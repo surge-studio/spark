@@ -28,7 +28,8 @@ const Menubar = forwardRef<
   <MenubarPrimitive.Root
     ref={ref}
     className={cn(
-      'flex h-10 items-center space-x-1 rounded-md border bg-background p-1',
+      'flex h-10 items-center space-x-1 rounded border p-1',
+      'bg-white dark:bg-gray-950',
       className
     )}
     {...props}
@@ -43,7 +44,9 @@ const MenubarTrigger = forwardRef<
   <MenubarPrimitive.Trigger
     ref={ref}
     className={cn(
-      'flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground',
+      'flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium',
+      'data-[state=open]:bg-gray-100 dark:data-[state=open]:bg-gray-900 data-[state=open]:text-gray-900 dark:data-[state=open]:text-gray-50',
+      'outline-none focus:bg-gray-100 dark:focus:bg-gray-800 focus:text-gray-900 dark:focus:text-gray-50',
       className
     )}
     {...props}
@@ -54,13 +57,15 @@ MenubarTrigger.displayName = MenubarPrimitive.Trigger.displayName;
 const MenubarSubTrigger = forwardRef<
   ElementRef<typeof MenubarPrimitive.SubTrigger>,
   ComponentPropsWithoutRef<typeof MenubarPrimitive.SubTrigger> & {
-    inset?: boolean;
+    readonly inset?: boolean;
   }
 >(({ className, inset, children, ...props }, ref) => (
   <MenubarPrimitive.SubTrigger
     ref={ref}
     className={cn(
-      'flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground',
+      'flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm',
+      'data-[state=open]:bg-gray-100 dark:data-[state=open]:bg-gray-900 data-[state=open]:text-gray-900 dark:data-[state=open]:text-gray-50',
+      'outline-none focus:bg-gray-100 dark:focus:bg-gray-800 focus:text-gray-900 dark:focus:text-gray-50',
       inset && 'pl-8',
       className
     )}
@@ -79,7 +84,8 @@ const MenubarSubContent = forwardRef<
   <MenubarPrimitive.SubContent
     ref={ref}
     className={cn(
-      'z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md animate-in data-[side=bottom]:slide-in-from-top-1 data-[side=left]:slide-in-from-right-1 data-[side=right]:slide-in-from-left-1 data-[side=top]:slide-in-from-bottom-1',
+      'z-50 min-w-[8rem] overflow-hidden rounded border p-1 shadow-md animate-in data-[side=bottom]:slide-in-from-top-1 data-[side=left]:slide-in-from-right-1 data-[side=right]:slide-in-from-left-1 data-[side=top]:slide-in-from-bottom-1',
+      'text-gray-900 bg-white dark:text-gray-400 dark:bg-gray-950',
       className
     )}
     {...props}
@@ -102,7 +108,8 @@ const MenubarContent = forwardRef<
         alignOffset={alignOffset}
         sideOffset={sideOffset}
         className={cn(
-          'z-50 min-w-[12rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md animate-in slide-in-from-top-1',
+          'z-50 min-w-[12rem] overflow-hidden rounded border p-1 shadow-md animate-in slide-in-from-top-1',
+          'text-gray-900 bg-white dark:text-gray-400 dark:bg-gray-950',
           className
         )}
         {...props}
@@ -115,13 +122,14 @@ MenubarContent.displayName = MenubarPrimitive.Content.displayName;
 const MenubarItem = forwardRef<
   ElementRef<typeof MenubarPrimitive.Item>,
   ComponentPropsWithoutRef<typeof MenubarPrimitive.Item> & {
-    inset?: boolean;
+    readonly inset?: boolean;
   }
 >(({ className, inset, ...props }, ref) => (
   <MenubarPrimitive.Item
     ref={ref}
     className={cn(
-      'relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      'relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      'outline-none focus:bg-gray-100 dark:focus:bg-gray-800 focus:text-gray-900 dark:focus:text-gray-50',
       inset && 'pl-8',
       className
     )}
@@ -137,7 +145,8 @@ const MenubarCheckboxItem = forwardRef<
   <MenubarPrimitive.CheckboxItem
     ref={ref}
     className={cn(
-      'relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      'relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      'outline-none focus:bg-gray-100 dark:focus:bg-gray-800 focus:text-gray-900 dark:focus:text-gray-50',
       className
     )}
     checked={checked}
@@ -160,7 +169,8 @@ const MenubarRadioItem = forwardRef<
   <MenubarPrimitive.RadioItem
     ref={ref}
     className={cn(
-      'relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      'relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      'outline-none focus:bg-gray-100 dark:focus:bg-gray-800 focus:text-gray-900 dark:focus:text-gray-50',
       className
     )}
     {...props}
@@ -178,7 +188,7 @@ MenubarRadioItem.displayName = MenubarPrimitive.RadioItem.displayName;
 const MenubarLabel = forwardRef<
   ElementRef<typeof MenubarPrimitive.Label>,
   ComponentPropsWithoutRef<typeof MenubarPrimitive.Label> & {
-    inset?: boolean;
+    readonly inset?: boolean;
   }
 >(({ className, inset, ...props }, ref) => (
   <MenubarPrimitive.Label
@@ -199,7 +209,7 @@ const MenubarSeparator = forwardRef<
 >(({ className, ...props }, ref) => (
   <MenubarPrimitive.Separator
     ref={ref}
-    className={cn('-mx-1 my-1 h-px bg-muted', className)}
+    className={cn('-mx-1 my-1 h-px bg-gray-100 dark:bg-gray-900', className)}
     {...props}
   />
 ));
@@ -210,10 +220,7 @@ const MenubarShortcut: FC<HTMLAttributes<HTMLSpanElement>> = ({
   ...props
 }) => (
   <span
-    className={cn(
-      'ml-auto text-xs tracking-widest text-muted-foreground',
-      className
-    )}
+    className={cn('ml-auto text-xs tracking-widest text-gray-500', className)}
     {...props}
   />
 );

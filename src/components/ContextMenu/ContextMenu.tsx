@@ -26,13 +26,15 @@ const ContextMenuRadioGroup = ContextMenuPrimitive.RadioGroup;
 const ContextMenuSubTrigger = forwardRef<
   ElementRef<typeof ContextMenuPrimitive.SubTrigger>,
   ComponentPropsWithoutRef<typeof ContextMenuPrimitive.SubTrigger> & {
-    inset?: boolean;
+    readonly inset?: boolean;
   }
 >(({ className, inset, children, ...props }, ref) => (
   <ContextMenuPrimitive.SubTrigger
     ref={ref}
     className={cn(
-      'flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground',
+      'flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none',
+      'data-[state=open]:bg-gray-100 dark:data-[state=open]:bg-gray-800 data-[state=open]:text-gray-900 dark:data-[state=open]:text-gray-50',
+      'focus:bg-gray-100 dark:focus:bg-gray-800 focus:text-gray-900 dark:focus:text-gray-50',
       inset && 'pl-8',
       className
     )}
@@ -51,7 +53,8 @@ const ContextMenuSubContent = forwardRef<
   <ContextMenuPrimitive.SubContent
     ref={ref}
     className={cn(
-      'z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md animate-in slide-in-from-left-1',
+      'z-50 min-w-[8rem] overflow-hidden rounded border p-1 shadow-md animate-in slide-in-from-left-1',
+      'text-gray-900 bg-white dark:text-gray-400 dark:bg-gray-950',
       className
     )}
     {...props}
@@ -67,7 +70,8 @@ const ContextMenuContent = forwardRef<
     <ContextMenuPrimitive.Content
       ref={ref}
       className={cn(
-        'z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md animate-in fade-in-80',
+        'z-50 min-w-[8rem] overflow-hidden rounded border p-1 shadow-md animate-in fade-in-80',
+        'text-gray-900 bg-white dark:text-gray-400 dark:bg-gray-950',
         className
       )}
       {...props}
@@ -79,13 +83,14 @@ ContextMenuContent.displayName = ContextMenuPrimitive.Content.displayName;
 const ContextMenuItem = forwardRef<
   ElementRef<typeof ContextMenuPrimitive.Item>,
   ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Item> & {
-    inset?: boolean;
+    readonly inset?: boolean;
   }
 >(({ className, inset, ...props }, ref) => (
   <ContextMenuPrimitive.Item
     ref={ref}
     className={cn(
-      'relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      'relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      'outline-none focus:bg-gray-100 dark:focus:bg-gray-800 focus:text-gray-900 dark:focus:text-gray-50',
       inset && 'pl-8',
       className
     )}
@@ -101,7 +106,8 @@ const ContextMenuCheckboxItem = forwardRef<
   <ContextMenuPrimitive.CheckboxItem
     ref={ref}
     className={cn(
-      'relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      'relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      'outline-none focus:bg-gray-100 dark:focus:bg-gray-800 focus:text-gray-900 dark:focus:text-gray-50',
       className
     )}
     checked={checked}
@@ -125,7 +131,8 @@ const ContextMenuRadioItem = forwardRef<
   <ContextMenuPrimitive.RadioItem
     ref={ref}
     className={cn(
-      'relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      'relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      'outline-none focus:bg-gray-100 dark:focus:bg-gray-800 focus:text-gray-900 dark:focus:text-gray-50',
       className
     )}
     {...props}
@@ -143,13 +150,13 @@ ContextMenuRadioItem.displayName = ContextMenuPrimitive.RadioItem.displayName;
 const ContextMenuLabel = forwardRef<
   ElementRef<typeof ContextMenuPrimitive.Label>,
   ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Label> & {
-    inset?: boolean;
+    readonly inset?: boolean;
   }
 >(({ className, inset, ...props }, ref) => (
   <ContextMenuPrimitive.Label
     ref={ref}
     className={cn(
-      'px-2 py-1.5 text-sm font-semibold text-foreground',
+      'px-2 py-1.5 text-sm font-semibold text-gray-900 dark:text-gray-200',
       inset && 'pl-8',
       className
     )}
@@ -164,7 +171,7 @@ const ContextMenuSeparator = forwardRef<
 >(({ className, ...props }, ref) => (
   <ContextMenuPrimitive.Separator
     ref={ref}
-    className={cn('-mx-1 my-1 h-px bg-border', className)}
+    className={cn('-mx-1 my-1 h-px bg-gray-200 dark:bg-gray-800', className)}
     {...props}
   />
 ));
@@ -175,10 +182,7 @@ const ContextMenuShortcut: FC<HTMLAttributes<HTMLSpanElement>> = ({
   ...props
 }) => (
   <span
-    className={cn(
-      'ml-auto text-xs tracking-widest text-muted-foreground',
-      className
-    )}
+    className={cn('ml-auto text-xs tracking-widest text-gray-500', className)}
     {...props}
   />
 );

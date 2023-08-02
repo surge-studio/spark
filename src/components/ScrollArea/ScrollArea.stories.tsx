@@ -7,7 +7,7 @@ const meta: Meta<typeof ScrollArea> = {
   title: 'Components/ScrollArea',
   component: ScrollArea,
   args: {
-    className: 'h-[200px] w-[350px] rounded-md border',
+    className: 'h-[200px] w-[350px] rounded border',
     children: (
       <div className="p-4">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi facilisis

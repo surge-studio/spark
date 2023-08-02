@@ -1,5 +1,4 @@
 import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu';
-import { cva } from 'class-variance-authority';
 import { ChevronDown } from 'lucide-react';
 import { forwardRef } from 'react';
 import { cn } from '@/lib/utils';
@@ -22,8 +21,11 @@ NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName;
 
 const NavigationMenuItem = NavigationMenuPrimitive.Item;
 
-const navigationMenuTriggerStyle = cva(
-  'inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none focus:bg-accent focus:text-accent-foreground disabled:opacity-50 disabled:pointer-events-none bg-background hover:bg-accent hover:text-accent-foreground data-[state=open]:bg-accent/50 data-[active]:bg-accent/50 h-10 py-2 px-4 group w-max'
+const navigationMenuTriggerStyle = cn(
+  'inline-flex items-center justify-center rounded text-sm font-medium transition-colors disabled:opacity-50 disabled:pointer-events-none h-10 py-2 px-4 group w-max',
+  'bg-white dark:bg-gray-950 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-50',
+  'data-[state=open]:bg-gray-100/50 dark:data-[state=open]:bg-gray-800/50 data-[active]:bg-gray-100/50 dark:data-[active]:bg-gray-800/50',
+  'focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-800 focus:text-gray-900 dark:focus:text-gray-50'
 );
 
 const NavigationMenuTrigger = forwardRef<
@@ -32,7 +34,7 @@ const NavigationMenuTrigger = forwardRef<
 >(({ className, children, ...props }, ref) => (
   <NavigationMenuPrimitive.Trigger
     ref={ref}
-    className={cn(navigationMenuTriggerStyle(), 'group', className)}
+    className={cn(navigationMenuTriggerStyle, 'group', className)}
     {...props}
   >
     {children}{' '}
@@ -68,7 +70,8 @@ const NavigationMenuViewport = forwardRef<
   <div className={cn('absolute left-0 top-full flex justify-center')}>
     <NavigationMenuPrimitive.Viewport
       className={cn(
-        'origin-top-center relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 md:w-[var(--radix-navigation-menu-viewport-width)]',
+        'origin-top-center relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded border shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 md:w-[var(--radix-navigation-menu-viewport-width)]',
+        'text-gray-900 bg-white dark:text-gray-400 dark:bg-gray-950',
         className
       )}
       ref={ref}
@@ -91,7 +94,7 @@ const NavigationMenuIndicator = forwardRef<
     )}
     {...props}
   >
-    <div className="relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm bg-border shadow-md" />
+    <div className="relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm bg-gray-200 dark:bg-gray-800 shadow-md" />
   </NavigationMenuPrimitive.Indicator>
 ));
 NavigationMenuIndicator.displayName =
