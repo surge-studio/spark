@@ -1,14 +1,25 @@
+import { withThemeByClassName } from '@storybook/addon-styling';
 import type { Preview } from '@storybook/react';
 
 import '@/styles/tailwind.css';
 
+export const decorators = [
+  withThemeByClassName({
+    themes: {
+      light: 'light',
+      dark: 'dark',
+    },
+    defaultTheme: 'light',
+  }),
+];
+
 const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/,
+    backgrounds: {
+      disable: true,
+      grid: {
+        disable: true,
       },
     },
     options: {

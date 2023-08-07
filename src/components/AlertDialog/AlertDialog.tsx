@@ -52,7 +52,9 @@ const AlertDialogContent = forwardRef<
     <AlertDialogPrimitive.Content
       ref={ref}
       className={cn(
-        'fixed z-50 grid w-full max-w-lg scale-100 gap-4 border bg-white dark:bg-gray-950 p-6 opacity-100 shadow-lg animate-in fade-in-90 slide-in-from-bottom-10 sm:rounded-lg sm:zoom-in-90 sm:slide-in-from-bottom-0 md:w-full',
+        'fixed z-50 grid w-full max-w-lg scale-100 gap-4 p-6 opacity-100 shadow-lg animate-in fade-in-90 slide-in-from-bottom-10 sm:rounded-lg sm:zoom-in-90 sm:slide-in-from-bottom-0 md:w-full',
+        'border border-gray-200 dark:border-gray-800',
+        'bg-white dark:bg-gray-900',
         className
       )}
       {...props}
@@ -133,7 +135,7 @@ const AlertDialogCancel = forwardRef<
   <AlertDialogPrimitive.Cancel
     ref={ref}
     className={cn(
-      buttonVariants({ variant: 'outline' }),
+      buttonVariants({ variant: 'secondary' }),
       'mt-2 sm:mt-0',
       className
     )}

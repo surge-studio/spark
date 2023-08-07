@@ -100,7 +100,7 @@ export const Default: Story = {
               .{' '}
               <Link
                 href="#"
-                className="font-medium text-primary underline underline-offset-4"
+                className="font-medium text-primary-600 hover:text-primary-500 dark:text-primary-500 dark:hover:text-primary-400 underline underline-offset-4"
               >
                 Click here
               </Link>{' '}

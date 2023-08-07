@@ -19,7 +19,7 @@ const Slider = forwardRef<
   >
     <SliderPrimitive.Track
       className={cn(
-        'relative h-2 w-full grow overflow-hidden rounded-full',
+        'relative h-1.5 w-full grow overflow-hidden rounded-full',
         'bg-gray-100 dark:bg-gray-900'
       )}
     >
@@ -27,8 +27,10 @@ const Slider = forwardRef<
     </SliderPrimitive.Track>
     <SliderPrimitive.Thumb
       className={cn(
-        'block h-5 w-5 rounded-full border-2 border-primary transition-colors disabled:pointer-events-none disabled:opacity-50',
-        'focus-visible:outline-none bg-white dark:bg-gray-950 ring-offset-white dark:ring-offset-gray-950 focus-visible:ring-gray-400 dark:focus-visible:ring-gray-800 focus-visible:ring-2 focus-visible:ring-offset-2'
+        'block h-4 w-4 rounded-full transition-colors disabled:pointer-events-none disabled:opacity-50',
+        'border-2 border-primary-600 dark:border-white',
+        'bg-white',
+        'focus-visible:outline-none ring-offset-white dark:ring-offset-gray-950 focus-visible:ring-primary-100 dark:focus-visible:ring-primary-900 focus-visible:ring-2 focus-visible:ring-offset-2'
       )}
     />
   </SliderPrimitive.Root>

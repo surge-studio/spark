@@ -19,7 +19,7 @@ import {
 import type { FC } from 'react';
 
 export const CommandDemo: FC = () => (
-  <Command className="rounded-lg border shadow-md">
+  <Command>
     <CommandInput placeholder="Type a command or search..." />
     <CommandList>
       <CommandEmpty>No results found.</CommandEmpty>

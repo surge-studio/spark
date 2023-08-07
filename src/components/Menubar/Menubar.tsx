@@ -28,7 +28,8 @@ const Menubar = forwardRef<
   <MenubarPrimitive.Root
     ref={ref}
     className={cn(
-      'flex h-10 items-center space-x-1 rounded border p-1',
+      'flex h-10 items-center space-x-1 rounded p-1',
+      'border border-gray-200 dark:border-gray-800',
       'bg-white dark:bg-gray-950',
       className
     )}
@@ -84,7 +85,8 @@ const MenubarSubContent = forwardRef<
   <MenubarPrimitive.SubContent
     ref={ref}
     className={cn(
-      'z-50 min-w-[8rem] overflow-hidden rounded border p-1 shadow-md animate-in data-[side=bottom]:slide-in-from-top-1 data-[side=left]:slide-in-from-right-1 data-[side=right]:slide-in-from-left-1 data-[side=top]:slide-in-from-bottom-1',
+      'z-50 min-w-[8rem] overflow-hidden rounded p-1 shadow-md animate-in data-[side=bottom]:slide-in-from-top-1 data-[side=left]:slide-in-from-right-1 data-[side=right]:slide-in-from-left-1 data-[side=top]:slide-in-from-bottom-1',
+      'border border-gray-200 dark:border-gray-800',
       'text-gray-900 bg-white dark:text-gray-400 dark:bg-gray-950',
       className
     )}
@@ -108,7 +110,8 @@ const MenubarContent = forwardRef<
         alignOffset={alignOffset}
         sideOffset={sideOffset}
         className={cn(
-          'z-50 min-w-[12rem] overflow-hidden rounded border p-1 shadow-md animate-in slide-in-from-top-1',
+          'z-50 min-w-[12rem] overflow-hidden rounded p-1 shadow-md animate-in slide-in-from-top-1',
+          'border border-gray-200 dark:border-gray-800',
           'text-gray-900 bg-white dark:text-gray-400 dark:bg-gray-950',
           className
         )}

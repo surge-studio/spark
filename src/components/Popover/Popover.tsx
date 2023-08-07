@@ -19,8 +19,10 @@ const PopoverContent = forwardRef<
       align={align}
       sideOffset={sideOffset}
       className={cn(
-        'z-50 w-72 rounded border p-4 shadow-md outline-none animate-in data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
-        'text-gray-900 bg-white dark:text-gray-400 dark:bg-gray-950',
+        'z-50 w-72 rounded p-4 shadow-md animate-in data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
+        'border border-gray-200 dark:border-gray-800',
+        'text-gray-900 bg-white dark:text-gray-400 dark:bg-gray-900',
+        'outline-none',
         className
       )}
       {...props}

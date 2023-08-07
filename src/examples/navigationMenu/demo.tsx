@@ -90,11 +90,11 @@ export const NavigationMenuDemo: FC = () => (
                 {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
                 <a
                   href="/"
-                  className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gray-100 dark:bg-gray-900 p-6 no-underline outline-none focus:shadow-md"
+                  className="flex h-full w-full select-none flex-col justify-end rounded-md bg-primary-600 dark:bg-primary-500 text-white p-6 no-underline outline-none focus:shadow-md"
                 >
                   <Zap className="h-6 w-6" />
                   <div className="mb-2 mt-4 text-lg font-medium">Surge</div>
-                  <p className="text-sm leading-tight text-gray-500">
+                  <p className="text-sm leading-tight">
                     Development tools and resources for the modern web
                   </p>
                 </a>

@@ -53,8 +53,9 @@ const ContextMenuSubContent = forwardRef<
   <ContextMenuPrimitive.SubContent
     ref={ref}
     className={cn(
-      'z-50 min-w-[8rem] overflow-hidden rounded border p-1 shadow-md animate-in slide-in-from-left-1',
-      'text-gray-900 bg-white dark:text-gray-400 dark:bg-gray-950',
+      'z-50 min-w-[8rem] overflow-hidden rounded p-1 shadow-md animate-in slide-in-from-left-1',
+      'border border-gray-200 dark:border-gray-800',
+      'text-gray-900 bg-white dark:text-gray-400 dark:bg-gray-900',
       className
     )}
     {...props}
@@ -70,8 +71,9 @@ const ContextMenuContent = forwardRef<
     <ContextMenuPrimitive.Content
       ref={ref}
       className={cn(
-        'z-50 min-w-[8rem] overflow-hidden rounded border p-1 shadow-md animate-in fade-in-80',
-        'text-gray-900 bg-white dark:text-gray-400 dark:bg-gray-950',
+        'z-50 min-w-[8rem] overflow-hidden rounded p-1 shadow-md animate-in fade-in-80',
+        'border border-gray-200 dark:border-gray-800',
+        'text-gray-900 bg-white dark:text-gray-400 dark:bg-gray-900',
         className
       )}
       {...props}

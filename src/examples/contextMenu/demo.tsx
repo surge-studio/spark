@@ -17,7 +17,7 @@ import type { FC } from 'react';
 
 export const ContextMenuDemo: FC = () => (
   <ContextMenu>
-    <ContextMenuTrigger className="flex h-[150px] w-[300px] items-center justify-center rounded-md border border-dashed text-sm">
+    <ContextMenuTrigger className="flex h-[150px] w-[300px] items-center justify-center rounded-md border border-gray-200 dark:border-gray-700 border-dashed text-sm">
       Right click here
     </ContextMenuTrigger>
     <ContextMenuContent className="w-64">

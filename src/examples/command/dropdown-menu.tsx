@@ -42,10 +42,10 @@ export const CommandDropdownMenu: FC = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="flex w-full flex-col items-start justify-between rounded-md border px-4 py-3 sm:flex-row sm:items-center">
+    <div className="flex w-full flex-col items-start justify-between rounded-md border border-gray-dark dark:border-gray-800 px-4 py-3 sm:flex-row sm:items-center">
       <p className="text-sm font-medium leading-none">
         <Badge className="mr-2">{label}</Badge>
-        <span className="text-gray-500">Create a new project</span>
+        <span>Create a new project</span>
       </p>
       <DropdownMenu open={open} onOpenChange={setOpen}>
         <DropdownMenuTrigger asChild>

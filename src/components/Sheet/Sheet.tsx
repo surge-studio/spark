@@ -62,8 +62,8 @@ SheetOverlay.displayName = SheetPrimitive.Overlay.displayName;
 
 const sheetVariants = cva(
   cn(
-    'fixed z-50 scale-100 gap-4 p-6 opacity-100 shadow-lg border',
-    'bg-white dark:bg-gray-950'
+    'fixed z-50 scale-100 gap-4 p-6 opacity-100 shadow-lg',
+    'bg-white dark:bg-gray-900'
   ),
   {
     variants: {
