@@ -46,5 +46,5 @@ const theme = create({
 
 addons.setConfig({
   theme,
-  enableShortcuts: false,
+  enableShortcuts: true,
 });
