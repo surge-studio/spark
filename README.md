@@ -1,3 +1,3 @@
 ## Spark
 
-Design system
+Surge Studio Design System
