@@ -18,7 +18,6 @@ import { AccordionDemo } from '@/examples/accordion/demo';
 import { NavigationMenuDemo } from '@/examples/navigationMenu/demo';
 import { SwitchDemo } from '@/examples/switch/demo';
 import { SelectDemo } from '@/examples/select/demo';
-import { SeparatorDemo } from '@/examples/separator/demo';
 import { AspectRatioDemo } from '@/examples/aspectRatio/demo';
 import { PopoverDemo } from '@/examples/popover/demo';
 import { TooltipDemo } from '@/examples/tooltip/demo';
@@ -47,6 +46,7 @@ import { TypographyDemo } from '@/examples/typography/demo';
 import { ThemeProvider } from './ThemeProvider';
 import type { HTMLAttributes } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import { DividerDemo } from '@/examples/divider/demo';
 
 type Story = StoryObj<typeof ThemeProvider>;
 
@@ -149,7 +149,7 @@ export const Default: Story = {
             <SelectDemo />
           </ComponentWrapper>
           <ComponentWrapper>
-            <SeparatorDemo />
+            <DividerDemo />
           </ComponentWrapper>
           <ComponentWrapper>
             <AspectRatioDemo />

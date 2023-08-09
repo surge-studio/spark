@@ -5,7 +5,7 @@ import { forwardRef } from 'react';
 import { cn } from '@/lib/utils';
 import type { ComponentPropsWithoutRef, ElementRef } from 'react';
 
-const Separator = forwardRef<
+const Divider = forwardRef<
   ElementRef<typeof SeparatorPrimitive.Root>,
   ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>
 >(
@@ -26,6 +26,6 @@ const Separator = forwardRef<
     />
   )
 );
-Separator.displayName = SeparatorPrimitive.Root.displayName;
+Divider.displayName = SeparatorPrimitive.Root.displayName;
 
-export { Separator };
+export { Divider };

@@ -1,5 +1,5 @@
 import { ScrollArea } from '@/components/ScrollArea';
-import { Separator } from '@/components/Separator';
+import { Divider } from '@/components/Divider';
 import type { FC } from 'react';
 
 const tags = Array.from({ length: 50 }).map(
@@ -15,7 +15,7 @@ export const ScrollAreaDemo: FC = () => (
           <div className="text-sm" key={tag}>
             {tag}
           </div>
-          <Separator className="my-2" />
+          <Divider className="my-2" />
         </>
       ))}
     </div>

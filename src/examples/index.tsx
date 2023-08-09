@@ -48,7 +48,6 @@ import { ProgressDemo } from '@/examples/progress/demo';
 import { RadioGroupDemo } from '@/examples/radioGroup/demo';
 import { ScrollAreaDemo } from '@/examples/scrollArea/demo';
 import { SelectDemo } from '@/examples/select/demo';
-import { SeparatorDemo } from '@/examples/separator/demo';
 import { SheetDemo } from '@/examples/sheet/demo';
 import { SheetPosition } from '@/examples/sheet/position';
 import { SheetSize } from '@/examples/sheet/size';
@@ -63,6 +62,7 @@ import { TextareaWithLabel } from '@/examples/textarea/with-label';
 import { TextareaWithText } from '@/examples/textarea/with-text';
 import { TooltipDemo } from '@/examples/tooltip/demo';
 import { TypographyDemo } from '@/examples/typography/demo';
+import { DividerDemo } from '@/examples/divider/demo';
 
 export const examples = {
   AccordionDemo,
@@ -115,7 +115,7 @@ export const examples = {
   RadioGroupDemo,
   ScrollAreaDemo,
   SelectDemo,
-  SeparatorDemo,
+  DividerDemo,
   SheetDemo,
   SheetSize,
   SheetPosition,
