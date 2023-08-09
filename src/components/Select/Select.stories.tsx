@@ -10,7 +10,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 type Story = StoryObj<typeof Select>;
 
 const meta: Meta<typeof Select> = {
-  title: 'Components/Select',
   component: Select,
   args: {
     children: 'Select',

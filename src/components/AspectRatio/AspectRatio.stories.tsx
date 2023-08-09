@@ -1,11 +1,9 @@
-import Image from 'next/image';
 import { AspectRatio } from './AspectRatio';
 import type { Meta, StoryObj } from '@storybook/react';
 
 type Story = StoryObj<typeof AspectRatio>;
 
 const meta: Meta<typeof AspectRatio> = {
-  title: 'Components/AspectRatio',
   component: AspectRatio,
   args: {
     children: 'AspectRatio',

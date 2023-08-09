@@ -4,7 +4,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 type Story = StoryObj<typeof ScrollArea>;
 
 const meta: Meta<typeof ScrollArea> = {
-  title: 'Components/ScrollArea',
   component: ScrollArea,
   args: {
     className: 'h-[200px] w-[350px] rounded border',

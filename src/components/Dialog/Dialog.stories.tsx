@@ -11,7 +11,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 type Story = StoryObj<typeof Dialog>;
 
 const meta: Meta<typeof Dialog> = {
-  title: 'Components/Dialog',
   component: Dialog,
   args: {
     children: 'Dialog',

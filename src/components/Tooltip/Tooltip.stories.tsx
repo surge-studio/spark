@@ -9,7 +9,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 type Story = StoryObj<typeof Tooltip>;
 
 const meta: Meta<typeof Tooltip> = {
-  title: 'Components/Tooltip',
   component: Tooltip,
 };
 

@@ -4,7 +4,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 type Story = StoryObj<typeof Avatar>;
 
 const meta: Meta<typeof Avatar> = {
-  title: 'Components/Avatar',
   component: Avatar,
   args: {
     children: 'Avatar',

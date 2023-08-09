@@ -9,7 +9,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 type Story = StoryObj<typeof ContextMenu>;
 
 const meta: Meta<typeof ContextMenu> = {
-  title: 'Components/ContextMenu',
   component: ContextMenu,
 };
 

@@ -4,7 +4,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 type Story = StoryObj<typeof HoverCard>;
 
 const meta: Meta<typeof HoverCard> = {
-  title: 'Components/HoverCard',
   component: HoverCard,
   args: {
     children: 'HoverCard',

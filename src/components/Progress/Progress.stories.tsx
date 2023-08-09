@@ -4,7 +4,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 type Story = StoryObj<typeof Progress>;
 
 const meta: Meta<typeof Progress> = {
-  title: 'Components/Progress',
   component: Progress,
   args: {
     value: 33,

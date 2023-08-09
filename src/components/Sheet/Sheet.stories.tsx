@@ -11,7 +11,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 type Story = StoryObj<typeof Sheet>;
 
 const meta: Meta<typeof Sheet> = {
-  title: 'Components/Sheet',
   component: Sheet,
   args: {
     children: 'Sheet',

@@ -12,7 +12,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 type Story = StoryObj<typeof Menubar>;
 
 const meta: Meta<typeof Menubar> = {
-  title: 'Components/Menubar',
   component: Menubar,
 };
 

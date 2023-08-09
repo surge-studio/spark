@@ -9,7 +9,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 type Story = StoryObj<typeof Accordion>;
 
 const meta: Meta<typeof Accordion> = {
-  title: 'Components/Accordion',
   component: Accordion,
   args: {
     children: 'Accordion',

@@ -11,7 +11,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 type Story = StoryObj<typeof NavigationMenu>;
 
 const meta: Meta<typeof NavigationMenu> = {
-  title: 'Components/NavigationMenu',
   component: NavigationMenu,
 };
 

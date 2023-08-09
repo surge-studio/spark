@@ -12,7 +12,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 type Story = StoryObj<typeof CommandDialog>;
 
 const meta: Meta<typeof CommandDialog> = {
-  title: 'Components/Command',
   component: CommandDialog,
   args: {
     open: true,

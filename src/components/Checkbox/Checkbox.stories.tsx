@@ -4,7 +4,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 type Story = StoryObj<typeof Checkbox>;
 
 const meta: Meta<typeof Checkbox> = {
-  title: 'Components/Checkbox',
   component: Checkbox,
 };
 

@@ -11,7 +11,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 type Story = StoryObj<typeof DropdownMenu>;
 
 const meta: Meta<typeof DropdownMenu> = {
-  title: 'Components/DropdownMenu',
   component: DropdownMenu,
 };
 

@@ -8,7 +8,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 type Story = StoryObj<typeof Collapsible>;
 
 const meta: Meta<typeof Collapsible> = {
-  title: 'Components/Collapsible',
   component: Collapsible,
   args: {
     children: 'Collapsible',
