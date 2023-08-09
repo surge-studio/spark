@@ -13,16 +13,16 @@ const theme = create({
   brandImage: Logo,
   brandTarget: '_self',
 
-  appBg: defaultColors.zinc[200],
+  appBg: defaultColors.zinc[100],
   appBorderColor: defaultColors.zinc[200],
   appBorderRadius: 0,
   appContentBg: defaultColors.zinc[50],
 
-  barBg: defaultColors.zinc[200],
+  barBg: defaultColors.zinc[100],
   barSelectedColor: defaultColors.zinc[900],
   barTextColor: defaultColors.zinc[900],
 
-  booleanBg: defaultColors.zinc[200],
+  booleanBg: defaultColors.zinc[100],
   booleanSelectedBg: defaultColors.zinc[300],
 
   buttonBg: defaultColors.zinc[200],
