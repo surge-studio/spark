@@ -65,7 +65,7 @@ const MenubarSubTrigger = forwardRef<
     ref={ref}
     className={cn(
       'flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm',
-      'data-[state=open]:bg-gray-100 dark:data-[state=open]:bg-gray-900 data-[state=open]:text-gray-900 dark:data-[state=open]:text-gray-50',
+      'data-[state=open]:bg-gray-100 dark:data-[state=open]:bg-gray-800 data-[state=open]:text-gray-900 dark:data-[state=open]:text-gray-50',
       'outline-none focus:bg-gray-100 dark:focus:bg-gray-800 focus:text-gray-900 dark:focus:text-gray-50',
       inset && 'pl-8',
       className
@@ -87,7 +87,7 @@ const MenubarSubContent = forwardRef<
     className={cn(
       'z-50 min-w-[8rem] overflow-hidden rounded p-1 shadow-md animate-in data-[side=bottom]:slide-in-from-top-1 data-[side=left]:slide-in-from-right-1 data-[side=right]:slide-in-from-left-1 data-[side=top]:slide-in-from-bottom-1',
       'border border-gray-200 dark:border-gray-800',
-      'text-gray-900 bg-white dark:text-gray-400 dark:bg-gray-950',
+      'text-gray-900 bg-white dark:text-gray-400 dark:bg-gray-900',
       className
     )}
     {...props}
@@ -112,7 +112,7 @@ const MenubarContent = forwardRef<
         className={cn(
           'z-50 min-w-[12rem] overflow-hidden rounded p-1 shadow-md animate-in slide-in-from-top-1',
           'border border-gray-200 dark:border-gray-800',
-          'text-gray-900 bg-white dark:text-gray-400 dark:bg-gray-950',
+          'text-gray-900 bg-white dark:text-gray-400 dark:bg-gray-900',
           className
         )}
         {...props}
@@ -212,7 +212,7 @@ const MenubarSeparator = forwardRef<
 >(({ className, ...props }, ref) => (
   <MenubarPrimitive.Separator
     ref={ref}
-    className={cn('-mx-1 my-1 h-px bg-gray-100 dark:bg-gray-900', className)}
+    className={cn('-mx-1 my-1 h-px bg-gray-100 dark:bg-gray-800', className)}
     {...props}
   />
 ));

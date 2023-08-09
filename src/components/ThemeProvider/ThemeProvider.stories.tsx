@@ -1,3 +1,4 @@
+/* eslint-disable storybook/no-title-property-in-meta */
 import Link from 'next/link';
 import { CardDemo } from '@/examples/card/demo';
 import { SliderDemo } from '@/examples/slider/demo';
@@ -43,10 +44,10 @@ import { BadgeTertiary } from '@/examples/badge/tertiary';
 import { ButtonTertiary } from '@/examples/button/tertiary';
 import { CommandDropdownMenu } from '@/examples/command/dropdown-menu';
 import { TypographyDemo } from '@/examples/typography/demo';
+import { DividerDemo } from '@/examples/divider/demo';
 import { ThemeProvider } from './ThemeProvider';
 import type { HTMLAttributes } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { DividerDemo } from '@/examples/divider/demo';
 
 type Story = StoryObj<typeof ThemeProvider>;
 

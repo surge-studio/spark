@@ -15,7 +15,7 @@ const Checkbox = forwardRef<
     className={cn(
       'peer h-4 w-4 shrink-0 rounded-sm disabled:cursor-not-allowed disabled:opacity-50',
       'border border-gray-200 dark:border-gray-800 data-[state=checked]:border-primary',
-      'ring-offset-white dark:ring-offset-gray-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-400 dark:focus-visible:ring-gray-800',
+      'ring-offset-white dark:ring-offset-gray-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary-100 dark:focus-visible:ring-primary-900',
       className
     )}
     {...props}

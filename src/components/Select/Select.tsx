@@ -21,7 +21,7 @@ const SelectTrigger = forwardRef<
     className={cn(
       'flex h-10 w-full items-center justify-between rounded bg-transparent px-3 py-2 text-sm placeholder:text-gray-500 disabled:cursor-not-allowed disabled:opacity-50',
       'border border-gray-200 dark:border-gray-800',
-      'focus:outline-none ring-offset-white dark:ring-offset-gray-950 focus:ring-gray-400 dark:focus:ring-gray-800 focus:ring-2 focus:ring-offset-2',
+      'focus:outline-none ring-offset-white dark:ring-offset-gray-950 focus:ring-primary-100 dark:focus:ring-primary-900 focus:ring-2 focus:ring-offset-2',
       className
     )}
     {...props}
@@ -44,7 +44,7 @@ const SelectContent = forwardRef<
       className={cn(
         'relative z-50 min-w-[8rem] overflow-hidden rounded shadow-md animate-in fade-in-80',
         'border border-gray-200 dark:border-gray-800',
-        'text-gray-900 bg-white dark:text-gray-400 dark:bg-gray-950',
+        'text-gray-900 bg-white dark:text-gray-400 dark:bg-gray-900',
         position === 'popper' && 'translate-y-1',
         className
       )}

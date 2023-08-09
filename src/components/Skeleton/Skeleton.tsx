@@ -7,7 +7,7 @@ const Skeleton: FC<HTMLAttributes<HTMLDivElement>> = ({
 }) => (
   <div
     className={cn(
-      'animate-pulse rounded bg-gray-100 dark:bg-gray-900',
+      'animate-pulse rounded bg-black/10 dark:bg-white/10',
       className
     )}
     {...props}

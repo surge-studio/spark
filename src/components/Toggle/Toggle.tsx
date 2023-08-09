@@ -11,7 +11,7 @@ const toggleVariants = cva(
   cn(
     'inline-flex items-center justify-center rounded text-sm font-medium transition-colors disabled:pointer-events-none disabled:opacity-50',
     'data-[state=on]:bg-gray-100 dark:data-[state=on]:bg-gray-800 data-[state=on]:text-gray-900 dark:data-[state=on]:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-900 hover:text-gray-600 dark:hover:text-gray-400',
-    'focus-visible:outline-none ring-offset-white dark:ring-offset-gray-950 focus-visible:ring-gray-400 dark:focus-visible:ring-gray-800 focus-visible:ring-2 focus-visible:ring-offset-2'
+    'focus-visible:outline-none ring-offset-white dark:ring-offset-gray-950 focus-visible:ring-primary-100 dark:focus-visible:ring-primary-900 focus-visible:ring-2 focus-visible:ring-offset-2'
   ),
   {
     variants: {

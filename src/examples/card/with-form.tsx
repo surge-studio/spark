@@ -49,7 +49,7 @@ export const CardWithForm: FC = () => (
       </form>
     </CardContent>
     <CardFooter className="flex justify-between">
-      <Button variant="ghost">Cancel</Button>
+      <Button variant="tertiary">Cancel</Button>
       <Button>Deploy</Button>
     </CardFooter>
   </Card>

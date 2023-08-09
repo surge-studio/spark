@@ -14,12 +14,14 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: 'bg-primary text-white hover:bg-primary/90',
+        primary:
+          'text-white bg-primary-600 hover:bg-primary-700 dark:bg-primary-700 dark:hover:bg-primary-600',
         secondary:
-          'text-gray-900 dark:text-gray-50 bg-gray-100 hover:bg-gray-100/80 dark:bg-gray-800 dark:hover:bg-gray-800/80',
+          'text-gray-900 bg-gray-100 hover:bg-gray-200 dark:text-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700',
         tertiary:
-          'hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-50',
-        destructive: 'bg-error text-white hover:bg-error/90',
+          'hover:text-gray-900 dark:hover:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-800',
+        destructive:
+          'text-white bg-error-600 hover:bg-error-700 dark:bg-error-700 dark:hover:bg-error-600 focus-visible:ring-error-100 dark:focus-visible:ring-error-900',
         link: 'underline-offset-4 underline text-primary-600 hover:text-primary-500 dark:text-primary-500 dark:hover:text-primary-400',
       },
       size: {
