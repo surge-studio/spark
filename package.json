@@ -1,11 +1,14 @@
 {
   "name": "@surge-studio/spark",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "scripts": {
     "dev": "storybook dev -p 3000",
     "build": "storybook build",
     "package": "tsup"
   },
+  "files": [
+    "dist/**"
+  ],
   "type": "module",
   "exports": {
     ".": "./dist/index.js"
