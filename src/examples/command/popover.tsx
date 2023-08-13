@@ -8,7 +8,7 @@ import {
   XCircle,
 } from 'lucide-react';
 import { useState } from 'react';
-import { cn } from '@/lib/utils';
+import { cn } from '../utils.js';
 import { Button } from '@/components/Button';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/Popover';
 import {

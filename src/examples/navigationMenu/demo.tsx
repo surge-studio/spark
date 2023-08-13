@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Zap } from 'lucide-react';
 import { forwardRef } from 'react';
-import { cn } from '@/lib/utils';
+import { cn } from '../utils.js';
 import {
   NavigationMenu,
   NavigationMenuContent,

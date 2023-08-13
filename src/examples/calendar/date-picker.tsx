@@ -2,7 +2,7 @@
 
 import { Calendar as CalendarIcon } from 'lucide-react';
 import { useState } from 'react';
-import { cn } from '@/lib/utils';
+import { cn } from '../utils.js';
 import { Button } from '@/components/Button';
 import { Calendar } from '@/components/Calendar';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/Popover';
