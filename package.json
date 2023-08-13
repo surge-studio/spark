@@ -1,12 +1,35 @@
 {
   "name": "@surge-studio/spark",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.1",
   "scripts": {
     "dev": "storybook dev -p 3000",
     "build": "storybook build",
-    "lint": "next lint"
+    "package": "tsup"
   },
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/surge-studio/spark.git"
+  },
+  "keywords": [
+    "design",
+    "system",
+    "storybook"
+  ],
+  "author": "Hayden Barnett <hello@haydenbarnett.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/surge-studio/spark/issues"
+  },
+  "homepage": "https://github.com/surge-studio/spark#readme",
   "dependencies": {
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-alert-dialog": "^1.0.4",
@@ -33,9 +56,6 @@
     "@radix-ui/react-tabs": "^1.0.4",
     "@radix-ui/react-toggle": "^1.0.3",
     "@radix-ui/react-tooltip": "^1.0.6",
-    "@types/node": "20.4.8",
-    "@types/react": "18.2.18",
-    "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.14",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
@@ -44,15 +64,15 @@
     "eslint": "^8.46.0",
     "eslint-config-next": "13.4.12",
     "lucide-react": "^0.264.0",
-    "next": "13.4.12",
-    "postcss": "8.4.27",
-    "react": "18.2.0",
     "react-day-picker": "^8.8.0",
-    "react-dom": "18.2.0",
     "tailwind-merge": "^1.14.0",
-    "tailwindcss": "3.3.3",
-    "tailwindcss-animate": "^1.0.6",
+    "tsup": "^7.2.0",
     "typescript": "^5.1.6"
+  },
+  "peerDependencies": {
+    "next": "13.4.13",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@beskar-labs/harmony": "^2.5.1",
@@ -66,10 +86,19 @@
     "@storybook/react": "^7.2.1",
     "@storybook/testing-library": "^0.2.0",
     "@storybook/theming": "^7.2.1",
+    "@types/node": "^20.4.10",
+    "@types/react": "^18.2.20",
+    "@types/react-dom": "^18.2.7",
     "eslint-plugin-storybook": "^0.6.13",
+    "next": "^13.4.13",
+    "postcss": "^8.4.27",
     "prettier": "^3.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "storybook": "^7.2.1",
-    "stylelint": "^15.10.2"
+    "stylelint": "^15.10.2",
+    "tailwindcss": "^3.3.3",
+    "tailwindcss-animate": "^1.0.6"
   },
   "prettier": "@beskar-labs/harmony/prettier",
   "stylelint": {
