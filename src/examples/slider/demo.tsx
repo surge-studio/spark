@@ -1,4 +1,4 @@
-import { cn } from '../utils.js';
+import { cn } from '@/components/utils';
 import { Slider } from '@/components/Slider';
 import type { ComponentProps, FC } from 'react';
 

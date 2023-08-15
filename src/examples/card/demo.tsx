@@ -1,6 +1,6 @@
 import { BellRing, Check } from 'lucide-react';
 
-import { cn } from '../utils.js';
+import { cn } from '@/components/utils';
 import { Button } from '@/components/Button';
 import {
   Card,

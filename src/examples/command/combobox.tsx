@@ -3,7 +3,7 @@
 
 import { Check, ChevronsUpDown } from 'lucide-react';
 import { useState } from 'react';
-import { cn } from '../utils.js';
+import { cn } from '@/components/utils';
 import { Button } from '@/components/Button';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/Popover';
 import {
