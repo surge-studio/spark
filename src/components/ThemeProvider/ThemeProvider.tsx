@@ -1,9 +1,17 @@
-import type { FC, ReactNode } from 'react';
+import { ThemeProvider as NextThemeProvider, useTheme } from 'next-themes';
+import type { ComponentProps, FC } from 'react';
 
-type ThemeProviderProps = {
-  readonly children: ReactNode;
-};
+const ThemeProvider: FC<ComponentProps<typeof NextThemeProvider>> = ({
+  children,
+  ...props
+}) => (
+  <NextThemeProvider
+    attribute="class"
+    disableTransitionOnChange={true}
+    {...props}
+  >
+    {children}
+  </NextThemeProvider>
+);
 
-const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => children;
-
-export { ThemeProvider };
+export { ThemeProvider, useTheme };

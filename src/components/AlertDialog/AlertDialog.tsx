@@ -2,8 +2,8 @@
 
 import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog';
 import { forwardRef } from 'react';
-import { cn } from '../utils.js';
-import { buttonVariants } from '../Button/Button.js';
+import { cn } from '../utils';
+import { buttonVariants } from '../Button/Button';
 import type {
   ComponentPropsWithoutRef,
   ElementRef,

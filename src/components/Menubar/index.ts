@@ -1,1 +1,1 @@
-export * from './Menubar.js';
+export * from './Menubar';

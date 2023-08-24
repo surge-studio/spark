@@ -1,7 +1,7 @@
 import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu';
 import { ChevronDown } from 'lucide-react';
 import { forwardRef } from 'react';
-import { cn } from '../utils.js';
+import { cn } from '../utils';
 import type { ComponentPropsWithoutRef, ElementRef } from 'react';
 
 const NavigationMenuList = forwardRef<

@@ -1,1 +1,1 @@
-export * from './HoverCard.js';
+export * from './HoverCard';

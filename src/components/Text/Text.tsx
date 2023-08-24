@@ -18,11 +18,11 @@ type TextProps = Omit<HTMLProps<HTMLElement>, 'size'> & {
 };
 
 const textSizeClassName: Record<TextSizes, string> = {
-  xxl: 'text-2xl',
-  xl: 'text-xl',
-  lg: 'text-lg',
-  md: 'text-base',
-  sm: 'text-sm',
+  xxl: 'text-2xl tracking-[-0.022em]',
+  xl: 'text-xl tracking-[-0.021em]',
+  lg: 'text-lg tracking-[-0.019em]',
+  md: 'text-base tracking-[-0.011em]',
+  sm: 'text-sm tracking-[-0.006em]',
   xs: 'text-xs',
 };
 

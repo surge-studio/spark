@@ -1,4 +1,4 @@
-import { cn } from '../utils.js';
+import { cn } from '../utils';
 import type { FC, HTMLAttributes } from 'react';
 
 const Skeleton: FC<HTMLAttributes<HTMLDivElement>> = ({

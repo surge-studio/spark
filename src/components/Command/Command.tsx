@@ -3,8 +3,8 @@
 import { Command as CommandPrimitive } from 'cmdk';
 import { Search } from 'lucide-react';
 import { forwardRef } from 'react';
-import { cn } from '../utils.js';
-import { Dialog, DialogContent } from '../Dialog/Dialog.js';
+import { cn } from '../utils';
+import { Dialog, DialogContent } from '../Dialog/Dialog';
 import type {
   ComponentPropsWithoutRef,
   ElementRef,

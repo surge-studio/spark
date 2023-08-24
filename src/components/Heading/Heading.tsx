@@ -20,12 +20,12 @@ const HeadingSizeTag: Record<HeadingSizes, HeadingTags> = {
 };
 
 const headingSizeClassName: Record<HeadingSizes, string> = {
-  xxl: 'text-5xl sm:text-7xl',
-  xl: 'text-4xl sm:text-6xl',
-  lg: 'text-3xl sm:text-5xl',
-  md: 'text-2xl sm:text-4xl',
-  sm: 'text-xl sm:text-3xl',
-  xs: 'text-lg sm:text-2xl',
+  xxl: 'text-5xl sm:text-7xl tracking-[-0.022em]',
+  xl: 'text-4xl sm:text-6xl tracking-[-0.022em]',
+  lg: 'text-3xl sm:text-5xl tracking-[-0.022em]',
+  md: 'text-2xl sm:text-4xl tracking-[-0.022em]',
+  sm: 'text-xl sm:text-3xl tracking-[-0.021em]',
+  xs: 'text-lg sm:text-2xl tracking-[-0.019em]',
 };
 
 export const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
@@ -34,11 +34,7 @@ export const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
 
     return (
       <Element
-        className={clsx(
-          'font-bold tracking-tighter',
-          headingSizeClassName[size],
-          className
-        )}
+        className={clsx('font-bold', headingSizeClassName[size], className)}
         ref={ref}
         {...props}
       />

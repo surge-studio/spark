@@ -1,1 +1,1 @@
-export * from './Collapsible.js';
+export * from './Collapsible';

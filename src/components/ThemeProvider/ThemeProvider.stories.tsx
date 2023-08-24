@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { CardDemo } from '@/examples/card/demo';
 import { SliderDemo } from '@/examples/slider/demo';
-import { cn } from '../utils.js';
+import { cn } from '../utils';
 import { CheckboxDemo } from '@/examples/checkbox/demo';
 import { HoverCardDemo } from '@/examples/hoverCard/demo';
 import { TabsDemo } from '@/examples/tabs/demo';
