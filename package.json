@@ -6,8 +6,9 @@
     "dev:storybook": "storybook dev -p 6006",
     "dev:next": "next dev",
     "build": "pnpm run build:storybook && pnpm run build:next",
-    "build:next": "next build",
     "build:storybook": "storybook build -o public/docs",
+    "postbuild:storybook": "sed -i 's#<head>#<head>\\n<base href='/docs/'>#' ./public/docs/index.html",
+    "build:next": "next build",
     "package": "tsup"
   },
   "files": [
