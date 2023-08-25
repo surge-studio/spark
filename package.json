@@ -2,8 +2,12 @@
   "name": "@surge-studio/spark",
   "version": "0.2.1",
   "scripts": {
-    "dev": "storybook dev -p 3000",
-    "build": "storybook build",
+    "dev": "concurrently \"pnpm:dev:storybook\" \"pnpm:dev:next\"",
+    "dev:storybook": "storybook dev -p 6006",
+    "dev:next": "next dev",
+    "build": "pnpm run build:storybook && pnpm run build:next",
+    "build:next": "next build",
+    "build:storybook": "storybook build -o public/docs",
     "package": "tsup"
   },
   "files": [
@@ -100,6 +104,7 @@
     "@types/node": "^20.4.10",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
+    "concurrently": "^8.2.1",
     "eslint-plugin-storybook": "^0.6.13",
     "next": "^13.4.13",
     "postcss": "^8.4.27",

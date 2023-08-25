@@ -12,8 +12,17 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[mdx]": {
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 80
+  },
   "eslint.experimental.useFlatConfig": true,
   "eslint.options": {
     "overrideConfigFile": "eslint.config.mjs"
-  }
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "css.validate": false,
+  "editor.inlineSuggest.enabled": true
 }
