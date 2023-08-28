@@ -6,14 +6,14 @@ import type { HTMLAttributes } from 'react';
 import type { VariantProps } from 'class-variance-authority';
 
 const alertVariants = cva(
-  'relative w-full rounded-lg border p-4 [&>svg]:absolute [&>svg]:text-foreground [&>svg]:left-4 [&>svg]:top-4 [&>svg+div]:translate-y-[-3px] [&:has(svg)]:pl-11',
+  'relative w-full rounded-lg border p-4 [&>svg]:absolute [&>svg]:text-gray-900 dark:[&>svg]:text-gray-200 [&>svg]:left-4 [&>svg]:top-4 [&>svg+div]:translate-y-[-3px] [&:has(svg)]:pl-11',
   {
     variants: {
       variant: {
         default:
-          'bg-white border-gray-200 dark:border-gray-800 dark:bg-gray-950 text-foreground',
+          'bg-white border-gray-200 dark:border-gray-800 dark:bg-gray-950 text-gray-900 dark:text-gray-200',
         destructive:
-          'text-error border-error/50 dark:border-error [&>svg]:text-error text-error',
+          'border-error-600/30 [&>svg]:text-error-600 dark:[&>svg]:text-error-500 text-error-600',
       },
     },
     defaultVariants: {

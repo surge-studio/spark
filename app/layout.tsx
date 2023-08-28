@@ -1,5 +1,6 @@
 import type { FC, ReactNode } from 'react';
-import { Providers } from './providers';
+import { ThemeProvider } from '@/components/ThemeProvider';
+import { Inter } from 'next/font/google';
 
 import '@/styles/tailwind.css';
 
@@ -8,12 +9,14 @@ export const metadata = {
   description: 'Surge Studio Design System.',
 };
 
+const inter = Inter({ subsets: ['latin'] });
+
 const Layout: FC<{
   children: ReactNode;
 }> = ({ children }) => (
   <html suppressHydrationWarning>
-    <body>
-      <Providers>{children}</Providers>
+    <body className={inter.className}>
+      <ThemeProvider>{children}</ThemeProvider>
     </body>
   </html>
 );
