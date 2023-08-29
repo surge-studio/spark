@@ -7,7 +7,7 @@ import { cn } from '../utils';
 
 const buttonVariants = cva(
   cn(
-    'inline-flex items-center justify-center rounded text-sm font-medium transition-colors',
+    'inline-flex items-center justify-center gap-2 rounded text-sm font-medium transition-colors',
     'disabled:opacity-30 disabled:pointer-events-none disabled:saturate-0',
     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-100 dark:focus-visible:ring-primary-900 focus-visible:ring-offset-2 ring-offset-white dark:ring-offset-gray-950'
   ),
@@ -25,9 +25,9 @@ const buttonVariants = cva(
         link: 'underline-offset-4 underline text-primary-600 hover:text-primary-500 dark:text-primary-500 dark:hover:text-primary-400',
       },
       size: {
-        sm: 'h-9 px-3',
+        sm: 'h-8 px-3',
         md: 'h-10 px-4',
-        lg: 'h-11 px-8',
+        lg: 'h-12 px-5 text-base',
       },
     },
     defaultVariants: {

@@ -4,42 +4,44 @@ import { useTheme } from '@/components/ThemeProvider';
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuGroup,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuPortal,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from '@/components/DropdownMenu';
-import type { FC } from 'react';
+import { useState, type FC, useEffect } from 'react';
+import { Skeleton } from '@/components/Skeleton';
 
 export const ThemeSelectionDemo: FC = () => {
+  const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const light = (
     <>
-      <Sun className="mr-2 h-4 w-4" />
+      <Sun className="h-4 w-4" />
       <span>Light theme</span>
     </>
   );
 
   const dark = (
     <>
-      <Moon className="mr-2 h-4 w-4" />
+      <Moon className="h-4 w-4" />
       <span>Dark theme</span>
     </>
   );
 
   const system = (
     <>
-      <Monitor className="mr-2 h-4 w-4" />
+      <Monitor className="h-4 w-4" />
       <span>System theme</span>
     </>
   );
+
+  if (!mounted) {
+    return <Skeleton className="w-[40px] h-[40px]" />;
+  }
 
   return (
     <DropdownMenu>

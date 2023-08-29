@@ -48,10 +48,10 @@ const CommandInput = forwardRef<
 >(({ className, ...props }, ref) => (
   // eslint-disable-next-line react/no-unknown-property
   <div
-    className="flex items-center border-b border-gray-200 dark:border-gray-800 px-3"
+    className="flex items-center gap-2 border-b border-gray-200 dark:border-gray-800 px-3"
     cmdk-input-wrapper=""
   >
-    <Search className="mr-2 h-4 w-4 shrink-0 opacity-50" />
+    <Search className="h-4 w-4 shrink-0 opacity-50" />
     <CommandPrimitive.Input
       ref={ref}
       className={cn(
@@ -126,7 +126,7 @@ const CommandItem = forwardRef<
   <CommandPrimitive.Item
     ref={ref}
     className={cn(
-      'relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      'relative flex gap-2 cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
       'aria-selected:bg-gray-100 dark:aria-selected:bg-gray-800 aria-selected:text-gray-900 dark:aria-selected:text-gray-50',
       'outline-none',
       className

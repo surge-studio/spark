@@ -21,9 +21,9 @@ export const tailwindConfig: Config = {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        primary: { DEFAULT: colors.indigo[600], ...colors.indigo },
+        primary: { DEFAULT: colors.blue[600], ...colors.blue },
         gray: { DEFAULT: colors.zinc[600], ...colors.zinc },
-        success: { DEFAULT: colors.green[600], ...colors.green },
+        success: { DEFAULT: colors.emerald[600], ...colors.emerald },
         error: { DEFAULT: colors.red[600], ...colors.red },
       },
       keyframes: {

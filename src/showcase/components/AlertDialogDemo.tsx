@@ -15,7 +15,9 @@ import type { FC } from 'react';
 export const AlertDialogDemo: FC = () => (
   <AlertDialog>
     <AlertDialogTrigger asChild>
-      <Button variant="secondary">Alert</Button>
+      <Button variant="secondary" size="sm">
+        Alert Dialog
+      </Button>
     </AlertDialogTrigger>
     <AlertDialogContent>
       <AlertDialogHeader>

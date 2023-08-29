@@ -12,8 +12,10 @@ const alertVariants = cva(
       variant: {
         default:
           'bg-white border-gray-200 dark:border-gray-800 dark:bg-gray-950 text-gray-900 dark:text-gray-200',
-        destructive:
-          'border-error-600/30 [&>svg]:text-error-600 dark:[&>svg]:text-error-500 text-error-600',
+        error:
+          'border-error-600/30 [&>svg]:text-error-600 dark:[&>svg]:text-error-500 text-error-600 dark:text-error-500',
+        success:
+          'border-success-600/30 [&>svg]:text-success-600 dark:[&>svg]:text-success-500 text-success-600 dark:text-success-500',
       },
     },
     defaultVariants: {

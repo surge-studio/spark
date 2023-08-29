@@ -42,7 +42,7 @@ const Calendar: FC<CalendarProps> = ({
         'h-9 w-9 p-0 font-normal aria-selected:opacity-100'
       ),
       day_selected:
-        'bg-primary text-white hover:bg-primary hover:text-white focus:bg-primary focus:text-white',
+        'bg-primary-600 text-white hover:bg-primary-600 hover:text-white focus:bg-primary-600 focus:text-white',
       day_today: 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-50',
       day_outside: 'text-gray-500 opacity-50',
       day_disabled: 'text-gray-500 opacity-50',

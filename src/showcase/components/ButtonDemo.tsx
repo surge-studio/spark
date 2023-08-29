@@ -15,11 +15,20 @@ export const ButtonDemo: FC = () => (
     </div>
     <div className="flex space-x-2">
       <Button>
-        <Zap className="mr-2 h-4 w-4" /> Icon
+        <Zap className="h-4 w-4" /> Icon
       </Button>
       <Button disabled>
-        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+        <Loader2 className="h-4 w-4 animate-spin" />
         Disabled
+      </Button>
+    </div>
+    <div className="flex space-x-2">
+      <Button variant="secondary" size="sm">
+        Small
+      </Button>
+      <Button variant="secondary">Medium</Button>
+      <Button variant="secondary" size="lg">
+        Large
       </Button>
     </div>
   </div>

@@ -7,6 +7,7 @@ import { Button } from '@/components/Button';
 import { Divider } from '@/components/Divider';
 import { Showcase } from '@/showcase';
 import clsx from 'clsx';
+import { ArrowUpRight, BookOpen } from 'lucide-react';
 
 const Logo: FC<{ className: string }> = ({ className }) => {
   return (
@@ -56,15 +57,29 @@ const Home: FC = () => {
             <code className="text-sm">pnpm add @surge-studio/spark</code>
           </div>
           <div className="flex justify-center gap-1">
-            <Button variant="secondary" asChild>
-              <Link href="/docs">Documentation</Link>
+            <Button size="sm" variant="secondary" asChild>
+              <Link href="/docs">
+                <BookOpen className="w-3 h-3" />
+                Documentation
+              </Link>
             </Button>
-            <Button variant="tertiary" asChild>
-              <Link href="https://github.com/surge-studio/spark">GitHub</Link>
+            <Button size="sm" variant="tertiary" asChild>
+              <Link
+                href="https://github.com/surge-studio/spark"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub <ArrowUpRight className="w-3 h-3" />
+              </Link>
             </Button>
-            <Button variant="tertiary" asChild>
-              <Link href="https://www.npmjs.com/package/@surge-studio/spark">
+            <Button size="sm" variant="tertiary" asChild>
+              <Link
+                href="https://www.npmjs.com/package/@surge-studio/spark"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 npm
+                <ArrowUpRight className="w-3 h-3" />
               </Link>
             </Button>
           </div>

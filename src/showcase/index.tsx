@@ -7,8 +7,6 @@ import Link from 'next/link';
 import { AccordionDemo } from './components/AccordionDemo';
 import { AlertDialogDemo } from './components/AlertDialogDemo';
 import { AlertDemo } from './components/AlertDemo';
-import { AlertDestructive } from './components/AlertDestructiveDemo';
-import { AspectRatioDemo } from './components/AspectRatioDemo';
 import { AvatarDemo } from './components/AvatarDemo';
 import { BadgeDemo } from './components/BadgeDemo';
 import { ButtonDemo } from './components/ButtonDemo';
@@ -16,10 +14,9 @@ import { CalendarDemo } from './components/CalendarDemo';
 import { CardDemo } from './components/CardDemo';
 import { CheckboxDemo } from './components/CheckboxDemo';
 import { CollapsibleDemo } from './components/CollapsibleDemo';
-import { CommandCombobox } from './components/CommandCombobox';
+// import { CommandCombobox } from './components/CommandCombobox';
 import { CommandDemo } from './components/CommandDemo';
 import { CommandDialogDemo } from './components/CommandDialogDemo';
-import { CommandDropdownMenu } from './components/CommandDropdownMenu';
 import { ContextMenuDemo } from './components/ContextMenuDemo';
 import { DialogDemo } from './components/DialogDemo';
 import { DropdownMenuCheckboxDemo } from './components/DropdownMenuCheckboxDemo';
@@ -47,12 +44,7 @@ import { ToggleDemo } from './components/ToggleDemo';
 import { ThemeSelectionDemo } from './components/ThemeSelectionDemo';
 
 const Wrapper = ({ className, children }: HTMLAttributes<HTMLDivElement>) => (
-  <div
-    className={cn(
-      'flex items-center justify-between space-x-4 py-4',
-      className
-    )}
-  >
+  <div className={cn('flex items-center space-x-4 py-4', className)}>
     {children}
   </div>
 );
@@ -63,6 +55,7 @@ export const Showcase = () => {
       <div className="grid gap-4">
         <Wrapper>
           <ThemeSelectionDemo />
+          {/* <CommandCombobox /> */}
         </Wrapper>
         <Wrapper>
           <CardDemo className="w-full" />
@@ -88,8 +81,10 @@ export const Showcase = () => {
           </p>
         </Wrapper>
         <Wrapper>
+          <ContextMenuDemo />
+        </Wrapper>
+        <Wrapper>
           <CheckboxDemo />
-          <HoverCardDemo />
         </Wrapper>
         <Wrapper>
           <TabsDemo />
@@ -115,7 +110,13 @@ export const Showcase = () => {
           <CalendarDemo />
         </Wrapper>
         <Wrapper>
+          <BadgeDemo />
+        </Wrapper>
+        <Wrapper>
           <InputDemo />
+        </Wrapper>
+        <Wrapper>
+          <RadioGroupDemo />
         </Wrapper>
         <Wrapper>
           <SkeletonDemo />
@@ -123,58 +124,44 @@ export const Showcase = () => {
         <Wrapper>
           <NavigationMenuDemo />
         </Wrapper>
-        <Wrapper className="justify-between">
+        <Wrapper>
           <SwitchDemo />
-          <SelectDemo />
         </Wrapper>
         <Wrapper>
-          <AspectRatioDemo />
+          <AlertDemo />
         </Wrapper>
-        <Wrapper className="justify-between">
+        <Wrapper>
           <DividerDemo />
-          <CommandCombobox />
         </Wrapper>
       </div>
       <div className="grid gap-4">
         <Wrapper>
-          <TooltipDemo />
-          <SheetDemo />
-          <ProgressDemo />
           <AvatarDemo />
+          <ProgressDemo />
         </Wrapper>
         <Wrapper>
           <CommandDemo />
         </Wrapper>
         <Wrapper>
-          <DropdownMenuCheckboxDemo />
-          <DropdownMenuRadioGroupDemo />
+          <SelectDemo />
           <CommandDialogDemo />
         </Wrapper>
         <Wrapper>
-          <CommandDropdownMenu />
-        </Wrapper>
-        <Wrapper className="[&>span]:h-[80px] [&>span]:w-[200px]">
-          <RadioGroupDemo />
-          <ContextMenuDemo />
+          <TooltipDemo />
+          <SheetDemo />
+          <HoverCardDemo />
         </Wrapper>
         <Wrapper>
-          <div className="flex space-x-2">
-            <DropdownMenuDemo />
-            <AlertDialogDemo />
-            <DialogDemo />
-            <PopoverDemo />
-          </div>
+          <AlertDialogDemo />
+          <DialogDemo />
+          <PopoverDemo />
         </Wrapper>
         <Wrapper>
-          <div className="flex space-x-2">
-            <AlertDemo />
-            <AlertDestructive />
-          </div>
+          <DropdownMenuDemo />
+          <DropdownMenuCheckboxDemo />
+          <DropdownMenuRadioGroupDemo />
         </Wrapper>
         <Wrapper>
-          <BadgeDemo />
-        </Wrapper>
-        <Wrapper className="[&>div]:w-full">
           <CollapsibleDemo />
         </Wrapper>
         <Wrapper>

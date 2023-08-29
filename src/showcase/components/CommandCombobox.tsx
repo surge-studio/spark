@@ -51,11 +51,11 @@ export const CommandCombobox: FC = () => {
           aria-expanded={open}
           className="w-[200px] justify-between"
         >
-          <div className="flex items-center">
+          <div className="flex items-center gap-2">
             {value ? (
               <div
                 className={cn(
-                  'mr-2 h-4 w-4 rounded-full flex-shrink-0',
+                  'h-4 w-4 rounded-full flex-shrink-0',
                   colors.find((framework) => framework.value === value)
                     ?.background
                 )}
@@ -83,7 +83,7 @@ export const CommandCombobox: FC = () => {
               >
                 <div
                   className={cn(
-                    'mr-2 h-4 w-4 rounded-full flex-shrink-0',
+                    'h-4 w-4 rounded-full flex-shrink-0',
                     color.background,
                     value === color.value &&
                       'ring-2 ring-offset-2 ring-offset-gray-900 ring-white'

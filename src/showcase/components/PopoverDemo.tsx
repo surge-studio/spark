@@ -8,7 +8,9 @@ import type { FC } from 'react';
 export const PopoverDemo: FC = () => (
   <Popover>
     <PopoverTrigger asChild>
-      <Button variant="secondary">Popover</Button>
+      <Button variant="secondary" size="sm">
+        Popover
+      </Button>
     </PopoverTrigger>
     <PopoverContent className="w-80">
       <div className="grid gap-4">

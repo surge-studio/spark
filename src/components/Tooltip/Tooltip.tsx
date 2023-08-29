@@ -20,8 +20,9 @@ const TooltipContent = forwardRef<
     sideOffset={sideOffset}
     className={cn(
       'z-50 overflow-hidden rounded px-3 py-1.5 text-sm shadow-md animate-in fade-in-50 data-[side=bottom]:slide-in-from-top-1 data-[side=left]:slide-in-from-right-1 data-[side=right]:slide-in-from-left-1 data-[side=top]:slide-in-from-bottom-1',
+      'text-gray-900  dark:text-gray-200',
+      'bg-white dark:bg-gray-900',
       'border border-gray-200 dark:border-gray-800',
-      'text-gray-900 bg-white dark:text-gray-400 dark:bg-gray-900',
       className
     )}
     {...props}

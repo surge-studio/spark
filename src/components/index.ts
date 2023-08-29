@@ -7,7 +7,6 @@ export * from './ThemeProvider/ThemeProvider.js';
 export * from './Accordion/Accordion.js';
 export * from './Alert/Alert.js';
 export * from './AlertDialog/AlertDialog.js';
-export * from './AspectRatio/AspectRatio.js';
 export * from './Avatar/Avatar.js';
 export * from './Badge/Badge.js';
 export * from './Button/Button.js';

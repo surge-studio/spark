@@ -15,7 +15,9 @@ import type { FC } from 'react';
 export const DialogDemo: FC = () => (
   <Dialog>
     <DialogTrigger asChild>
-      <Button variant="secondary">Dialog</Button>
+      <Button variant="secondary" size="sm">
+        Dialog
+      </Button>
     </DialogTrigger>
     <DialogContent className="sm:max-w-[425px]">
       <DialogHeader>

@@ -17,14 +17,14 @@ export const CollapsibleDemo: FC = () => {
     <Collapsible
       open={isOpen}
       onOpenChange={setIsOpen}
-      className="w-[350px] space-y-2"
+      className="w-full space-y-2"
     >
-      <div className="flex items-center justify-between space-x-4 px-4">
+      <div className="flex items-center justify-between space-x-4">
         <h4 className="text-sm font-semibold">
           @haydenbarnett starred 3 repositories
         </h4>
         <CollapsibleTrigger asChild>
-          <Button variant="tertiary" size="sm" className="w-9 p-0">
+          <Button variant="tertiary" size="sm">
             <ChevronsUpDown className="h-4 w-4" />
             <span className="sr-only">Toggle</span>
           </Button>

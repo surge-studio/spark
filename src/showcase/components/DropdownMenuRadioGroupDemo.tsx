@@ -19,7 +19,9 @@ export const DropdownMenuRadioGroupDemo: FC = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="secondary">Dropdown Radio</Button>
+        <Button variant="secondary" size="sm">
+          Radio
+        </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuLabel>Panel Position</DropdownMenuLabel>

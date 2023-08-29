@@ -23,7 +23,9 @@ export const DropdownMenuCheckboxDemo: FC = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="secondary">Dropdown Checkboxes</Button>
+        <Button variant="secondary" size="sm">
+          Checkbox
+        </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuLabel>Appearance</DropdownMenuLabel>

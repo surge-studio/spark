@@ -7,11 +7,14 @@ import {
   HoverCardTrigger,
 } from '@/components/HoverCard';
 import type { FC } from 'react';
+import { Text } from '@/components/Text';
 
 export const HoverCardDemo: FC = () => (
   <HoverCard>
     <HoverCardTrigger asChild>
-      <Button variant="link">Hover Card</Button>
+      <Button variant="secondary" size="sm">
+        Hover Card
+      </Button>
     </HoverCardTrigger>
     <HoverCardContent className="w-80">
       <div className="flex justify-between space-x-4">
@@ -21,11 +24,11 @@ export const HoverCardDemo: FC = () => (
         </Avatar>
         <div className="space-y-1">
           <h4 className="text-sm font-semibold">@nextjs</h4>
-          <p className="text-sm">
+          <Text size="sm">
             The React Framework - created and maintained by @vercel.
-          </p>
-          <div className="flex items-center pt-2">
-            <CalendarDays className="mr-2 h-4 w-4 opacity-70" />{' '}
+          </Text>
+          <div className="flex gap-2 items-center pt-2">
+            <CalendarDays className="h-4 w-4 opacity-70" />{' '}
             <span className="text-xs text-gray-500">Joined December 2021</span>
           </div>
         </div>

@@ -15,7 +15,9 @@ import type { FC } from 'react';
 export const SheetDemo: FC = () => (
   <Sheet>
     <SheetTrigger asChild>
-      <Button variant="secondary">Sheet</Button>
+      <Button variant="secondary" size="sm">
+        Sheet
+      </Button>
     </SheetTrigger>
     <SheetContent position="right" size="sm">
       <SheetHeader>

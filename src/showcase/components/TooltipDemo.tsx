@@ -1,4 +1,3 @@
-import { Plus } from 'lucide-react';
 import { Button } from '@/components/Button';
 import {
   Tooltip,
@@ -12,11 +11,11 @@ export const TooltipDemo: FC = () => (
   <TooltipProvider>
     <Tooltip>
       <TooltipTrigger asChild>
-        <Button variant="secondary">Tooltip</Button>
+        <Button variant="secondary" size="sm">
+          Tooltip
+        </Button>
       </TooltipTrigger>
-      <TooltipContent>
-        <p>Add to library</p>
-      </TooltipContent>
+      <TooltipContent>Add to library</TooltipContent>
     </Tooltip>
   </TooltipProvider>
 );

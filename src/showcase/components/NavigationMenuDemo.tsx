@@ -125,13 +125,6 @@ export const NavigationMenuDemo: FC = () => (
           </ul>
         </NavigationMenuContent>
       </NavigationMenuItem>
-      <NavigationMenuItem>
-        <Link href="#" legacyBehavior passHref>
-          <NavigationMenuLink className={navigationMenuTriggerStyle}>
-            Documentation
-          </NavigationMenuLink>
-        </Link>
-      </NavigationMenuItem>
     </NavigationMenuList>
   </NavigationMenu>
 );
