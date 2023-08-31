@@ -33,7 +33,7 @@ const textWeightClassName: Record<TextWeights, string> = {
   bold: 'font-bold',
 };
 
-export const Text = forwardRef<RefType, TextProps>(
+const Text = forwardRef<RefType, TextProps>(
   ({ as, size = 'md', weight = 'normal', className, ...props }, ref) => {
     const Element = as ?? 'p';
 
@@ -53,3 +53,5 @@ export const Text = forwardRef<RefType, TextProps>(
 );
 
 Text.displayName = 'Text';
+
+export { Text };

@@ -1,6 +1,6 @@
 {
   "name": "@surge-studio/spark",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "scripts": {
     "dev": "concurrently \"pnpm:dev:storybook\" \"pnpm:dev:next\"",
     "dev:storybook": "storybook dev -p 6006",
@@ -9,7 +9,7 @@
     "build:storybook": "storybook build -o public/docs",
     "postbuild:storybook": "sed -i 's#<head>#<head>\\n<base href='/docs/'>#' ./public/docs/index.html",
     "build:next": "next build",
-    "package": "tsup"
+    "package": "tsup && node scripts/postprocess.js"
   },
   "files": [
     "dist/**"
@@ -19,8 +19,25 @@
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.js"
+    },
+    "./client": {
+      "import": "./dist/client.mjs",
+      "require": "./dist/client.js"
+    },
+    "./server": {
+      "import": "./dist/server.mjs",
+      "require": "./dist/server.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "client": [
+        "dist/client.d.ts"
+      ],
+      "server": [
+        "dist/server.d.ts"
+      ]
     }
   },
   "sideEffects": false,
@@ -114,7 +131,7 @@
     "react-dom": "^18.2.0",
     "storybook": "^7.3.2",
     "stylelint": "^15.10.2",
-    "tsup": "6.6.0"
+    "tsup": "6.6.2"
   },
   "prettier": "@beskar-labs/harmony/prettier",
   "stylelint": {

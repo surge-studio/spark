@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { Zap } from 'lucide-react';
 import { forwardRef } from 'react';
 import { cn } from '@/components/utils';
@@ -11,7 +10,6 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from '@/components/NavigationMenu';
 import type { ComponentPropsWithoutRef, ElementRef, FC } from 'react';
 

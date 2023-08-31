@@ -1,3 +1,5 @@
+'use client';
+
 import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu';
 import { ChevronDown } from 'lucide-react';
 import { forwardRef } from 'react';
@@ -21,20 +23,19 @@ NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName;
 
 const NavigationMenuItem = NavigationMenuPrimitive.Item;
 
-const navigationMenuTriggerStyle = cn(
-  'inline-flex items-center justify-center rounded text-sm font-medium transition-colors disabled:opacity-50 disabled:pointer-events-none h-10 py-2 px-4 group w-max',
-  'bg-white dark:bg-gray-950 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-50',
-  'data-[state=open]:bg-gray-100/50 dark:data-[state=open]:bg-gray-800/50 data-[active]:bg-gray-100/50 dark:data-[active]:bg-gray-800/50',
-  'focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-800 focus:text-gray-900 dark:focus:text-gray-50'
-);
-
 const NavigationMenuTrigger = forwardRef<
   ElementRef<typeof NavigationMenuPrimitive.Trigger>,
   ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Trigger>
 >(({ className, children, ...props }, ref) => (
   <NavigationMenuPrimitive.Trigger
     ref={ref}
-    className={cn(navigationMenuTriggerStyle, 'group', className)}
+    className={cn(
+      'group inline-flex items-center justify-center rounded text-sm font-medium transition-colors disabled:opacity-50 disabled:pointer-events-none h-10 py-2 px-4 group w-max',
+      'bg-white dark:bg-gray-950 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-50',
+      'data-[state=open]:bg-gray-100/50 dark:data-[state=open]:bg-gray-800/50 data-[active]:bg-gray-100/50 dark:data-[active]:bg-gray-800/50',
+      'focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-800 focus:text-gray-900 dark:focus:text-gray-50',
+      className
+    )}
     {...props}
   >
     {children}{' '}
@@ -120,7 +121,6 @@ const NavigationMenu = forwardRef<
 NavigationMenu.displayName = NavigationMenuPrimitive.Root.displayName;
 
 export {
-  navigationMenuTriggerStyle,
   NavigationMenu,
   NavigationMenuList,
   NavigationMenuItem,

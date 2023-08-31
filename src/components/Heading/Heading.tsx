@@ -28,7 +28,7 @@ const headingSizeClassName: Record<HeadingSizes, string> = {
   xs: 'text-lg sm:text-2xl tracking-[-0.019em]',
 };
 
-export const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
+const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
   ({ as, size = 'md', className, ...props }, ref) => {
     const Element = as ?? HeadingSizeTag[size];
 
@@ -43,3 +43,5 @@ export const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
 );
 
 Heading.displayName = 'Heading';
+
+export { Heading };
