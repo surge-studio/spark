@@ -15,7 +15,7 @@ export const PopoverDemo: FC = () => (
     <PopoverContent className="w-80">
       <div className="grid gap-4">
         <div className="space-y-1">
-          <Text weight="medium">Dimensions</Text>
+          <Text className="font-medium">Dimensions</Text>
           <Text size="sm">Set the dimensions for the layer.</Text>
         </div>
         <div className="grid gap-2">
