@@ -19,12 +19,7 @@
     "strictNullChecks": true,
     "paths": {
       "@/*": ["./src/*"]
-    },
-    "plugins": [
-      {
-        "name": "@surge-studio/spark"
-      }
-    ]
+    }
   },
   "include": [
     "next-env.d.ts",

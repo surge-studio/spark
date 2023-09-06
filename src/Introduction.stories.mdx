@@ -22,11 +22,7 @@ import { tailwindConfig } from '@surge-studio/spark';
 
 const config: Config = {
   presets: [tailwindConfig],
-  content: [
-    './app/**/*.{js,jsx,ts,tsx,mdx}',
-    './components/**/*.{js,jsx,ts,tsx,mdx}',
-    './node_modules/@surge-studio/spark/**/*.js',
-  ],
+  content: tailwindConfig.content,
 };
 
 export default config;

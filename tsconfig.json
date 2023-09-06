@@ -1,6 +1,12 @@
 {
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   }
 }
