@@ -1,16 +1,29 @@
 import { forwardRef } from 'react';
-import clsx from 'clsx';
-import type { HTMLProps } from 'react';
+import type { HTMLAttributes } from 'react';
+import { cn } from '../utils';
+import { VariantProps, cva } from 'class-variance-authority';
+
+const headingVariants = cva('font-bold', {
+  variants: {
+    size: {
+      xxl: 'text-5xl sm:text-7xl tracking-[-0.022em]',
+      xl: 'text-4xl sm:text-6xl tracking-[-0.022em]',
+      lg: 'text-3xl sm:text-5xl tracking-[-0.022em]',
+      md: 'text-2xl sm:text-4xl tracking-[-0.022em]',
+      sm: 'text-xl sm:text-3xl tracking-[-0.021em] sm:tracking-[-0.022em]',
+      xs: 'text-lg sm:text-2xl tracking-[-0.019em] sm:tracking-[-0.022em]',
+      xxs: 'text-lg sm:text-xl tracking-[-0.011em] sm:tracking-[-0.021em]',
+    },
+  },
+  defaultVariants: {
+    size: 'md',
+  },
+});
 
 type HeadingTags = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 type HeadingSizes = 'lg' | 'md' | 'sm' | 'xl' | 'xs' | 'xxl' | 'xxs';
 
-type HeadingProps = Omit<HTMLProps<HTMLHeadingElement>, 'size'> & {
-  as?: HeadingTags;
-  size?: HeadingSizes;
-};
-
-const HeadingSizeTag: Record<HeadingSizes, HeadingTags> = {
+const headingSizeTag: Record<HeadingSizes, HeadingTags> = {
   xxl: 'h1',
   xl: 'h1',
   lg: 'h2',
@@ -20,24 +33,19 @@ const HeadingSizeTag: Record<HeadingSizes, HeadingTags> = {
   xxs: 'h6',
 };
 
-const headingSizeClassName: Record<HeadingSizes, string> = {
-  xxl: 'text-5xl sm:text-7xl tracking-[-0.022em]',
-  xl: 'text-4xl sm:text-6xl tracking-[-0.022em]',
-  lg: 'text-3xl sm:text-5xl tracking-[-0.022em]',
-  md: 'text-2xl sm:text-4xl tracking-[-0.022em]',
-  sm: 'text-xl sm:text-3xl tracking-[-0.021em] sm:tracking-[-0.022em]',
-  xs: 'text-lg sm:text-2xl tracking-[-0.019em] sm:tracking-[-0.022em]',
-  xxs: 'text-lg sm:text-xl tracking-[-0.011em] sm:tracking-[-0.021em]',
-};
+type HeadingProps = Omit<HTMLAttributes<HTMLHeadingElement>, 'size'> &
+  VariantProps<typeof headingVariants> & {
+    as?: HeadingTags;
+  };
 
 const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
-  ({ as, size = 'md', className, ...props }, ref) => {
-    const Element = as ?? HeadingSizeTag[size];
+  ({ as, size, className, ...props }, ref) => {
+    const Element = as ?? headingSizeTag[size ?? 'md'];
 
     return (
       <Element
-        className={clsx('font-bold', headingSizeClassName[size], className)}
         ref={ref}
+        className={cn(headingVariants({ size, className }))}
         {...props}
       />
     );

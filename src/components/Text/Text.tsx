@@ -1,38 +1,38 @@
+import { Slot } from '@radix-ui/react-slot';
 import { forwardRef } from 'react';
-import clsx from 'clsx';
-import type { HTMLProps } from 'react';
+import type { HTMLAttributes } from 'react';
+import { VariantProps, cva } from 'class-variance-authority';
+import { cn } from '../utils';
 
-type TextSizes = 'lg' | 'md' | 'sm' | 'xl' | 'xs' | 'xxl';
-type TextTags = 'div' | 'label' | 'p' | 'span';
-type RefType =
-  | HTMLDivElement
-  | HTMLLabelElement
-  | HTMLParagraphElement
-  | HTMLSpanElement;
+const textVariants = cva('', {
+  variants: {
+    size: {
+      xxl: 'text-2xl tracking-[-0.022em]',
+      xl: 'text-xl tracking-[-0.021em]',
+      lg: 'text-lg tracking-[-0.019em]',
+      md: 'text-base tracking-[-0.011em]',
+      sm: 'text-sm tracking-[-0.006em]',
+      xs: 'text-xs',
+    },
+  },
+  defaultVariants: {
+    size: 'md',
+  },
+});
 
-type TextProps = Omit<HTMLProps<HTMLElement>, 'size'> & {
-  size?: TextSizes;
-  as?: TextTags;
-};
+type TextProps = Omit<HTMLAttributes<HTMLParagraphElement>, 'size'> &
+  VariantProps<typeof textVariants> & {
+    readonly asChild?: boolean;
+  };
 
-const textSizeClassName: Record<TextSizes, string> = {
-  xxl: 'text-2xl tracking-[-0.022em]',
-  xl: 'text-xl tracking-[-0.021em]',
-  lg: 'text-lg tracking-[-0.019em]',
-  md: 'text-base tracking-[-0.011em]',
-  sm: 'text-sm tracking-[-0.006em]',
-  xs: 'text-xs',
-};
-
-const Text = forwardRef<RefType, TextProps>(
-  ({ as, size = 'md', className, ...props }, ref) => {
-    const Element = as ?? 'p';
+const Text = forwardRef<HTMLParagraphElement, TextProps>(
+  ({ asChild, size, className, ...props }, ref) => {
+    const Comp = asChild ? Slot : 'p';
 
     return (
-      <Element
-        className={clsx(textSizeClassName[size], className)}
-        // @ts-expect-error TODO: fix this
+      <Comp
         ref={ref}
+        className={cn(textVariants({ size, className }))}
         {...props}
       />
     );

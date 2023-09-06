@@ -1,34 +1,37 @@
-import type { FC, HTMLProps } from 'react';
+import { forwardRef, type HTMLProps } from 'react';
 import { cn } from '../utils';
+import { VariantProps, cva } from 'class-variance-authority';
 
-type ContainerSizes = 'full' | 'lg' | 'md' | 'sm' | 'xl';
+const containerVariants = cva(cn('mx-auto w-full px-4 sm:px-8'), {
+  variants: {
+    size: {
+      sm: 'max-w-3xl',
+      md: 'max-w-5xl',
+      lg: 'max-w-7xl',
+      xl: 'max-w-[1920px]',
+      full: 'max-w-full',
+    },
+  },
+  defaultVariants: {
+    size: 'lg',
+  },
+});
 
-type ContainerProps = Omit<HTMLProps<HTMLDivElement>, 'size'> & {
-  size?: ContainerSizes;
-};
+type ContainerProps = HTMLProps<HTMLDivElement> &
+  VariantProps<typeof containerVariants>;
 
-const containerSizeClassName: Record<ContainerSizes, string> = {
-  sm: 'max-w-3xl',
-  md: 'max-w-5xl',
-  lg: 'max-w-7xl',
-  xl: 'max-w-[1920px]',
-  full: 'max-w-full',
-};
-
-const Container: FC<ContainerProps> = ({
-  size = 'lg',
-  children,
-  className,
-}) => (
-  <div
-    className={cn(
-      'mx-auto w-full px-4 sm:px-8',
-      containerSizeClassName[size],
-      className
-    )}
-  >
-    {children}
-  </div>
+const Container = forwardRef<HTMLDivElement, ContainerProps>(
+  ({ className, size, children, ...props }, ref) => {
+    return (
+      <div
+        className={cn(containerVariants({ size, className }))}
+        ref={ref}
+        {...props}
+      >
+        {children}
+      </div>
+    );
+  }
 );
 
 export { Container };
