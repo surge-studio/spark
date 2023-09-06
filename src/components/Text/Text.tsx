@@ -4,7 +4,6 @@ import type { HTMLProps } from 'react';
 
 type TextSizes = 'lg' | 'md' | 'sm' | 'xl' | 'xs' | 'xxl';
 type TextTags = 'div' | 'label' | 'p' | 'span';
-type TextWeights = 'bold' | 'medium' | 'normal' | 'semibold';
 type RefType =
   | HTMLDivElement
   | HTMLLabelElement
@@ -14,7 +13,6 @@ type RefType =
 type TextProps = Omit<HTMLProps<HTMLElement>, 'size'> & {
   size?: TextSizes;
   as?: TextTags;
-  weight?: TextWeights;
 };
 
 const textSizeClassName: Record<TextSizes, string> = {
@@ -26,24 +24,13 @@ const textSizeClassName: Record<TextSizes, string> = {
   xs: 'text-xs',
 };
 
-const textWeightClassName: Record<TextWeights, string> = {
-  normal: 'font-normal',
-  medium: 'font-medium',
-  semibold: 'font-semibold',
-  bold: 'font-bold',
-};
-
 const Text = forwardRef<RefType, TextProps>(
-  ({ as, size = 'md', weight = 'normal', className, ...props }, ref) => {
+  ({ as, size = 'md', className, ...props }, ref) => {
     const Element = as ?? 'p';
 
     return (
       <Element
-        className={clsx(
-          textSizeClassName[size],
-          textWeightClassName[weight],
-          className
-        )}
+        className={clsx(textSizeClassName[size], className)}
         // @ts-expect-error TODO: fix this
         ref={ref}
         {...props}

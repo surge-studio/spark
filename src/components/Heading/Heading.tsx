@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import type { HTMLProps } from 'react';
 
 type HeadingTags = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-type HeadingSizes = 'lg' | 'md' | 'sm' | 'xl' | 'xs' | 'xxl';
+type HeadingSizes = 'lg' | 'md' | 'sm' | 'xl' | 'xs' | 'xxl' | 'xxs';
 
 type HeadingProps = Omit<HTMLProps<HTMLHeadingElement>, 'size'> & {
   as?: HeadingTags;
@@ -17,6 +17,7 @@ const HeadingSizeTag: Record<HeadingSizes, HeadingTags> = {
   md: 'h3',
   sm: 'h4',
   xs: 'h5',
+  xxs: 'h6',
 };
 
 const headingSizeClassName: Record<HeadingSizes, string> = {
@@ -24,8 +25,9 @@ const headingSizeClassName: Record<HeadingSizes, string> = {
   xl: 'text-4xl sm:text-6xl tracking-[-0.022em]',
   lg: 'text-3xl sm:text-5xl tracking-[-0.022em]',
   md: 'text-2xl sm:text-4xl tracking-[-0.022em]',
-  sm: 'text-xl sm:text-3xl tracking-[-0.021em]',
-  xs: 'text-lg sm:text-2xl tracking-[-0.019em]',
+  sm: 'text-xl sm:text-3xl tracking-[-0.021em] sm:tracking-[-0.022em]',
+  xs: 'text-lg sm:text-2xl tracking-[-0.019em] sm:tracking-[-0.022em]',
+  xxs: 'text-lg sm:text-xl tracking-[-0.011em] sm:tracking-[-0.021em]',
 };
 
 const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(

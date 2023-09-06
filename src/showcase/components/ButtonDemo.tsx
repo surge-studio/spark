@@ -1,5 +1,6 @@
 import { Button } from '@/components/Button';
-import { Loader2, Zap } from 'lucide-react';
+import { Loader } from '@/components/Loader';
+import { Zap } from 'lucide-react';
 import type { FC } from 'react';
 
 export const ButtonDemo: FC = () => (
@@ -18,7 +19,7 @@ export const ButtonDemo: FC = () => (
         <Zap className="h-4 w-4" /> Icon
       </Button>
       <Button disabled>
-        <Loader2 className="h-4 w-4 animate-spin" />
+        <Loader />
         Disabled
       </Button>
     </div>

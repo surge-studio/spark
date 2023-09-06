@@ -1,3 +1,5 @@
+'use client';
+
 import { Sun, Moon, Monitor } from 'lucide-react';
 import { Button } from '@/components/Button';
 import { useTheme } from '@/components/ThemeProvider';
@@ -21,21 +23,21 @@ export const ThemeSelectionDemo: FC = () => {
   const light = (
     <>
       <Sun className="h-4 w-4" />
-      <span>Light theme</span>
+      <span>Light</span>
     </>
   );
 
   const dark = (
     <>
       <Moon className="h-4 w-4" />
-      <span>Dark theme</span>
+      <span>Dark</span>
     </>
   );
 
   const system = (
     <>
       <Monitor className="h-4 w-4" />
-      <span>System theme</span>
+      <span>System</span>
     </>
   );
 
@@ -46,11 +48,11 @@ export const ThemeSelectionDemo: FC = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="secondary">
+        <Button variant="tertiary" size="sm">
           {theme === 'system' ? system : theme === 'light' ? light : dark}
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56">
+      <DropdownMenuContent>
         <DropdownMenuItem onClick={() => setTheme('light')}>
           {light}
         </DropdownMenuItem>
