@@ -23,7 +23,7 @@ const Slider = forwardRef<
         'bg-gray-100 dark:bg-gray-900'
       )}
     >
-      <SliderPrimitive.Range className="absolute h-full bg-primary" />
+      <SliderPrimitive.Range className="absolute h-full bg-primary-600 dark:bg-primary-700" />
     </SliderPrimitive.Track>
     <SliderPrimitive.Thumb
       className={cn(
