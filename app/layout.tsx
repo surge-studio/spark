@@ -3,10 +3,11 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 import { Inter } from 'next/font/google';
 
 import '@/styles/tailwind.css';
+import { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Spark',
-  description: 'Surge Studio Design System.',
+  description: 'Design System by Surge Studio.',
 };
 
 const inter = Inter({ subsets: ['latin'] });
