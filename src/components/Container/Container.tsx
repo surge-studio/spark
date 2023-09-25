@@ -17,7 +17,7 @@ const containerVariants = cva(cn('mx-auto w-full px-4 sm:px-8'), {
   },
 });
 
-type ContainerProps = HTMLProps<HTMLDivElement> &
+type ContainerProps = Omit<HTMLProps<HTMLDivElement>, 'size'> &
   VariantProps<typeof containerVariants>;
 
 const Container = forwardRef<HTMLDivElement, ContainerProps>(
@@ -33,5 +33,6 @@ const Container = forwardRef<HTMLDivElement, ContainerProps>(
     );
   }
 );
+Container.displayName = 'Container';
 
 export { Container };

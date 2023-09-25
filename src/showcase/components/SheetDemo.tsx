@@ -19,7 +19,7 @@ export const SheetDemo: FC = () => (
         Sheet
       </Button>
     </SheetTrigger>
-    <SheetContent position="right" size="sm">
+    <SheetContent side="right">
       <SheetHeader>
         <SheetTitle>Edit profile</SheetTitle>
         <SheetDescription>

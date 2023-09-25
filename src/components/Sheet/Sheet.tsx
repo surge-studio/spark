@@ -1,56 +1,37 @@
 'use client';
 
 import * as SheetPrimitive from '@radix-ui/react-dialog';
-import { cva } from 'class-variance-authority';
+import { cva, type VariantProps } from 'class-variance-authority';
 import { X } from 'lucide-react';
-import { forwardRef } from 'react';
 import { cn } from '../utils';
-import type {
+import {
   ComponentPropsWithoutRef,
   ElementRef,
+  forwardRef,
   HTMLAttributes,
-  FC,
 } from 'react';
-import type { VariantProps } from 'class-variance-authority';
 
 const Sheet = SheetPrimitive.Root;
 
 const SheetTrigger = SheetPrimitive.Trigger;
 
-const portalVariants = cva('fixed inset-0 z-50 flex', {
-  variants: {
-    position: {
-      top: 'items-start',
-      bottom: 'items-end',
-      left: 'justify-start',
-      right: 'justify-end',
-    },
-  },
-  defaultVariants: { position: 'right' },
-});
-
-type SheetPortalProps = SheetPrimitive.DialogPortalProps &
-  VariantProps<typeof portalVariants>;
+const SheetClose = SheetPrimitive.Close;
 
 const SheetPortal = ({
-  position,
   className,
-  children,
   ...props
-}: SheetPortalProps) => (
-  <SheetPrimitive.Portal className={cn(className)} {...props}>
-    <div className={portalVariants({ position })}>{children}</div>
-  </SheetPrimitive.Portal>
+}: SheetPrimitive.DialogPortalProps) => (
+  <SheetPrimitive.Portal className={cn(className)} {...props} />
 );
 SheetPortal.displayName = SheetPrimitive.Portal.displayName;
 
 const SheetOverlay = forwardRef<
   ElementRef<typeof SheetPrimitive.Overlay>,
   ComponentPropsWithoutRef<typeof SheetPrimitive.Overlay>
->(({ className, children, ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <SheetPrimitive.Overlay
     className={cn(
-      'fixed inset-0 z-50 backdrop-blur-sm transition-all duration-100 data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=open]:fade-in',
+      'fixed inset-0 z-50 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
       'bg-white/80 dark:bg-gray-950/80',
       className
     )}
@@ -62,109 +43,40 @@ SheetOverlay.displayName = SheetPrimitive.Overlay.displayName;
 
 const sheetVariants = cva(
   cn(
-    'fixed z-50 scale-100 gap-4 p-6 opacity-100 shadow-lg',
+    'fixed z-50 gap-4 p-6 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500',
+    'border-gray-200 dark:border-gray-800',
     'bg-white dark:bg-gray-900'
   ),
   {
     variants: {
-      position: {
-        top: 'animate-in slide-in-from-top w-full duration-300',
-        bottom: 'animate-in slide-in-from-bottom w-full duration-300',
-        left: 'animate-in slide-in-from-left h-full duration-300',
-        right: 'animate-in slide-in-from-right h-full duration-300',
-      },
-      size: {
-        content: '',
-        default: '',
-        sm: '',
-        lg: '',
-        xl: '',
-        full: '',
+      side: {
+        top: 'inset-x-0 top-0 border-b data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top',
+        bottom:
+          'inset-x-0 bottom-0 border-t data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom',
+        left: 'inset-y-0 left-0 h-full w-3/4 border-r data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left sm:max-w-sm',
+        right:
+          'inset-y-0 right-0 h-full w-3/4 border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm',
       },
     },
-    compoundVariants: [
-      {
-        position: ['top', 'bottom'],
-        size: 'content',
-        class: 'max-h-screen',
-      },
-      {
-        position: ['top', 'bottom'],
-        size: 'default',
-        class: 'h-1/3',
-      },
-      {
-        position: ['top', 'bottom'],
-        size: 'sm',
-        class: 'h-1/4',
-      },
-      {
-        position: ['top', 'bottom'],
-        size: 'lg',
-        class: 'h-1/2',
-      },
-      {
-        position: ['top', 'bottom'],
-        size: 'xl',
-        class: 'h-5/6',
-      },
-      {
-        position: ['top', 'bottom'],
-        size: 'full',
-        class: 'h-screen',
-      },
-      {
-        position: ['right', 'left'],
-        size: 'content',
-        class: 'max-w-screen',
-      },
-      {
-        position: ['right', 'left'],
-        size: 'default',
-        class: 'w-1/3',
-      },
-      {
-        position: ['right', 'left'],
-        size: 'sm',
-        class: 'w-1/4',
-      },
-      {
-        position: ['right', 'left'],
-        size: 'lg',
-        class: 'w-1/2',
-      },
-      {
-        position: ['right', 'left'],
-        size: 'xl',
-        class: 'w-5/6',
-      },
-      {
-        position: ['right', 'left'],
-        size: 'full',
-        class: 'w-screen',
-      },
-    ],
     defaultVariants: {
-      position: 'right',
-      size: 'default',
+      side: 'right',
     },
   }
 );
 
-export type DialogContentProps = ComponentPropsWithoutRef<
-  typeof SheetPrimitive.Content
-> &
-  VariantProps<typeof sheetVariants> & {};
+interface SheetContentProps
+  extends ComponentPropsWithoutRef<typeof SheetPrimitive.Content>,
+    VariantProps<typeof sheetVariants> {}
 
 const SheetContent = forwardRef<
   ElementRef<typeof SheetPrimitive.Content>,
-  DialogContentProps
->(({ position, size, className, children, ...props }, ref) => (
-  <SheetPortal position={position}>
+  SheetContentProps
+>(({ side = 'right', className, children, ...props }, ref) => (
+  <SheetPortal>
     <SheetOverlay />
     <SheetPrimitive.Content
       ref={ref}
-      className={cn(sheetVariants({ position, size }), className)}
+      className={cn(sheetVariants({ side }), className)}
       {...props}
     >
       {children}
@@ -183,10 +95,10 @@ const SheetContent = forwardRef<
 ));
 SheetContent.displayName = SheetPrimitive.Content.displayName;
 
-const SheetHeader: FC<HTMLAttributes<HTMLDivElement>> = ({
+const SheetHeader = ({
   className,
   ...props
-}) => (
+}: HTMLAttributes<HTMLDivElement>) => (
   <div
     className={cn(
       'flex flex-col space-y-2 text-center sm:text-left',
@@ -197,10 +109,10 @@ const SheetHeader: FC<HTMLAttributes<HTMLDivElement>> = ({
 );
 SheetHeader.displayName = 'SheetHeader';
 
-const SheetFooter: FC<HTMLAttributes<HTMLDivElement>> = ({
+const SheetFooter = ({
   className,
   ...props
-}) => (
+}: HTMLAttributes<HTMLDivElement>) => (
   <div
     className={cn(
       'flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2',
@@ -241,6 +153,7 @@ SheetDescription.displayName = SheetPrimitive.Description.displayName;
 export {
   Sheet,
   SheetTrigger,
+  SheetClose,
   SheetContent,
   SheetHeader,
   SheetFooter,
