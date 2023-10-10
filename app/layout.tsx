@@ -6,7 +6,7 @@ import '@/styles/tailwind.css';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Spark',
+  title: 'Spark // Design System',
   description: 'Design System by Surge Studio.',
 };
 
