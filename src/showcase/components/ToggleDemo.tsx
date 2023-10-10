@@ -6,13 +6,13 @@ export const ToggleDemo: FC = () => (
   <div className="flex flex-col gap-4 justify-between w-full items-center">
     <div className="flex space-x-2">
       <Toggle variant="primary" aria-label="Toggle bold">
-        <Bold className="h-4 w-4" />
+        Primary
       </Toggle>
       <Toggle variant="secondary" aria-label="Toggle italic">
-        <Italic className="h-4 w-4" />
+        Secondary
       </Toggle>
       <Toggle variant="tertiary" aria-label="Toggle underline">
-        <Underline className="h-4 w-4" />
+        Tertiary
       </Toggle>
     </div>
     <div className="flex space-x-2 items-center">
