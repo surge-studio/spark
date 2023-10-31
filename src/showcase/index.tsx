@@ -41,7 +41,6 @@ import { TooltipDemo } from './components/TooltipDemo';
 import { ProseDemo } from './components/ProseDemo';
 import { DividerDemo } from './components/DividerDemo';
 import { ToggleDemo } from './components/ToggleDemo';
-import { ThemeSelectionDemo } from './components/ThemeSelectionDemo';
 
 const Wrapper = ({ className, children }: HTMLAttributes<HTMLDivElement>) => (
   <div className={cn('flex items-center space-x-4 py-4', className)}>
@@ -54,10 +53,7 @@ export const Showcase = () => {
     <div className="grid grid-cols-1 items-start gap-12 xl:grid-cols-3">
       <div className="grid gap-4">
         <Wrapper>
-          <ThemeSelectionDemo />
           {/* <CommandCombobox /> */}
-        </Wrapper>
-        <Wrapper>
           <CardDemo className="w-full" />
         </Wrapper>
         <Wrapper>

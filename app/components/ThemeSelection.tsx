@@ -1,6 +1,6 @@
 'use client';
 
-import { Sun, Moon, Monitor } from 'lucide-react';
+import { SunIcon, MoonIcon } from 'lucide-react';
 import { Button } from '@/components/Button';
 import { useTheme } from '@/components/ThemeProvider';
 import {
@@ -12,34 +12,13 @@ import {
 import { useState, type FC, useEffect } from 'react';
 import { Skeleton } from '@/components/Skeleton';
 
-export const ThemeSelectionDemo: FC = () => {
+export const ThemeSelection: FC = () => {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { setTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
   }, []);
-
-  const light = (
-    <>
-      <Sun className="h-4 w-4" />
-      <span>Light</span>
-    </>
-  );
-
-  const dark = (
-    <>
-      <Moon className="h-4 w-4" />
-      <span>Dark</span>
-    </>
-  );
-
-  const system = (
-    <>
-      <Monitor className="h-4 w-4" />
-      <span>System</span>
-    </>
-  );
 
   if (!mounted) {
     return <Skeleton className="w-[40px] h-[40px]" />;
@@ -48,19 +27,30 @@ export const ThemeSelectionDemo: FC = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="tertiary" size="sm">
-          {theme === 'system' ? system : theme === 'light' ? light : dark}
+        <Button size="sm" variant="tertiary" className="w-8 px-0">
+          <SunIcon
+            size={16}
+            strokeWidth={1}
+            absoluteStrokeWidth
+            className="scale-100 dark:scale-0"
+          />
+          <MoonIcon
+            size={16}
+            strokeWidth={1}
+            absoluteStrokeWidth
+            className="absolute scale-0 dark:scale-100"
+          />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent>
+      <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => setTheme('light')}>
-          {light}
+          Light
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme('dark')}>
-          {dark}
+          Dark
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme('system')}>
-          {system}
+          System
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

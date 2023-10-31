@@ -8,10 +8,14 @@ import { Showcase } from '@/showcase';
 import { ArrowUpRight, BookOpen } from 'lucide-react';
 import { InstallButton } from './components/InstallButton';
 import { SurgeLogomark, SurgeLogotype } from '@/components/SurgeLogo';
+import { ThemeSelection } from './components/ThemeSelection';
 
 const Home: FC = () => {
   return (
     <>
+      <div className="absolute right-2 top-2">
+        <ThemeSelection />
+      </div>
       <div className="text-center py-20 px-4 sm:px-8">
         <SurgeLogomark className="inline-flex mb-6" />
         <Heading as="h1" size="xs" className="mb-1">
@@ -21,8 +25,8 @@ const Home: FC = () => {
           Design System
         </Text>
         <InstallButton className="mb-8" />
-        <div className="flex justify-center gap-1">
-          <Button size="sm" variant="secondary" asChild>
+        <div className="flex justify-center gap-0.5">
+          <Button size="sm" variant="tertiary" asChild>
             <Link href="/docs">
               <BookOpen className="w-3 h-3" />
               Documentation
