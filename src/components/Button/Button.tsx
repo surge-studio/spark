@@ -9,7 +9,7 @@ const buttonVariants = cva(
   cn(
     'inline-flex items-center justify-center gap-2 rounded text-sm font-medium transition-colors',
     'disabled:opacity-30 disabled:pointer-events-none disabled:saturate-0',
-    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-100 dark:focus-visible:ring-primary-900 focus-visible:ring-offset-2 ring-offset-white dark:ring-offset-gray-950'
+    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 dark:focus-visible:ring-primary-900 focus-visible:ring-offset-2 ring-offset-white dark:ring-offset-gray-950'
   ),
   {
     variants: {
@@ -21,7 +21,7 @@ const buttonVariants = cva(
         tertiary:
           'hover:text-gray-900 dark:hover:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-800',
         destructive:
-          'text-white bg-error-600 hover:bg-error-700 dark:bg-error-700 dark:hover:bg-error-600 focus-visible:ring-error-100 dark:focus-visible:ring-error-900',
+          'text-white bg-error-600 hover:bg-error-700 dark:bg-error-700 dark:hover:bg-error-600 focus-visible:ring-error-300 dark:focus-visible:ring-error-900',
         link: 'underline-offset-4 underline text-primary-600 hover:text-primary-500 dark:text-primary-500 dark:hover:text-primary-400',
       },
       size: {

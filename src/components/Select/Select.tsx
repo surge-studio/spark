@@ -20,7 +20,7 @@ const SelectTrigger = forwardRef<
     ref={ref}
     className={cn(
       'flex h-10 transition w-full items-center justify-between rounded bg-transparent px-3 py-2 text-sm placeholder:text-gray-500 disabled:cursor-not-allowed disabled:opacity-50',
-      'border border-gray-200 dark:border-gray-800',
+      'border border-gray-200 dark:border-gray-700',
       'focus:outline-none focus:ring-[3px] focus:ring-primary-100 focus:border-primary-600 dark:focus:ring-primary-900 dark:focus:border-primary-500',
       className
     )}

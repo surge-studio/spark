@@ -13,13 +13,13 @@ const toggleVariants = cva(
     'text-gray-600 dark:text-gray-400 data-[state=on]:text-gray-900 dark:data-[state=on]:text-gray-50',
     'data-[state=on]:bg-gray-100 dark:data-[state=on]:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-50',
     'border border-transparent',
-    'focus-visible:outline-none ring-offset-white dark:ring-offset-gray-950 focus-visible:ring-primary-100 dark:focus-visible:ring-primary-900 focus-visible:ring-2 focus-visible:ring-offset-2'
+    'focus-visible:outline-none ring-offset-white dark:ring-offset-gray-950 focus-visible:ring-primary-300 dark:focus-visible:ring-primary-900 focus-visible:ring-2 focus-visible:ring-offset-2'
   ),
   {
     variants: {
       variant: {
         primary:
-          'bg-gray-900/5 dark:bg-gray-100/10 hover:text-primary-600 dark:hover:text-primary-500 data-[state=on]:bg-primary-600 dark:data-[state=on]:bg-primary-700 data-[state=on]:text-gray-50 dark:data-[state=on]:text-gray-50',
+          'bg-gray-900/5 dark:bg-gray-100/10 hover:text-gray-900 dark:hover:text-white data-[state=on]:bg-primary-600 dark:data-[state=on]:bg-primary-700 data-[state=on]:text-gray-50 dark:data-[state=on]:text-gray-50',
         secondary: 'bg-transparent border-gray-200 dark:border-gray-800',
         tertiary: 'bg-transparent',
       },

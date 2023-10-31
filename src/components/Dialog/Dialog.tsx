@@ -64,7 +64,7 @@ const DialogContent = forwardRef<
         className={cn(
           'absolute right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 disabled:pointer-events-none',
           'data-[state=open]:bg-gray-100 dark:data-[state=open]:bg-gray-800 data-[state=open]:text-gray-500',
-          'focus:outline-none ring-offset-white dark:ring-offset-gray-950 focus:ring-gray-400 dark:focus:ring-gray-800 focus:ring-2 focus:ring-offset-2'
+          'focus:outline-none ring-offset-white dark:ring-offset-gray-950 focus:ring-primary-300 dark:focus:ring-primary-800 focus:ring-2 focus:ring-offset-2'
         )}
       >
         <X className="h-4 w-4" />

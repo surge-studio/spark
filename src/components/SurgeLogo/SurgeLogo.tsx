@@ -86,10 +86,9 @@ const SurgeLogomark: FC<LogoProps> = ({ className }) => (
   </svg>
 );
 
-const SurgeLogo: FC<LogoProps & { orientation: 'horizontal' | 'vertical' }> = ({
-  orientation = 'horizontal',
-  className,
-}) => (
+const SurgeLogo: FC<
+  LogoProps & { orientation?: 'horizontal' | 'vertical' }
+> = ({ orientation = 'horizontal', className }) => (
   <div
     className={cn(
       'inline-flex items-center gap-6',

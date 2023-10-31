@@ -1,6 +1,5 @@
 'use client';
 
-import { Zap } from 'lucide-react';
 import { forwardRef } from 'react';
 import { cn } from '@/components/utils';
 import {
@@ -12,6 +11,7 @@ import {
   NavigationMenuTrigger,
 } from '@/components/NavigationMenu';
 import type { ComponentPropsWithoutRef, ElementRef, FC } from 'react';
+import { SurgeLogomark } from '@/components/SurgeLogo';
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -58,7 +58,7 @@ const ListItem = forwardRef<ElementRef<'a'>, ComponentPropsWithoutRef<'a'>>(
         <a
           ref={ref}
           className={cn(
-            'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors',
+            'block select-none space-y-1 rounded-sm p-3 leading-none no-underline outline-none transition-colors',
             'hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-50',
             'focus:bg-gray-100 dark:focus:bg-gray-800 focus:text-gray-900 dark:focus:text-gray-50',
             className
@@ -87,10 +87,10 @@ export const NavigationMenuDemo: FC = () => (
               <NavigationMenuLink asChild>
                 <a
                   href="#"
-                  className="flex h-full w-full select-none flex-col justify-end rounded-md bg-primary-600 dark:bg-primary-500 text-white p-6 no-underline outline-none focus:shadow-md"
+                  className="flex h-full w-full select-none flex-col justify-end rounded-sm bg-primary-600 dark:bg-primary-700 text-white p-6 no-underline outline-none focus:shadow-md"
                 >
-                  <Zap className="h-6 w-6" />
-                  <div className="mb-2 mt-4 text-lg font-medium">Surge</div>
+                  <SurgeLogomark />
+                  <div className="mb-2 mt-4 text-lg font-medium">Spark</div>
                   <p className="text-sm leading-tight">Design System</p>
                 </a>
               </NavigationMenuLink>

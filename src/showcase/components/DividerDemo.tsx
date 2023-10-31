@@ -12,11 +12,26 @@ export const DividerDemo: FC = () => (
     </div>
     <Divider className="my-4" />
     <div className="flex h-5 items-center space-x-4 text-sm">
-      <Link href="/docs">Docs</Link>
+      <Link
+        href="/docs"
+        className="outline-none hover:underline focus-visible:underline"
+      >
+        Docs
+      </Link>
       <Divider orientation="vertical" />
-      <Link href="https://github.com/surge-studio/spark">Source</Link>
+      <Link
+        href="https://github.com/surge-studio/spark"
+        className="outline-none hover:underline focus-visible:underline"
+      >
+        Source
+      </Link>
       <Divider orientation="vertical" />
-      <Link href="https://surge.studio">Surge</Link>
+      <Link
+        href="https://surge.studio"
+        className="outline-none hover:underline focus-visible:underline"
+      >
+        Surge
+      </Link>
     </div>
   </div>
 );

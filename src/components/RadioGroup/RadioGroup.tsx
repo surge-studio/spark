@@ -26,7 +26,7 @@ const RadioGroupItem = forwardRef<
     ref={ref}
     className={cn(
       'h-4 w-4 rounded-full disabled:cursor-not-allowed disabled:opacity-50',
-      'border border-gray-200 dark:border-gray-800',
+      'border border-gray-200 dark:border-gray-700',
       'focus:outline-none ring-offset-white dark:ring-offset-gray-950 focus:ring-primary-100 dark:focus:ring-primary-900 focus:ring-2 focus:ring-offset-2 transition',
       className
     )}

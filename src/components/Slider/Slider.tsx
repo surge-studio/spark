@@ -30,7 +30,7 @@ const Slider = forwardRef<
         'block h-4 w-4 rounded-full transition-colors disabled:pointer-events-none disabled:opacity-50',
         'border-2 border-primary-600 dark:border-white',
         'bg-white',
-        'focus-visible:outline-none ring-offset-white dark:ring-offset-gray-950 focus-visible:ring-primary-100 dark:focus-visible:ring-primary-900 focus-visible:ring-2 focus-visible:ring-offset-2'
+        'focus-visible:outline-none ring-offset-white dark:ring-offset-gray-950 focus-visible:ring-primary-300 dark:focus-visible:ring-primary-900 focus-visible:ring-2 focus-visible:ring-offset-2'
       )}
     />
   </SliderPrimitive.Root>
