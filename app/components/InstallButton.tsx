@@ -16,7 +16,7 @@ export const InstallButton: FC<InstallButtonProps> = ({ className }) => {
   return (
     <Button
       size="sm"
-      variant="tertiary"
+      variant="secondary"
       className={cn('group font-mono text-xs', className)}
       onClick={async () => {
         await navigator.clipboard.writeText(value);
@@ -27,15 +27,12 @@ export const InstallButton: FC<InstallButtonProps> = ({ className }) => {
         }, 2000);
       }}
     >
-      {value}
       {hasCopied ? (
-        <CheckIcon size={16} className="text-success-500" />
+        <CheckIcon className="w-3 h-3 text-success-500" />
       ) : (
-        <CopyIcon
-          size={16}
-          className="opacity-0 group-hover:opacity-50 transition"
-        />
+        <CopyIcon className="w-3 h-3 transition opacity-50 group-hover:opacity-100" />
       )}
+      {value}
     </Button>
   );
 };

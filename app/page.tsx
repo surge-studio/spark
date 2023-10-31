@@ -16,19 +16,19 @@ const Home: FC = () => {
       <div className="absolute right-2 top-2">
         <ThemeSelection />
       </div>
-      <div className="text-center py-20 px-4 sm:px-8">
+      <div className="px-4 py-20 text-center sm:px-8">
         <SurgeLogomark className="inline-flex mb-6" />
         <Heading as="h1" size="xs" className="mb-1">
           Spark
         </Heading>
-        <Text size="sm" className="opacity-80 mb-6">
+        <Text size="sm" className="mb-6 opacity-80">
           Design System
         </Text>
         <InstallButton className="mb-8" />
         <div className="flex justify-center gap-0.5">
           <Button size="sm" variant="tertiary" asChild>
             <Link href="/docs">
-              <BookOpen className="w-3 h-3" />
+              <BookOpen className="w-3 h-3 opacity-50" />
               Documentation
             </Link>
           </Button>
@@ -38,7 +38,7 @@ const Home: FC = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              GitHub <ArrowUpRight className="w-3 h-3" />
+              GitHub <ArrowUpRight className="w-3 h-3 opacity-50" />
             </Link>
           </Button>
           <Button size="sm" variant="tertiary" asChild>
@@ -48,13 +48,13 @@ const Home: FC = () => {
               rel="noopener noreferrer"
             >
               npm
-              <ArrowUpRight className="w-3 h-3" />
+              <ArrowUpRight className="w-3 h-3 opacity-50" />
             </Link>
           </Button>
         </div>
       </div>
       <Divider />
-      <div className="dark:bg-gray-950 py-16">
+      <div className="py-16 dark:bg-gray-950">
         <div className="mx-auto w-full max-w-[1920px] px-4 sm:px-8">
           <Showcase />
         </div>
