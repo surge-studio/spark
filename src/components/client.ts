@@ -21,7 +21,7 @@ export {
   AlertDialogAction,
   AlertDialogCancel,
 } from './AlertDialog/AlertDialog.js';
-export { Avatar, AvatarImage, AvatarFallback } from './Avatar/Avatar.js';
+export { Avatar } from './Avatar/Avatar.js';
 export { Calendar } from './Calendar/Calendar.js';
 export { Checkbox } from './Checkbox/Checkbox.js';
 export {

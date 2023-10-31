@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback, AvatarImage } from './Avatar';
+import { Avatar } from './Avatar';
 import type { Meta, StoryObj } from '@storybook/react';
 
 type Story = StoryObj<typeof Avatar>;
@@ -13,10 +13,5 @@ const meta: Meta<typeof Avatar> = {
 export default meta;
 
 export const Default: Story = {
-  render: () => (
-    <Avatar>
-      <AvatarImage src="https://github.com/surge-studio.png" />
-      <AvatarFallback>S</AvatarFallback>
-    </Avatar>
-  ),
+  render: () => <Avatar src="https://github.com/surge-studio.png" label="S" />,
 };

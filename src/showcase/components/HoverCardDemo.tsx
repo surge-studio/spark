@@ -1,6 +1,6 @@
 import { CalendarDays } from 'lucide-react';
 import { Button } from '@/components/Button';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/Avatar';
+import { Avatar } from '@/components/Avatar';
 import {
   HoverCard,
   HoverCardContent,
@@ -18,10 +18,7 @@ export const HoverCardDemo: FC = () => (
     </HoverCardTrigger>
     <HoverCardContent className="w-80">
       <div className="flex justify-between space-x-4">
-        <Avatar>
-          <AvatarImage src="https://github.com/vercel.png" />
-          <AvatarFallback>VC</AvatarFallback>
-        </Avatar>
+        <Avatar src="https://github.com/vercel.png" label="VC" />
         <div className="space-y-1">
           <h4 className="text-sm font-semibold">@nextjs</h4>
           <Text size="sm">

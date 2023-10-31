@@ -5,21 +5,6 @@ import { forwardRef } from 'react';
 import { cn } from '../utils';
 import type { ComponentPropsWithoutRef, ElementRef } from 'react';
 
-const Avatar = forwardRef<
-  ElementRef<typeof AvatarPrimitive.Root>,
-  ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>
->(({ className, ...props }, ref) => (
-  <AvatarPrimitive.Root
-    ref={ref}
-    className={cn(
-      'relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full',
-      className
-    )}
-    {...props}
-  />
-));
-Avatar.displayName = AvatarPrimitive.Root.displayName;
-
 const AvatarImage = forwardRef<
   ElementRef<typeof AvatarPrimitive.Image>,
   ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>
@@ -47,4 +32,26 @@ const AvatarFallback = forwardRef<
 ));
 AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName;
 
-export { Avatar, AvatarImage, AvatarFallback };
+const Avatar = forwardRef<
+  ElementRef<typeof AvatarPrimitive.Root>,
+  ComponentPropsWithoutRef<typeof AvatarPrimitive.Root> &
+    Pick<
+      ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>,
+      'alt' | 'src'
+    > & { label?: string }
+>(({ className, src, alt, label, ...props }, ref) => (
+  <AvatarPrimitive.Root
+    ref={ref}
+    className={cn(
+      'relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full',
+      className
+    )}
+    {...props}
+  >
+    <AvatarImage src={src} alt={alt} />
+    <AvatarFallback>{label}</AvatarFallback>
+  </AvatarPrimitive.Root>
+));
+Avatar.displayName = AvatarPrimitive.Root.displayName;
+
+export { Avatar };

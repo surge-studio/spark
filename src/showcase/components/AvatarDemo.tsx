@@ -1,12 +1,10 @@
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/Avatar';
+import { Avatar } from '@/components/Avatar';
 import type { FC } from 'react';
 
 export const AvatarDemo: FC = () => (
-  <Avatar>
-    <AvatarImage
-      src="https://github.com/surge-studio.png"
-      alt="@surge-studio"
-    />
-    <AvatarFallback>SS</AvatarFallback>
-  </Avatar>
+  <Avatar
+    src="https://github.com/surge-studio.png"
+    alt="@surge-studio"
+    label="S"
+  />
 );
