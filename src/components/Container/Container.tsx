@@ -1,6 +1,8 @@
-import { forwardRef, type HTMLProps } from 'react';
+import { forwardRef } from 'react';
+import { cva } from 'class-variance-authority';
 import { cn } from '../utils';
-import { VariantProps, cva } from 'class-variance-authority';
+import type { VariantProps } from 'class-variance-authority';
+import type { HTMLProps } from 'react';
 
 const containerVariants = cva(cn('mx-auto w-full px-4 sm:px-8'), {
   variants: {
@@ -21,17 +23,15 @@ type ContainerProps = Omit<HTMLProps<HTMLDivElement>, 'size'> &
   VariantProps<typeof containerVariants>;
 
 const Container = forwardRef<HTMLDivElement, ContainerProps>(
-  ({ className, size, children, ...props }, ref) => {
-    return (
-      <div
-        className={cn(containerVariants({ size, className }))}
-        ref={ref}
-        {...props}
-      >
-        {children}
-      </div>
-    );
-  }
+  ({ className, size, children, ...props }, ref) => (
+    <div
+      className={cn(containerVariants({ size, className }))}
+      ref={ref}
+      {...props}
+    >
+      {children}
+    </div>
+  )
 );
 Container.displayName = 'Container';
 

@@ -38,7 +38,7 @@ const Avatar = forwardRef<
     Pick<
       ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>,
       'alt' | 'src'
-    > & { label?: string }
+    > & { readonly label?: string }
 >(({ className, src, alt, label, ...props }, ref) => (
   <AvatarPrimitive.Root
     ref={ref}

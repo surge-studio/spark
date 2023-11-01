@@ -1,6 +1,6 @@
 import { Label } from '@/components/Label';
-import type { FC } from 'react';
 import { RadioGroup, RadioGroupItem } from '@/components/RadioGroup';
+import type { FC } from 'react';
 
 export const RadioGroupDemo: FC = () => (
   <RadioGroup defaultValue="comfortable">

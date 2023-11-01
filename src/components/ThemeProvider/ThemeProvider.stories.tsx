@@ -1,8 +1,8 @@
 /* eslint-disable storybook/no-title-property-in-meta */
 
+import { Showcase } from '@/showcase';
 import { ThemeProvider } from './ThemeProvider';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Showcase } from '@/showcase';
 
 type Story = StoryObj<typeof ThemeProvider>;
 

@@ -7,11 +7,7 @@ const ThemeProvider: FC<ComponentProps<typeof NextThemeProvider>> = ({
   children,
   ...props
 }) => (
-  <NextThemeProvider
-    attribute="class"
-    disableTransitionOnChange={true}
-    {...props}
-  >
+  <NextThemeProvider attribute="class" disableTransitionOnChange {...props}>
     {children}
   </NextThemeProvider>
 );

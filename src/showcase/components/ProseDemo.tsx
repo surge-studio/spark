@@ -30,7 +30,7 @@ export const ProseDemo: FC = () => (
         <thead>
           <tr>
             <th>Royal Treasury</th>
-            <th>People's joy</th>
+            <th>People&apos;s joy</th>
           </tr>
         </thead>
         <tbody>

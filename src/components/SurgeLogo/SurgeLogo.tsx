@@ -1,8 +1,8 @@
-import type { FC } from 'react';
 import { cn } from '../utils';
+import type { FC } from 'react';
 
 type LogoProps = {
-  className?: string;
+  readonly className?: string;
 };
 
 const SurgeLogotype: FC<LogoProps> = ({ className }) => (
@@ -87,7 +87,7 @@ const SurgeLogomark: FC<LogoProps> = ({ className }) => (
 );
 
 const SurgeLogo: FC<
-  LogoProps & { orientation?: 'horizontal' | 'vertical' }
+  LogoProps & { readonly orientation?: 'horizontal' | 'vertical' }
 > = ({ orientation = 'horizontal', className }) => (
   <div
     className={cn(

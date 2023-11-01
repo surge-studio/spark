@@ -1,6 +1,7 @@
+import { Fragment } from 'react';
 import { ScrollArea } from '@/components/ScrollArea';
 import { Divider } from '@/components/Divider';
-import { Fragment, type FC } from 'react';
+import type { FC } from 'react';
 
 const tags = Array.from({ length: 50 }).map(
   (value, index, array) => `v1.2.0-beta.${array.length - index}`

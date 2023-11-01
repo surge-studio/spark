@@ -46,9 +46,9 @@ const CommandInput = forwardRef<
   ElementRef<typeof CommandPrimitive.Input>,
   ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
 >(({ className, ...props }, ref) => (
-  // eslint-disable-next-line react/no-unknown-property
   <div
     className="flex items-center gap-2 border-b border-gray-200 dark:border-gray-800 px-3"
+    // eslint-disable-next-line react/no-unknown-property
     cmdk-input-wrapper=""
   >
     <Search className="h-4 w-4 shrink-0 opacity-50" />

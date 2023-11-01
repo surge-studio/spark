@@ -1,12 +1,13 @@
 'use client';
 
+import { CheckIcon, CopyIcon } from 'lucide-react';
+import { useState } from 'react';
 import { cn } from '@/components/utils';
 import { Button } from '@/components/Button';
-import { CheckIcon, CopyIcon } from 'lucide-react';
-import { FC, useState } from 'react';
+import type { FC } from 'react';
 
 type InstallButtonProps = {
-  className?: string;
+  readonly className?: string;
 };
 
 export const InstallButton: FC<InstallButtonProps> = ({ className }) => {

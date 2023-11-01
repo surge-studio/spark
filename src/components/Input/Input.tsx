@@ -1,7 +1,8 @@
 import { forwardRef } from 'react';
+import { cva } from 'class-variance-authority';
 import { cn } from '../utils';
+import type { VariantProps } from 'class-variance-authority';
 import type { InputHTMLAttributes } from 'react';
-import { VariantProps, cva } from 'class-variance-authority';
 
 const inputVariants = cva(
   cn(

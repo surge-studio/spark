@@ -1,9 +1,10 @@
 import { forwardRef } from 'react';
-import type { HTMLAttributes } from 'react';
+import { cva } from 'class-variance-authority';
 import { cn } from '../utils';
-import { VariantProps, cva } from 'class-variance-authority';
+import type { HTMLAttributes } from 'react';
+import type { VariantProps } from 'class-variance-authority';
 
-const headingVariants = cva('font-bold', {
+const headingVariants = cva('font-semibold', {
   variants: {
     size: {
       xxl: 'text-5xl sm:text-7xl tracking-[-0.022em]',
@@ -35,7 +36,7 @@ const headingSizeTag: Record<HeadingSizes, HeadingTags> = {
 
 type HeadingProps = Omit<HTMLAttributes<HTMLHeadingElement>, 'size'> &
   VariantProps<typeof headingVariants> & {
-    as?: HeadingTags;
+    readonly as?: HeadingTags;
   };
 
 const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(

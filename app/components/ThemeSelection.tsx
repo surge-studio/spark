@@ -1,6 +1,7 @@
 'use client';
 
 import { SunIcon, MoonIcon } from 'lucide-react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/Button';
 import { useTheme } from '@/components/ThemeProvider';
 import {
@@ -9,8 +10,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/DropdownMenu';
-import { useState, type FC, useEffect } from 'react';
 import { Skeleton } from '@/components/Skeleton';
+import type { FC } from 'react';
 
 export const ThemeSelection: FC = () => {
   const [mounted, setMounted] = useState(false);
@@ -21,7 +22,7 @@ export const ThemeSelection: FC = () => {
   }, []);
 
   if (!mounted) {
-    return <Skeleton className="w-[40px] h-[40px]" />;
+    return <Skeleton className="w-8 h-8" />;
   }
 
   return (

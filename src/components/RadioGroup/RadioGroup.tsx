@@ -20,8 +20,7 @@ RadioGroup.displayName = RadioGroupPrimitive.Root.displayName;
 const RadioGroupItem = forwardRef<
   ElementRef<typeof RadioGroupPrimitive.Item>,
   ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item>
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
->(({ className, children, ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <RadioGroupPrimitive.Item
     ref={ref}
     className={cn(

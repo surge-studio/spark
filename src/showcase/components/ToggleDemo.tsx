@@ -1,9 +1,8 @@
-import { Bold, Italic, Underline } from 'lucide-react';
 import { Toggle } from '@/components/Toggle';
 import type { FC } from 'react';
 
 export const ToggleDemo: FC = () => (
-  <div className="flex flex-col gap-4 justify-between w-full items-center">
+  <div className="flex flex-col items-center justify-between w-full gap-4">
     <div className="flex space-x-2">
       <Toggle variant="primary" aria-label="Toggle bold">
         Primary
@@ -15,7 +14,7 @@ export const ToggleDemo: FC = () => (
         Tertiary
       </Toggle>
     </div>
-    <div className="flex space-x-2 items-center">
+    <div className="flex items-center space-x-2">
       <Toggle size="sm" variant="secondary" aria-label="Toggle small">
         Small
       </Toggle>

@@ -27,13 +27,13 @@ export const SheetDemo: FC = () => (
         </SheetDescription>
       </SheetHeader>
       <div className="grid gap-4 py-4">
-        <div className="grid grid-cols-4 items-center gap-4">
+        <div className="grid items-center grid-cols-4 gap-4">
           <Label htmlFor="name" className="text-right">
             Name
           </Label>
           <Input id="name" value="Hayden Barnett" className="col-span-3" />
         </div>
-        <div className="grid grid-cols-4 items-center gap-4">
+        <div className="grid items-center grid-cols-4 gap-4">
           <Label htmlFor="username" className="text-right">
             Username
           </Label>

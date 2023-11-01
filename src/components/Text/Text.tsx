@@ -1,8 +1,9 @@
 import { Slot } from '@radix-ui/react-slot';
 import { forwardRef } from 'react';
-import type { HTMLAttributes } from 'react';
-import { VariantProps, cva } from 'class-variance-authority';
+import { cva } from 'class-variance-authority';
 import { cn } from '../utils';
+import type { VariantProps } from 'class-variance-authority';
+import type { HTMLAttributes } from 'react';
 
 const textVariants = cva('', {
   variants: {

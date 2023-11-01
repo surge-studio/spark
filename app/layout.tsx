@@ -1,21 +1,20 @@
-import type { FC, ReactNode } from 'react';
+import { Inter as loadInter } from 'next/font/google';
 import { ThemeProvider } from '@/components/ThemeProvider';
-import { Inter } from 'next/font/google';
-
+import type { FC, ReactNode } from 'react';
+import type { Metadata } from 'next';
 import '@/styles/tailwind.css';
-import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Spark // Design System',
   description: 'Design System by Surge Studio.',
 };
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = loadInter({ subsets: ['latin'] });
 
 const Layout: FC<{
-  children: ReactNode;
+  readonly children: ReactNode;
 }> = ({ children }) => (
-  <html suppressHydrationWarning>
+  <html lang="en" suppressHydrationWarning>
     <body className={inter.className}>
       <ThemeProvider>{children}</ThemeProvider>
     </body>

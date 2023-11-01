@@ -10,8 +10,8 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from '@/components/NavigationMenu';
-import type { ComponentPropsWithoutRef, ElementRef, FC } from 'react';
 import { SurgeLogomark } from '@/components/SurgeLogo';
+import type { ComponentPropsWithoutRef, ElementRef, FC } from 'react';
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -66,7 +66,7 @@ const ListItem = forwardRef<ElementRef<'a'>, ComponentPropsWithoutRef<'a'>>(
           {...props}
         >
           <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-gray-500">
+          <p className="text-sm leading-snug text-gray-500 line-clamp-2">
             {children}
           </p>
         </a>
@@ -87,10 +87,10 @@ export const NavigationMenuDemo: FC = () => (
               <NavigationMenuLink asChild>
                 <a
                   href="#"
-                  className="flex h-full w-full select-none flex-col justify-end rounded-sm bg-primary-600 dark:bg-primary-700 text-white p-6 no-underline outline-none focus:shadow-md"
+                  className="flex flex-col justify-end w-full h-full p-6 text-white no-underline rounded-sm outline-none select-none bg-primary-600 dark:bg-primary-700 focus:shadow-md"
                 >
                   <SurgeLogomark />
-                  <div className="mb-2 mt-4 text-lg font-medium">Spark</div>
+                  <div className="mt-4 mb-2 text-lg font-medium">Spark</div>
                   <p className="text-sm leading-tight">Design System</p>
                 </a>
               </NavigationMenuLink>

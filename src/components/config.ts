@@ -1,9 +1,9 @@
 import animate from 'tailwindcss-animate';
 import typography from '@tailwindcss/typography';
 import colors from 'tailwindcss/colors';
-import type { Config } from 'tailwindcss';
 import defaultConfig from 'tailwindcss/defaultConfig';
 import defaultTheme from 'tailwindcss/defaultTheme';
+import type { Config } from 'tailwindcss';
 
 export const tailwindConfig: Config = {
   presets: [defaultConfig],

@@ -1,15 +1,17 @@
 'use client';
 
 import * as SheetPrimitive from '@radix-ui/react-dialog';
-import { cva, type VariantProps } from 'class-variance-authority';
+import { cva } from 'class-variance-authority';
 import { X } from 'lucide-react';
+import { forwardRef } from 'react';
 import { cn } from '../utils';
-import {
+import type {
   ComponentPropsWithoutRef,
   ElementRef,
-  forwardRef,
+  FC,
   HTMLAttributes,
 } from 'react';
+import type { VariantProps } from 'class-variance-authority';
 
 const Sheet = SheetPrimitive.Root;
 
@@ -17,11 +19,8 @@ const SheetTrigger = SheetPrimitive.Trigger;
 
 const SheetClose = SheetPrimitive.Close;
 
-const SheetPortal = ({
-  className,
-  ...props
-}: SheetPrimitive.DialogPortalProps) => (
-  <SheetPrimitive.Portal className={cn(className)} {...props} />
+const SheetPortal = ({ ...props }: SheetPrimitive.DialogPortalProps) => (
+  <SheetPrimitive.Portal {...props} />
 );
 SheetPortal.displayName = SheetPrimitive.Portal.displayName;
 
@@ -64,9 +63,10 @@ const sheetVariants = cva(
   }
 );
 
-interface SheetContentProps
-  extends ComponentPropsWithoutRef<typeof SheetPrimitive.Content>,
-    VariantProps<typeof sheetVariants> {}
+type SheetContentProps = ComponentPropsWithoutRef<
+  typeof SheetPrimitive.Content
+> &
+  VariantProps<typeof sheetVariants>;
 
 const SheetContent = forwardRef<
   ElementRef<typeof SheetPrimitive.Content>,
@@ -87,7 +87,7 @@ const SheetContent = forwardRef<
           'focus:outline-none ring-offset-white dark:ring-offset-gray-900 focus:ring-primary-300 dark:focus:ring-primary-800 focus:ring-2 focus:ring-offset-2'
         )}
       >
-        <X className="h-4 w-4" />
+        <X className="w-4 h-4" />
         <span className="sr-only">Close</span>
       </SheetPrimitive.Close>
     </SheetPrimitive.Content>
@@ -95,10 +95,10 @@ const SheetContent = forwardRef<
 ));
 SheetContent.displayName = SheetPrimitive.Content.displayName;
 
-const SheetHeader = ({
+const SheetHeader: FC<HTMLAttributes<HTMLDivElement>> = ({
   className,
   ...props
-}: HTMLAttributes<HTMLDivElement>) => (
+}) => (
   <div
     className={cn(
       'flex flex-col space-y-2 text-center sm:text-left',
@@ -109,10 +109,10 @@ const SheetHeader = ({
 );
 SheetHeader.displayName = 'SheetHeader';
 
-const SheetFooter = ({
+const SheetFooter: FC<HTMLAttributes<HTMLDivElement>> = ({
   className,
   ...props
-}: HTMLAttributes<HTMLDivElement>) => (
+}) => (
   <div
     className={cn(
       'flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2',
