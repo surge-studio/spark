@@ -10,7 +10,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from '@/components/NavigationMenu';
-import { SurgeLogomark } from '@/components/SurgeLogo';
+import { SurgeLogo } from '@/components/SurgeLogo';
 import type { ComponentPropsWithoutRef, ElementRef, FC } from 'react';
 
 const components: { title: string; href: string; description: string }[] = [
@@ -86,10 +86,10 @@ export const NavigationMenuDemo: FC = () => (
             <li className="row-span-3">
               <NavigationMenuLink asChild>
                 <a
-                  href="#"
+                  href="/"
                   className="flex flex-col justify-end w-full h-full p-6 text-white no-underline rounded-sm outline-none select-none bg-primary-600 dark:bg-primary-700 focus:shadow-md"
                 >
-                  <SurgeLogomark />
+                  <SurgeLogo variant="symbol" />
                   <div className="mt-4 mb-2 text-lg font-medium">Spark</div>
                   <p className="text-sm leading-tight">Design System</p>
                 </a>

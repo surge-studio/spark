@@ -2,10 +2,12 @@ import { cn } from '../utils';
 import type { FC } from 'react';
 
 type LogoProps = {
+  readonly orientation?: 'horizontal' | 'vertical';
+  readonly variant?: 'default' | 'symbol' | 'wordmark';
   readonly className?: string;
 };
 
-const SurgeLogotype: FC<LogoProps> = ({ className }) => (
+const Wordmark: FC<Pick<LogoProps, 'className'>> = ({ className }) => (
   <svg
     className={cn('w-32', className)}
     version="1.1"
@@ -49,7 +51,7 @@ const SurgeLogotype: FC<LogoProps> = ({ className }) => (
   </svg>
 );
 
-const SurgeLogomark: FC<LogoProps> = ({ className }) => (
+const Symbol: FC<Pick<LogoProps, 'className'>> = ({ className }) => (
   <svg
     className={cn('w-8', className)}
     version="1.1"
@@ -86,9 +88,10 @@ const SurgeLogomark: FC<LogoProps> = ({ className }) => (
   </svg>
 );
 
-const SurgeLogo: FC<
-  LogoProps & { readonly orientation?: 'horizontal' | 'vertical' }
-> = ({ orientation = 'horizontal', className }) => (
+const FullLogo: FC<Pick<LogoProps, 'className' | 'orientation'>> = ({
+  orientation = 'horizontal',
+  className,
+}) => (
   <div
     className={cn(
       'inline-flex items-center gap-6',
@@ -96,9 +99,19 @@ const SurgeLogo: FC<
       className
     )}
   >
-    <SurgeLogomark />
-    <SurgeLogotype />
+    <Symbol />
+    <Wordmark />
   </div>
 );
 
-export { SurgeLogo, SurgeLogomark, SurgeLogotype };
+const SurgeLogo: FC<LogoProps> = ({ variant, orientation, ...props }) => {
+  if (variant === 'symbol') {
+    return <Symbol {...props} />;
+  }
+  if (variant === 'wordmark') {
+    return <Wordmark {...props} />;
+  }
+  return <FullLogo orientation={orientation} {...props} />;
+};
+
+export { SurgeLogo };

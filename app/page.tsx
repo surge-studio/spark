@@ -5,7 +5,7 @@ import { Heading } from '@/components/Heading';
 import { Button } from '@/components/Button';
 import { Divider } from '@/components/Divider';
 import { Showcase } from '@/showcase';
-import { SurgeLogomark, SurgeLogotype } from '@/components/SurgeLogo';
+import { SurgeLogo } from '@/components/SurgeLogo';
 import { InstallButton } from './components/InstallButton';
 import { ThemeSelection } from './components/ThemeSelection';
 import type { FC } from 'react';
@@ -16,7 +16,7 @@ const Home: FC = () => (
       <ThemeSelection />
     </div>
     <div className="px-4 py-20 text-center sm:px-8">
-      <SurgeLogomark className="inline-flex mb-6" />
+      <SurgeLogo variant="symbol" className="inline-flex mb-6" />
       <Heading as="h1" size="xs" className="mb-1">
         Spark
       </Heading>
@@ -65,7 +65,7 @@ const Home: FC = () => (
         target="_blank"
         className="outline-none"
       >
-        <SurgeLogotype />
+        <SurgeLogo variant="wordmark" />
       </Link>
     </footer>
   </>
