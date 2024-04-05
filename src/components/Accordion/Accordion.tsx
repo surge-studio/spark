@@ -29,7 +29,7 @@ const AccordionTrigger = forwardRef<
       ref={ref}
       className={cn(
         'flex flex-1 items-center justify-between py-4 font-medium transition hover:underline [&[data-state=open]>svg]:rotate-180',
-        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 dark:focus-visible:ring-primary-900',
+        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 dark:focus-visible:ring-primary-800',
         className
       )}
       {...props}

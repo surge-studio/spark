@@ -13,7 +13,7 @@ const toggleVariants = cva(
     'text-gray-600 dark:text-gray-400 data-[state=on]:text-gray-900 dark:data-[state=on]:text-gray-50',
     'data-[state=on]:bg-gray-100 dark:data-[state=on]:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-50',
     'border border-transparent',
-    'focus-visible:outline-none ring-offset-white dark:ring-offset-gray-950 focus-visible:ring-primary-300 dark:focus-visible:ring-primary-900 focus-visible:ring-2 focus-visible:ring-offset-2'
+    'focus-visible:outline-none ring-offset-white dark:ring-offset-gray-950 focus-visible:ring-primary-300 dark:focus-visible:ring-primary-800 focus-visible:ring-2 focus-visible:ring-offset-2'
   ),
   {
     variants: {

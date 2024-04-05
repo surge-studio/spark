@@ -13,7 +13,7 @@ const Switch = forwardRef<
     className={cn(
       'peer inline-flex h-[24px] w-[44px] shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors disabled:cursor-not-allowed disabled:opacity-50',
       'data-[state=checked]:bg-primary-600 data-[state=unchecked]:bg-gray-200 dark:data-[state=checked]:bg-primary-700 dark:data-[state=unchecked]:bg-gray-800',
-      'focus-visible:outline-none focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-950 focus-visible:ring-primary-300 dark:focus-visible:ring-primary-900 focus-visible:ring-2 focus-visible:ring-offset-2',
+      'focus-visible:outline-none focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-950 focus-visible:ring-primary-300 dark:focus-visible:ring-primary-800 focus-visible:ring-2 focus-visible:ring-offset-2',
       className
     )}
     {...props}

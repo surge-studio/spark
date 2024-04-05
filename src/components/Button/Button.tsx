@@ -9,7 +9,7 @@ const buttonVariants = cva(
   cn(
     'inline-flex items-center justify-center gap-2 rounded text-sm font-medium transition-colors',
     'disabled:opacity-30 disabled:pointer-events-none disabled:saturate-0',
-    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 dark:focus-visible:ring-primary-900 focus-visible:ring-offset-2 ring-offset-white dark:ring-offset-gray-950'
+    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 dark:focus-visible:ring-primary-800 focus-visible:ring-offset-2 ring-offset-white dark:ring-offset-gray-950'
   ),
   {
     variants: {
