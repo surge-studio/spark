@@ -19,10 +19,15 @@ export const tailwindConfig: Config = {
     extend: {
       fontFamily: {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
+        mono: [...defaultTheme.fontFamily.mono],
       },
       colors: {
-        primary: colors.blue,
+        primary: {
+          DEFAULT: colors.blue[600],
+          ...colors.blue,
+        },
         gray: {
+          DEFAULT: '#4F545F',
           '50': '#FAFAFB',
           '100': '#F4F4F6',
           '200': '#E5E6E9',
@@ -36,6 +41,7 @@ export const tailwindConfig: Config = {
           '950': '#06080F',
         },
         success: {
+          DEFAULT: '#0E9D5A',
           '50': '#EEFDF5',
           '100': '#D7FBE6',
           '200': '#B1F5D0',
@@ -49,6 +55,7 @@ export const tailwindConfig: Config = {
           '950': '#042D1C',
         },
         error: {
+          DEFAULT: '#DF2237',
           '50': '#FFF2F2',
           '100': '#FFE3E4',
           '200': '#FECCCF',
