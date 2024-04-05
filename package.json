@@ -1,6 +1,6 @@
 {
   "name": "@surge-studio/spark",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "scripts": {
     "dev": "concurrently \"pnpm:dev:storybook\" \"pnpm:dev:next\"",
     "dev:storybook": "storybook dev -p 6006",
