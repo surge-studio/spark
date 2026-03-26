@@ -1,74 +1,69 @@
-import Link from 'next/link';
-import { ArrowUpRight, BookOpen } from 'lucide-react';
-import { Text } from '@/components/Text';
-import { Heading } from '@/components/Heading';
-import { Button } from '@/components/Button';
-import { Divider } from '@/components/Divider';
-import { Showcase } from '@/showcase';
-import { SurgeLogo } from '@/components/SurgeLogo';
-import { InstallButton } from './components/InstallButton';
-import { ThemeSelection } from './components/ThemeSelection';
 import type { FC } from 'react';
+import { SurgeLogo } from '@/registry/default/surge-logo/surge-logo';
+import { Footer } from './components/Footer';
+import { Hero } from './components/Hero';
+
+/* ------------------------------------------------------------------ */
+/*  Inline CLI snippet component                                         */
+/* ------------------------------------------------------------------ */
+
+const Snippet: FC<{ cmd: string }> = ({ cmd }) => (
+  <div className="inline-flex items-center gap-2 rounded-lg border border-border bg-muted px-4 py-2.5 font-mono text-sm">
+    <span className="select-none text-muted-foreground">$</span>
+    <span className="text-foreground/80">{cmd}</span>
+  </div>
+);
+
+/* ------------------------------------------------------------------ */
+/*  Page                                                                 */
+/* ------------------------------------------------------------------ */
 
 const Home: FC = () => (
-  <>
-    <div className="absolute right-2 top-2">
-      <ThemeSelection />
-    </div>
-    <div className="px-4 py-20 text-center sm:px-8">
-      <SurgeLogo variant="symbol" className="inline-flex mb-6" />
-      <Heading as="h1" size="xs" className="mb-1">
-        Spark
-      </Heading>
-      <Text size="sm" className="mb-6 opacity-80">
-        Design System
-      </Text>
-      <InstallButton className="mb-8" />
-      <div className="flex justify-center gap-0.5">
-        <Button size="sm" variant="tertiary" asChild>
-          <Link href="/docs">
-            <BookOpen className="w-3 h-3 opacity-50" />
-            Documentation
-          </Link>
-        </Button>
-        <Button size="sm" variant="tertiary" asChild>
-          <Link
-            href="https://github.com/surge-studio/spark"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub <ArrowUpRight className="w-3 h-3 opacity-50" />
-          </Link>
-        </Button>
-        <Button size="sm" variant="tertiary" asChild>
-          <Link
-            href="https://www.npmjs.com/package/@surge-studio/spark"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            npm
-            <ArrowUpRight className="w-3 h-3 opacity-50" />
-          </Link>
-        </Button>
-      </div>
-    </div>
-    <Divider />
-    <div className="py-16 dark:bg-gray-950">
-      <div className="mx-auto w-full max-w-[1920px] px-4 sm:px-8">
-        <Showcase />
-      </div>
-    </div>
-    <Divider />
-    <footer className="flex items-center justify-center py-20">
-      <Link
-        href="https://surge.studio"
-        target="_blank"
-        className="outline-none"
-      >
-        <SurgeLogo variant="wordmark" />
-      </Link>
-    </footer>
-  </>
+  <div className="flex min-h-screen flex-col">
+    <Hero />
+
+    <main className="flex flex-col gap-24 pb-24">
+      <section className="mx-auto w-full max-w-6xl px-4 sm:px-8">
+        <div className="grid gap-6 sm:grid-cols-3">
+          <div className="flex flex-col overflow-hidden rounded-2xl border border-border bg-card">
+            <div className="flex h-48 items-center justify-center bg-muted">
+              <SurgeLogo variant="symbol" className="w-12 text-foreground" />
+            </div>
+            <div className="p-5">
+              <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                symbol
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col overflow-hidden rounded-2xl border border-border bg-card">
+            <div className="flex h-48 items-center justify-center bg-muted">
+              <SurgeLogo variant="wordmark" className="text-foreground" />
+            </div>
+            <div className="p-5">
+              <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                wordmark
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col overflow-hidden rounded-2xl border border-border bg-card">
+            <div className="flex h-48 items-center justify-center bg-muted">
+              <SurgeLogo className="text-foreground" />
+            </div>
+            <div className="p-5">
+              <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                default
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="mt-6">
+          <Snippet cmd="npx shadcn@latest add https://spark.surge.studio/r/surge-logo.json" />
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </div>
 );
 
 export default Home;

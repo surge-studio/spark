@@ -1,140 +1,39 @@
 {
-  "name": "@surge-studio/spark",
-  "version": "0.3.3",
-  "scripts": {
-    "dev": "concurrently \"pnpm:dev:storybook\" \"pnpm:dev:next\"",
-    "dev:storybook": "storybook dev -p 6006",
-    "dev:next": "next dev",
-    "build": "pnpm run build:storybook && pnpm run build:next",
-    "build:storybook": "storybook build -o public/docs",
-    "postbuild:storybook": "sed -i 's#<head>#<head>\\n<base href='/docs/'>#' ./public/docs/index.html",
-    "build:next": "next build",
-    "package": "tsup && node scripts/postprocess.js"
-  },
-  "files": [
-    "dist/**"
-  ],
-  "main": "dist/index.mjs",
-  "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
-    },
-    "./client": {
-      "import": "./dist/client.mjs",
-      "require": "./dist/client.js"
-    },
-    "./server": {
-      "import": "./dist/server.mjs",
-      "require": "./dist/server.js"
-    }
-  },
-  "typesVersions": {
-    "*": {
-      "client": [
-        "dist/client.d.ts"
-      ],
-      "server": [
-        "dist/server.d.ts"
-      ]
-    }
-  },
-  "sideEffects": false,
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
+  "name": "spark",
+  "version": "1.0.0",
+  "author": "Hayden Barnett <hello@haydenbarnett.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/surge-studio/spark.git"
   },
-  "keywords": [
-    "design",
-    "system",
-    "storybook"
-  ],
-  "author": "Hayden Barnett <hello@haydenbarnett.com>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/surge-studio/spark/issues"
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "registry:build": "shadcn build",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check"
   },
-  "homepage": "https://github.com/surge-studio/spark#readme",
   "dependencies": {
-    "@radix-ui/react-accordion": "^1.1.2",
-    "@radix-ui/react-alert-dialog": "^1.0.5",
-    "@radix-ui/react-aspect-ratio": "^1.0.3",
-    "@radix-ui/react-avatar": "^1.0.4",
-    "@radix-ui/react-checkbox": "^1.0.4",
-    "@radix-ui/react-collapsible": "^1.0.3",
-    "@radix-ui/react-context-menu": "^2.1.5",
-    "@radix-ui/react-dialog": "^1.0.5",
-    "@radix-ui/react-dropdown-menu": "^2.0.6",
-    "@radix-ui/react-hover-card": "^1.0.7",
-    "@radix-ui/react-label": "^2.0.2",
-    "@radix-ui/react-menubar": "^1.0.4",
-    "@radix-ui/react-navigation-menu": "^1.1.4",
-    "@radix-ui/react-popover": "^1.0.7",
-    "@radix-ui/react-progress": "^1.0.3",
-    "@radix-ui/react-radio-group": "^1.1.3",
-    "@radix-ui/react-scroll-area": "^1.0.5",
-    "@radix-ui/react-select": "^2.0.0",
-    "@radix-ui/react-separator": "^1.0.3",
-    "@radix-ui/react-slider": "^1.1.2",
-    "@radix-ui/react-slot": "^1.0.2",
-    "@radix-ui/react-switch": "^1.0.3",
-    "@radix-ui/react-tabs": "^1.0.4",
-    "@radix-ui/react-toggle": "^1.0.3",
-    "@radix-ui/react-tooltip": "^1.0.7",
-    "@tailwindcss/typography": "^0.5.12",
-    "autoprefixer": "10.4.19",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.0",
-    "cmdk": "^1.0.0",
-    "date-fns": "^3.6.0",
-    "eslint": "^8.57.0",
-    "eslint-config-harmony": "^3.1.9",
-    "eslint-config-next": "14.1.4",
-    "lucide-react": "^0.364.0",
-    "next-themes": "^0.3.0",
-    "react-day-picker": "^8.10.0",
-    "tailwind-merge": "^2.2.2",
-    "tailwindcss": "^3.4.3",
-    "tailwindcss-animate": "^1.0.7",
-    "typescript": "^5.4.4"
-  },
-  "peerDependencies": {
-    "next": "^14.1.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.576.0",
+    "next": "^15.2.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.5.2",
-    "@storybook/addon-interactions": "^7.5.2",
-    "@storybook/addon-links": "^7.5.2",
-    "@storybook/addon-styling": "^1.3.7",
-    "@storybook/blocks": "^7.5.2",
-    "@storybook/manager-api": "^7.5.2",
-    "@storybook/nextjs": "^7.5.2",
-    "@storybook/react": "^7.5.2",
-    "@storybook/testing-library": "^0.2.2",
-    "@storybook/theming": "^7.5.2",
-    "@types/node": "^20.12.4",
-    "@types/react": "^18.2.74",
-    "@types/react-dom": "^18.2.24",
-    "concurrently": "^8.2.2",
-    "eslint-plugin-storybook": "^0.8.0",
-    "next": "14.1.4",
-    "postcss": "^8.4.38",
-    "prettier": "^3.2.5",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "storybook": "^7.5.2",
-    "stylelint": "^16.3.1",
-    "tsup": "6.6.2"
-  },
-  "prettier": "eslint-config-harmony/prettier",
-  "stylelint": {
-    "extends": "eslint-config-harmony/stylelint"
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "autoprefixer": "^10.4.21",
+    "oxfmt": "^0.35.0",
+    "oxlint": "^1.50.0",
+    "postcss": "^8.5.3",
+    "shadcn": "^3.8.5",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.8.2"
   }
 }

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oxc-project/oxc/main/npm/oxlint/configuration_schema.json",
+  "rules": {
+    "no-magic-numbers": "off",
+    "id-length": "off",
+    "max-lines-per-function": "off",
+    "max-statements": "off",
+    "func-style": "off"
+  },
+  "ignorePatterns": [".next/**", "public/r/**"]
+}

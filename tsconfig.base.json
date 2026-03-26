@@ -18,7 +18,8 @@
     "incremental": false,
     "strictNullChecks": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@/registry/*": ["./registry/*"]
     }
   },
   "include": [
