@@ -12,8 +12,13 @@
   "bracketSameLine": false,
   "arrowParens": "always",
   "endOfLine": "lf",
-  "sortPackageJson": true,
+  "ignorePatterns": [".next/**", "public/r/**"],
+  "sortImports": {},
+  "sortPackageJson": {
+    "sortScripts": true,
+  },
   "sortTailwindcss": {
+    "config": "./tailwind.config.ts",
     "functions": ["clsx", "cn"],
   },
 }

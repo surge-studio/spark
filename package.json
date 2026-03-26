@@ -1,20 +1,23 @@
 {
   "name": "spark",
   "version": "1.0.0",
+  "private": true,
+  "homepage": "https://spark.surge.studio",
   "author": "Hayden Barnett <hello@haydenbarnett.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/surge-studio/spark.git"
   },
   "scripts": {
+    "build": "pnpm registry:build && pnpm registry:check && next build",
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "registry:build": "shadcn build",
-    "lint": "oxlint",
-    "lint:fix": "oxlint --fix",
     "format": "oxfmt",
-    "format:check": "oxfmt --check"
+    "format:check": "oxfmt --check",
+    "lint": "oxlint --max-warnings 0",
+    "lint:fix": "oxlint --fix --max-warnings 0",
+    "registry:build": "shadcn build",
+    "registry:check": "node scripts/verify-registry.mjs",
+    "start": "next start"
   },
   "dependencies": {
     "clsx": "^2.1.1",

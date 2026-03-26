@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 export const Footer: FC = () => (
   <footer className="mt-auto flex items-center justify-end px-4 py-6 sm:px-8">
