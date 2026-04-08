@@ -1,0 +1,17 @@
+{
+  "name": "@spark/ui",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./logo-preview-card": "./src/logo-preview-card.tsx",
+    "./snippet": "./src/snippet.tsx"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0"
+  },
+  "peerDependencies": {
+    "next": "^15.2.0",
+    "react": "^19.0.0"
+  }
+}

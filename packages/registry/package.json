@@ -1,0 +1,23 @@
+{
+  "name": "@spark/registry",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./registry/*": "./registry/*",
+    "./registry.json": "./registry.json",
+    "./surge-logo": "./registry/default/surge-logo/surge-logo.tsx"
+  },
+  "scripts": {
+    "build": "shadcn build",
+    "check": "node scripts/verify-registry.mjs",
+    "sync": "node scripts/sync-registry-public.mjs"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "shadcn": "^3.8.5"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  }
+}

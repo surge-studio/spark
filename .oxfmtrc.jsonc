@@ -1,0 +1,29 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "printWidth": 80,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": true,
+  "singleQuote": true,
+  "quoteProps": "as-needed",
+  "jsxSingleQuote": false,
+  "trailingComma": "es5",
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "arrowParens": "always",
+  "endOfLine": "lf",
+  "ignorePatterns": [
+    ".next/**",
+    "**/node_modules/**",
+    "apps/docs/.next/**",
+    "packages/registry/public/r/**",
+  ],
+  "sortImports": {},
+  "sortPackageJson": {
+    "sortScripts": true,
+  },
+  "sortTailwindcss": {
+    "config": "./apps/docs/tailwind.config.ts",
+    "functions": ["clsx", "cn"],
+  },
+}

@@ -1,131 +1,73 @@
 # Spark
 
-Surge Studio Design System.
+Spark is a custom shadcn/ui component registry for building web apps.
 
 ## Usage
 
-Install the package.
+Start from a project that has already been initialized with shadcn. If it has not been initialized yet, run:
 
 ```bash
-pnpm add @surge-studio/spark
+pnpm dlx shadcn@latest init
 ```
 
-Setup `tailwind.config.ts` using `presets` and `content`.
+Then add a registry item directly from Spark:
 
-Use `extend` to update the colour scheme or any other properties.
-
-```js
-import type { Config } from 'tailwindcss';
-import colors from 'tailwindcss/colors';
-import { tailwindConfig } from '@surge-studio/spark';
-
-const config: Config = {
-  presets: [tailwindConfig],
-  content: tailwindConfig.content,
-  theme: {
-    extend: {
-      colors: {
-        primary: colors.purple,
-        gray: colors.zinc,
-      },
-    },
-  },
-};
-
-export default config;
-```
-
-Apply global styles.
-
-```
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  html {
-    @apply bg-white text-gray-900;
-  }
-
-  .dark {
-    @apply bg-gray-950 text-white;
-  }
-}
-```
-
-Add the ThemeProvider and Inter font.
-
-_App directory_
-
-```js
-// app/layout.jsx
-
-import { ThemeProvider } from '@surge-studio/spark';
-import { Inter } from 'next/font/google';
-
-const inter = Inter({ subsets: ['latin'] });
-
-export default function Layout({ children }) {
-  return (
-    <html suppressHydrationWarning>
-      <head />
-      <body className={inter.className}>
-        <ThemeProvider>{children}</ThemeProvider>
-      </body>
-    </html>
-  );
-}
-```
-
-> As per `next-themes` if you do not add [suppressHydrationWarning](https://reactjs.org/docs/dom-elements.html#suppresshydrationwarning:~:text=It%20only%20works%20one%20level%20deep) to your `<html>` you will get warnings because next-themes updates that element. This property only applies one level deep, so it won't block hydration warnings on other elements.
-
-_Pages directory_
-
-```js
-// pages/_app.tsx
-
-import type { AppProps } from 'next/app';
-import type { FC } from 'react';
-import { ThemeProvider } from '@surge-studio/spark';
-import { Inter } from 'next/font/google';
-
-const inter = Inter({ subsets: ['latin'] });
-
-const App: FC<AppProps> = ({ Component, pageProps }) => (
-  <ThemeProvider>
-    <main className={inter.className}>
-      <Component {...pageProps} />
-    </main>
-  </ThemeProvider>
-);
-
-export default App;
-```
-
-Ready to go!
-
-```js
-import { Button } from '@surge-studio/spark';
+```bash
+pnpm dlx shadcn@latest add https://spark.surge.studio/r/surge-logo.json
 ```
 
 ## Development
 
-Install packages with `pnpm install`
+Install dependencies:
 
-Run Storybook with `pnpm dev:storybook` and navigate to `localhost:6006`
+```bash
+pnpm install
+```
 
-Run Next.js landing page with `pnpm dev:next` and navigate to `localhost:3000`
+Run the docs app locally:
 
-Run concurrently with `pnpm dev`
+```bash
+pnpm dev
+```
 
-## Release workflow
+Build the registry JSON files:
 
-Releases are created manually at this stage in the project.
+```bash
+pnpm registry:build
+```
 
-- Prepare build with `pnpm package`
+Verify the generated `/packages/registry/public/r` output matches `packages/registry/registry.json`:
 
-- Test locally with `pnpm pack --pack-destination ../ `
+```bash
+pnpm registry:check
+```
 
-- Include in a test project with `"@surge-studio/spark": "file:../surge-studio-spark-0.3.0-rc1.tgz"`
+Build everything for production:
 
-- Publish with `npm publish`
+```bash
+pnpm build
+```
+
+`pnpm build` regenerates and verifies the registry artifacts before running the Next.js production build.
+
+## Registry Structure
+
+Spark serves a flat registry endpoint from the docs app at:
+
+- `/r/registry.json`
+- `/r/surge-logo.json`
+
+Registry source files live in `packages/registry/registry/**` and are transformed into public JSON payloads in `packages/registry/public/r` by `shadcn build`. The docs build then syncs those files into `apps/docs/public/r` so they are shipped as static assets at `/r/*.json`.
+
+## Workspace Structure
+
+- `apps/docs` contains the deployable Next.js docs and marketing app.
+- `packages/content` contains editorial docs content and docs-only metadata layered on top of the registry.
+- `packages/registry` contains registry source and generated registry output.
+- `packages/ui` contains shared presentational components used by the docs app.
+
+## Deployment notes
+
+- Keep `packages/registry/registry.json` as the source of truth for item metadata.
+- Regenerate `packages/registry/public/r` whenever a registry item changes.
+- The landing page is only a preview site. The actual distribution contract is the JSON served from `/r`.

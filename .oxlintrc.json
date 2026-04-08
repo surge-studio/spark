@@ -1,0 +1,24 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "ignorePatterns": [
+    ".next/**",
+    "**/node_modules/**",
+    "apps/docs/.next/**",
+    "packages/registry/public/r/**"
+  ],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error",
+    "perf": "warn",
+    "style": "warn"
+  },
+  "rules": {
+    "func-style": "off",
+    "id-length": "off",
+    "max-lines-per-function": "off",
+    "max-statements": "off",
+    "no-magic-numbers": "off",
+    "sort-imports": "off",
+    "sort-keys": "off"
+  }
+}

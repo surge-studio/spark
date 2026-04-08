@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "spark",
+  "homepage": "https://spark.surge.studio",
+  "items": [
+    {
+      "name": "surge-logo",
+      "type": "registry:component",
+      "title": "Surge Logo",
+      "description": "The Surge Studio logo component with symbol, wordmark and full variants.",
+      "categories": ["surge"],
+      "files": [
+        {
+          "path": "registry/default/surge-logo/surge-logo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}
