@@ -1,6 +1,11 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "ignorePatterns": [".next/**", "public/r/**"],
+  "ignorePatterns": [
+    ".next/**",
+    "**/node_modules/**",
+    "apps/docs/.next/**",
+    "packages/registry/public/r/**"
+  ],
   "categories": {
     "correctness": "error",
     "suspicious": "error",

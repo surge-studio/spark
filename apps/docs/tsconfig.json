@@ -1,0 +1,22 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "incremental": true,
+    "plugins": [{ "name": "next" }],
+    "paths": {
+      "@/*": ["./*"],
+      "@spark/content/components": ["../../packages/content/src/components.ts"],
+      "@spark/content/docs": ["../../packages/content/src/docs.ts"],
+      "@spark/registry/registry.json": [
+        "../../packages/registry/registry.json"
+      ],
+      "@spark/registry/surge-logo": [
+        "../../packages/registry/registry/default/surge-logo/surge-logo.tsx"
+      ],
+      "@spark/ui/*": ["../../packages/ui/src/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}

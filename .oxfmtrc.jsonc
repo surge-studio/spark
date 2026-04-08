@@ -12,13 +12,18 @@
   "bracketSameLine": false,
   "arrowParens": "always",
   "endOfLine": "lf",
-  "ignorePatterns": [".next/**", "public/r/**"],
+  "ignorePatterns": [
+    ".next/**",
+    "**/node_modules/**",
+    "apps/docs/.next/**",
+    "packages/registry/public/r/**",
+  ],
   "sortImports": {},
   "sortPackageJson": {
     "sortScripts": true,
   },
   "sortTailwindcss": {
-    "config": "./tailwind.config.ts",
+    "config": "./apps/docs/tailwind.config.ts",
     "functions": ["clsx", "cn"],
   },
 }

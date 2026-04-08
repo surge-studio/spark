@@ -1,6 +1,6 @@
 # Spark
 
-Spark is a custom shadcn/ui component registry for building web applications.
+Spark is a custom shadcn/ui component registry for building web apps.
 
 ## Usage
 
@@ -24,7 +24,7 @@ Install dependencies:
 pnpm install
 ```
 
-Run the site locally:
+Run the docs app locally:
 
 ```bash
 pnpm dev
@@ -36,7 +36,7 @@ Build the registry JSON files:
 pnpm registry:build
 ```
 
-Verify the generated `/public/r` output matches `registry.json`:
+Verify the generated `/packages/registry/public/r` output matches `packages/registry/registry.json`:
 
 ```bash
 pnpm registry:check
@@ -50,17 +50,24 @@ pnpm build
 
 `pnpm build` regenerates and verifies the registry artifacts before running the Next.js production build.
 
-## Registry structure
+## Registry Structure
 
-Spark serves a flat registry endpoint from `public/r`:
+Spark serves a flat registry endpoint from the docs app at:
 
 - `/r/registry.json`
 - `/r/surge-logo.json`
 
-Source files live in `registry/default/**` and are transformed into public JSON payloads by `shadcn build`.
+Registry source files live in `packages/registry/registry/**` and are transformed into public JSON payloads in `packages/registry/public/r` by `shadcn build`. The docs app serves those files through a route handler.
+
+## Workspace Structure
+
+- `apps/docs` contains the deployable Next.js docs and marketing app.
+- `packages/content` contains editorial docs content and docs-only metadata layered on top of the registry.
+- `packages/registry` contains registry source and generated registry output.
+- `packages/ui` contains shared presentational components used by the docs app.
 
 ## Deployment notes
 
-- Keep `registry.json` as the source of truth for item metadata.
-- Regenerate `public/r` whenever a registry item changes.
+- Keep `packages/registry/registry.json` as the source of truth for item metadata.
+- Regenerate `packages/registry/public/r` whenever a registry item changes.
 - The landing page is only a preview site. The actual distribution contract is the JSON served from `/r`.

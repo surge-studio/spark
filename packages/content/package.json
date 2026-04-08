@@ -1,0 +1,13 @@
+{
+  "name": "@spark/content",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./components": "./src/components.ts",
+    "./docs": "./src/docs.ts"
+  },
+  "dependencies": {
+    "@spark/registry": "workspace:*"
+  }
+}
