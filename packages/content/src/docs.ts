@@ -11,11 +11,9 @@ export const homeContent = {
 } as const;
 
 export const docsOverviewContent = {
-  description:
-    'Spark publishes installation-ready shadcn registry items and documents how to use them inside real product codebases.',
+  description: 'Spark is a custom registry built on top of shadcn/ui.',
   installDescription:
     'Initialize shadcn in your consumer app first, then add the component directly from the hosted registry endpoint.',
-  installTitle: 'Install from the registry',
-  overviewLabel: 'Overview',
-  title: 'Component docs for the Spark registry.',
+  installTitle: 'Installation',
+  title: 'Overview',
 } as const;

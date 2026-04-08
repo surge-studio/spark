@@ -5,11 +5,8 @@ import Link from 'next/link';
 
 export default function DocsPage() {
   return (
-    <div className="space-y-12">
+    <div className="space-y-10">
       <section className="space-y-4">
-        <p className="text-muted-foreground text-sm font-semibold tracking-[0.22em] uppercase">
-          {docsOverviewContent.overviewLabel}
-        </p>
         <div className="space-y-3">
           <h1 className="text-foreground text-4xl font-semibold tracking-tight">
             {docsOverviewContent.title}
@@ -37,10 +34,6 @@ export default function DocsPage() {
         <h2 className="text-foreground text-xl font-semibold tracking-tight">
           Browse components
         </h2>
-        <p className="text-muted-foreground text-sm leading-6">
-          Each component page includes install instructions, previews, and API
-          details.
-        </p>
         <Link
           href="/components"
           className="border-border text-foreground hover:bg-muted inline-flex items-center rounded-lg border px-4 py-2 text-sm font-medium transition"

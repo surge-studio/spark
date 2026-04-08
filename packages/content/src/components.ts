@@ -11,7 +11,6 @@ type RegistryComponentName = RegistryItem['name'];
 
 interface ComponentContent {
   readonly props: readonly ComponentProp[];
-  readonly summary: string;
 }
 
 export interface ComponentEntry extends ComponentContent {
@@ -26,7 +25,6 @@ export interface ComponentEntry extends ComponentContent {
 const componentContentBySlug: Record<RegistryComponentName, ComponentContent> =
   {
     'surge-logo': {
-      summary: 'Brand component',
       props: [
         {
           name: 'variant',
@@ -109,7 +107,6 @@ export const componentCatalog: readonly ComponentEntry[] =
       path: primaryFile.path,
       props: content.props,
       slug: item.name,
-      summary: content.summary,
       title: item.title,
     };
   });
@@ -119,11 +116,11 @@ export const docsNavigation = [
     href: '/docs',
     title: 'Overview',
   },
-  {
-    href: '/components',
-    title: 'Components',
-  },
 ] as const;
+
+export const componentCategories = [
+  ...new Set(componentCatalog.flatMap((component) => component.categories)),
+].toSorted((left, right) => left.localeCompare(right));
 
 export const getComponentBySlug = (slug: string) =>
   componentCatalog.find((component) => component.slug === slug);

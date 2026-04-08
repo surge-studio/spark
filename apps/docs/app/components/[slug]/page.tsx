@@ -25,7 +25,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${component.title} | Spark`,
+    title: component.title,
     description: component.description,
   };
 }
@@ -49,9 +49,6 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
   return (
     <div className="space-y-10">
       <section className="space-y-3">
-        <p className="text-muted-foreground text-sm font-semibold tracking-[0.22em] uppercase">
-          {component.summary}
-        </p>
         <h1 className="text-foreground text-4xl font-semibold tracking-tight">
           {component.title}
         </h1>

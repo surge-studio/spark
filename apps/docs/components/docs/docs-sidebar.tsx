@@ -1,10 +1,20 @@
 'use client';
 
-import { componentCatalog, docsNavigation } from '@spark/content/components';
+import {
+  componentCatalog,
+  componentCategories,
+  docsNavigation,
+} from '@spark/content/components';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import { cn } from '@/lib/utils';
+
+const formatCategoryLabel = (category: string) =>
+  category
+    .split('-')
+    .map((segment) => segment.charAt(0).toUpperCase() + segment.slice(1))
+    .join(' ');
 
 export function DocsSidebar() {
   const pathname = usePathname();
@@ -22,10 +32,7 @@ export function DocsSidebar() {
               href={item.href}
               className={cn(
                 'text-muted-foreground hover:bg-muted hover:text-foreground block rounded-lg px-3 py-2 text-sm transition',
-                (pathname === item.href ||
-                  (item.href === '/components' &&
-                    pathname.startsWith('/components/'))) &&
-                  'bg-muted text-foreground'
+                pathname === item.href && 'bg-muted text-foreground'
               )}
             >
               {item.title}
@@ -34,29 +41,33 @@ export function DocsSidebar() {
         </nav>
       </div>
 
-      <div className="space-y-3">
-        <p className="text-muted-foreground text-xs font-semibold tracking-[0.22em] uppercase">
-          Components
-        </p>
-        <nav className="space-y-1">
-          {componentCatalog.map((component) => {
-            const href = `/components/${component.slug}`;
+      {componentCategories.map((category) => (
+        <div key={category} className="space-y-3">
+          <p className="text-muted-foreground text-xs font-semibold tracking-[0.22em] uppercase">
+            {formatCategoryLabel(category)}
+          </p>
+          <nav className="space-y-1">
+            {componentCatalog
+              .filter((component) => component.categories.includes(category))
+              .map((component) => {
+                const href = `/components/${component.slug}`;
 
-            return (
-              <Link
-                key={component.slug}
-                href={href}
-                className={cn(
-                  'text-muted-foreground hover:bg-muted hover:text-foreground block rounded-lg px-3 py-2 text-sm transition',
-                  pathname === href && 'bg-muted text-foreground'
-                )}
-              >
-                {component.title}
-              </Link>
-            );
-          })}
-        </nav>
-      </div>
+                return (
+                  <Link
+                    key={component.slug}
+                    href={href}
+                    className={cn(
+                      'text-muted-foreground hover:bg-muted hover:text-foreground block rounded-lg px-3 py-2 text-sm transition',
+                      pathname === href && 'bg-muted text-foreground'
+                    )}
+                  >
+                    {component.title}
+                  </Link>
+                );
+              })}
+          </nav>
+        </div>
+      ))}
     </aside>
   );
 }

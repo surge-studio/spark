@@ -10,7 +10,10 @@ export const metadata: Metadata = {
   description:
     'Spark is a custom shadcn/ui component registry for building web apps.',
   metadataBase: new URL('https://spark.surge.studio'),
-  title: 'Spark',
+  title: {
+    default: 'Spark',
+    template: '%s // Spark',
+  },
 };
 
 const Layout: FC<{
