@@ -1,4 +1,7 @@
-import { componentCatalog } from '@spark/content/components';
+import {
+  componentCatalog,
+  firstComponentHref,
+} from '@spark/content/components';
 import { docsOverviewContent } from '@spark/content/docs';
 import { Snippet } from '@spark/ui/snippet';
 import Link from 'next/link';
@@ -35,8 +38,8 @@ export default function DocsPage() {
           Browse components
         </h2>
         <Link
-          href="/components"
-          className="border-border text-foreground hover:bg-muted inline-flex items-center rounded-lg border px-4 py-2 text-sm font-medium transition"
+          href={firstComponentHref}
+          className="border-border text-foreground hover:bg-muted inline-flex items-center rounded border px-3 py-1.5 text-sm font-medium transition"
         >
           View components
         </Link>

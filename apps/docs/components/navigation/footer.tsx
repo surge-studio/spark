@@ -3,7 +3,7 @@ import Link from 'next/link';
 import type { FC } from 'react';
 
 export const Footer: FC = () => (
-  <footer className="px-4 py-20 sm:px-8">
+  <footer className="px-4 py-14 sm:px-6">
     <div className="mx-auto flex w-full max-w-[1480px] items-center justify-center gap-4">
       <Link
         href="https://surge.studio"

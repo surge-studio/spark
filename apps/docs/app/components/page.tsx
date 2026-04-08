@@ -13,7 +13,7 @@ export default function ComponentsIndexPage() {
           <Link
             key={component.slug}
             href={`/components/${component.slug}`}
-            className="border-border bg-card hover:border-foreground/20 rounded-2xl border p-5 transition hover:-translate-y-0.5 hover:shadow-lg"
+            className="border-border bg-card hover:border-foreground/20 rounded-[10px] border p-4 transition hover:-translate-y-0.5 hover:shadow-lg"
           >
             <h2 className="text-foreground text-xl font-semibold tracking-tight">
               {component.title}

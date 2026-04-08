@@ -75,13 +75,17 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
         <h2 className="text-foreground text-xl font-semibold tracking-tight">
           Props
         </h2>
-        <div className="border-border overflow-hidden rounded-2xl border">
+        <div className="border-border overflow-hidden rounded-[10px] border">
           <table className="w-full border-collapse text-left text-sm">
             <thead className="bg-muted/60">
               <tr>
-                <th className="text-foreground px-4 py-3 font-medium">Prop</th>
-                <th className="text-foreground px-4 py-3 font-medium">Type</th>
-                <th className="text-foreground px-4 py-3 font-medium">
+                <th className="text-foreground px-3 py-2.5 font-medium">
+                  Prop
+                </th>
+                <th className="text-foreground px-3 py-2.5 font-medium">
+                  Type
+                </th>
+                <th className="text-foreground px-3 py-2.5 font-medium">
                   Description
                 </th>
               </tr>
@@ -89,13 +93,13 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
             <tbody>
               {component.props.map((prop) => (
                 <tr key={prop.name} className="border-border border-t">
-                  <td className="text-foreground px-4 py-3 font-mono">
+                  <td className="text-foreground px-3 py-2.5 font-mono">
                     {prop.name}
                   </td>
-                  <td className="text-muted-foreground px-4 py-3 font-mono">
+                  <td className="text-muted-foreground px-3 py-2.5 font-mono">
                     {prop.type}
                   </td>
-                  <td className="text-muted-foreground px-4 py-3">
+                  <td className="text-muted-foreground px-3 py-2.5">
                     {prop.description}
                   </td>
                 </tr>

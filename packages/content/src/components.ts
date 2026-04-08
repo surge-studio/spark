@@ -122,5 +122,13 @@ export const componentCategories = [
   ...new Set(componentCatalog.flatMap((component) => component.categories)),
 ].toSorted((left, right) => left.localeCompare(right));
 
+let firstComponentHref = '/components';
+
+if (componentCatalog[0]) {
+  firstComponentHref = `/components/${componentCatalog[0].slug}`;
+}
+
+export { firstComponentHref };
+
 export const getComponentBySlug = (slug: string) =>
   componentCatalog.find((component) => component.slug === slug);
