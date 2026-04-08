@@ -57,7 +57,7 @@ Spark serves a flat registry endpoint from the docs app at:
 - `/r/registry.json`
 - `/r/surge-logo.json`
 
-Registry source files live in `packages/registry/registry/**` and are transformed into public JSON payloads in `packages/registry/public/r` by `shadcn build`. The docs app serves those files through a route handler.
+Registry source files live in `packages/registry/registry/**` and are transformed into public JSON payloads in `packages/registry/public/r` by `shadcn build`. The docs build then syncs those files into `apps/docs/public/r` so they are shipped as static assets at `/r/*.json`.
 
 ## Workspace Structure
 

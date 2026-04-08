@@ -10,7 +10,8 @@
   },
   "scripts": {
     "build": "shadcn build",
-    "check": "node scripts/verify-registry.mjs"
+    "check": "node scripts/verify-registry.mjs",
+    "sync": "node scripts/sync-registry-public.mjs"
   },
   "devDependencies": {
     "@types/react": "^19.0.0",

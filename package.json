@@ -16,7 +16,7 @@
     "format:check": "oxfmt --check",
     "lint": "oxlint --max-warnings 0",
     "lint:fix": "oxlint --fix --max-warnings 0",
-    "registry:build": "pnpm --filter @spark/registry build",
+    "registry:build": "pnpm --filter @spark/registry build && pnpm --filter @spark/registry sync",
     "registry:check": "pnpm --filter @spark/registry check",
     "start": "pnpm --filter @spark/docs start"
   },

@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "pnpm --filter @spark/registry check && next build",
-    "dev": "next dev",
+    "build": "pnpm --filter @spark/registry build && pnpm --filter @spark/registry check && pnpm --filter @spark/registry sync && next build",
+    "dev": "pnpm --filter @spark/registry build && pnpm --filter @spark/registry sync && next dev",
     "start": "next start"
   },
   "dependencies": {

@@ -19,6 +19,7 @@
 /build
 /dist
 /public/docs
+/apps/docs/public/r/
 /packages/**/public/r
 
 # turbo
