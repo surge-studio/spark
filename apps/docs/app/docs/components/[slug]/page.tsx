@@ -1,14 +1,14 @@
 import { redirect } from 'next/navigation';
 
-interface LegacyComponentPageProps {
+interface ComponentRedirectPageProps {
   readonly params: Promise<{
     slug: string;
   }>;
 }
 
-export default async function LegacyComponentPage({
+export default async function ComponentRedirectPage({
   params,
-}: LegacyComponentPageProps) {
+}: ComponentRedirectPageProps) {
   const { slug } = await params;
 
   redirect(`/components/${slug}`);
