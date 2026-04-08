@@ -23,7 +23,6 @@
     "sortScripts": true,
   },
   "sortTailwindcss": {
-    "config": "./apps/docs/tailwind.config.ts",
     "functions": ["clsx", "cn"],
   },
 }

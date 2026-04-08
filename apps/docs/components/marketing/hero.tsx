@@ -7,20 +7,20 @@ export const Hero: FC = () => (
     <div className="mx-auto flex w-full max-w-[1480px] justify-center">
       <div className="max-w-2xl space-y-8 text-center">
         <div className="space-y-3">
-          <h2 className="text-balance text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+          <h2 className="text-foreground text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
             {heroContent.title}
           </h2>
         </div>
         <div className="flex items-center justify-center gap-3">
           <Link
             href="/docs"
-            className="inline-flex items-center rounded-lg bg-foreground px-4 py-2 text-sm font-medium text-background transition hover:opacity-90"
+            className="bg-foreground text-background inline-flex items-center rounded-lg px-4 py-2 text-sm font-medium transition hover:opacity-90"
           >
             Open docs
           </Link>
           <Link
             href="/components"
-            className="inline-flex items-center rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground transition hover:bg-muted"
+            className="border-border text-foreground hover:bg-muted inline-flex items-center rounded-lg border px-4 py-2 text-sm font-medium transition"
           >
             Browse components
           </Link>

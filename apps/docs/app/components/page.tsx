@@ -5,13 +5,13 @@ export default function ComponentsIndexPage() {
   return (
     <div className="space-y-8">
       <section className="space-y-3">
-        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+        <p className="text-muted-foreground text-sm font-semibold tracking-[0.22em] uppercase">
           Components
         </p>
-        <h1 className="text-4xl font-semibold tracking-tight text-foreground">
+        <h1 className="text-foreground text-4xl font-semibold tracking-tight">
           Registry components
         </h1>
-        <p className="max-w-2xl text-base leading-7 text-muted-foreground">
+        <p className="text-muted-foreground max-w-2xl text-base leading-7">
           Spark components are documented individually, with a dedicated install
           command, preview surface, and API reference for each item.
         </p>
@@ -22,13 +22,13 @@ export default function ComponentsIndexPage() {
           <Link
             key={component.slug}
             href={`/components/${component.slug}`}
-            className="rounded-2xl border border-border bg-card p-6 transition hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-lg"
+            className="border-border bg-card hover:border-foreground/20 rounded-2xl border p-6 transition hover:-translate-y-0.5 hover:shadow-lg"
           >
             <div className="space-y-2">
-              <h2 className="text-xl font-semibold tracking-tight text-foreground">
+              <h2 className="text-foreground text-xl font-semibold tracking-tight">
                 {component.title}
               </h2>
-              <p className="text-sm leading-6 text-muted-foreground">
+              <p className="text-muted-foreground text-sm leading-6">
                 {component.description}
               </p>
             </div>

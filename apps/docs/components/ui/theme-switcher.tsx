@@ -72,7 +72,7 @@ export function ThemeSwitcher() {
       <DropdownMenu.Trigger asChild>
         <button
           type="button"
-          className="inline-flex h-10 items-center gap-2 rounded-xl border border-border bg-card px-3 text-sm text-muted-foreground transition hover:bg-muted hover:text-foreground"
+          className="border-border bg-card text-muted-foreground hover:bg-muted hover:text-foreground inline-flex h-10 items-center gap-2 rounded-xl border px-3 text-sm transition"
           aria-label="Change color theme"
         >
           <TriggerIcon className="h-4 w-4" />
@@ -83,7 +83,7 @@ export function ThemeSwitcher() {
         <DropdownMenu.Content
           align="end"
           sideOffset={10}
-          className="z-[60] min-w-40 rounded-xl border border-border bg-popover p-2 text-popover-foreground shadow-lg"
+          className="border-border bg-popover text-popover-foreground z-[60] min-w-40 rounded-xl border p-2 shadow-lg"
         >
           {themeOptions.map((option) => {
             const Icon = option.icon;
@@ -102,7 +102,7 @@ export function ThemeSwitcher() {
                 key={option.value}
                 onSelect={() => setTheme(option.value)}
                 className={cn(
-                  'flex cursor-pointer items-center justify-between rounded-lg px-3 py-2 text-sm outline-none transition',
+                  'flex cursor-pointer items-center justify-between rounded-lg px-3 py-2 text-sm transition outline-none',
                   itemClassName
                 )}
               >

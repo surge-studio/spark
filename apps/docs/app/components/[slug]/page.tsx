@@ -49,56 +49,56 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
   return (
     <div className="space-y-10">
       <section className="space-y-3">
-        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+        <p className="text-muted-foreground text-sm font-semibold tracking-[0.22em] uppercase">
           {component.summary}
         </p>
-        <h1 className="text-4xl font-semibold tracking-tight text-foreground">
+        <h1 className="text-foreground text-4xl font-semibold tracking-tight">
           {component.title}
         </h1>
-        <p className="max-w-2xl text-base leading-7 text-muted-foreground">
+        <p className="text-muted-foreground max-w-2xl text-base leading-7">
           {component.description}
         </p>
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold tracking-tight text-foreground">
+        <h2 className="text-foreground text-xl font-semibold tracking-tight">
           Installation
         </h2>
         <Snippet cmd={component.installCommand} />
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold tracking-tight text-foreground">
+        <h2 className="text-foreground text-xl font-semibold tracking-tight">
           Preview
         </h2>
         <Preview />
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold tracking-tight text-foreground">
+        <h2 className="text-foreground text-xl font-semibold tracking-tight">
           Props
         </h2>
-        <div className="overflow-hidden rounded-2xl border border-border">
+        <div className="border-border overflow-hidden rounded-2xl border">
           <table className="w-full border-collapse text-left text-sm">
             <thead className="bg-muted/60">
               <tr>
-                <th className="px-4 py-3 font-medium text-foreground">Prop</th>
-                <th className="px-4 py-3 font-medium text-foreground">Type</th>
-                <th className="px-4 py-3 font-medium text-foreground">
+                <th className="text-foreground px-4 py-3 font-medium">Prop</th>
+                <th className="text-foreground px-4 py-3 font-medium">Type</th>
+                <th className="text-foreground px-4 py-3 font-medium">
                   Description
                 </th>
               </tr>
             </thead>
             <tbody>
               {component.props.map((prop) => (
-                <tr key={prop.name} className="border-t border-border">
-                  <td className="px-4 py-3 font-mono text-foreground">
+                <tr key={prop.name} className="border-border border-t">
+                  <td className="text-foreground px-4 py-3 font-mono">
                     {prop.name}
                   </td>
-                  <td className="px-4 py-3 font-mono text-muted-foreground">
+                  <td className="text-muted-foreground px-4 py-3 font-mono">
                     {prop.type}
                   </td>
-                  <td className="px-4 py-3 text-muted-foreground">
+                  <td className="text-muted-foreground px-4 py-3">
                     {prop.description}
                   </td>
                 </tr>

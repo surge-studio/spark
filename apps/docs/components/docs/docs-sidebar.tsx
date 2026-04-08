@@ -12,7 +12,7 @@ export function DocsSidebar() {
   return (
     <aside className="w-full max-w-xs space-y-8">
       <div className="space-y-3">
-        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+        <p className="text-muted-foreground text-xs font-semibold tracking-[0.22em] uppercase">
           Docs
         </p>
         <nav className="space-y-1">
@@ -21,7 +21,7 @@ export function DocsSidebar() {
               key={item.href}
               href={item.href}
               className={cn(
-                'block rounded-lg px-3 py-2 text-sm text-muted-foreground transition hover:bg-muted hover:text-foreground',
+                'text-muted-foreground hover:bg-muted hover:text-foreground block rounded-lg px-3 py-2 text-sm transition',
                 (pathname === item.href ||
                   (item.href === '/components' &&
                     pathname.startsWith('/components/'))) &&
@@ -35,7 +35,7 @@ export function DocsSidebar() {
       </div>
 
       <div className="space-y-3">
-        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+        <p className="text-muted-foreground text-xs font-semibold tracking-[0.22em] uppercase">
           Components
         </p>
         <nav className="space-y-1">
@@ -47,7 +47,7 @@ export function DocsSidebar() {
                 key={component.slug}
                 href={href}
                 className={cn(
-                  'block rounded-lg px-3 py-2 text-sm text-muted-foreground transition hover:bg-muted hover:text-foreground',
+                  'text-muted-foreground hover:bg-muted hover:text-foreground block rounded-lg px-3 py-2 text-sm transition',
                   pathname === href && 'bg-muted text-foreground'
                 )}
               >

@@ -21,17 +21,17 @@ const links = [
 
 export function SiteHeader() {
   return (
-    <header className="relative z-40 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+    <header className="border-border bg-background/95 supports-[backdrop-filter]:bg-background/80 relative z-40 border-b backdrop-blur">
       <div className="mx-auto flex w-full max-w-[1480px] items-center justify-between gap-6 px-4 py-4 sm:px-8">
         <Link
           href="/"
-          className="inline-flex items-center gap-3 text-sm font-semibold tracking-tight text-foreground"
+          className="text-foreground inline-flex items-center gap-3 text-sm font-semibold tracking-tight"
         >
           <SurgeLogo variant="symbol" className="w-5" />
           <span>Spark</span>
         </Link>
         <div className="flex items-center gap-3">
-          <nav className="flex items-center gap-4 text-sm text-muted-foreground">
+          <nav className="text-muted-foreground flex items-center gap-4 text-sm">
             {links.map((link) => {
               const externalLinkProps: {
                 rel?: string;
@@ -47,7 +47,7 @@ export function SiteHeader() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="transition hover:text-foreground"
+                  className="hover:text-foreground transition"
                   {...externalLinkProps}
                 >
                   {link.label}

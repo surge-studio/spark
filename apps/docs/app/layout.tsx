@@ -17,9 +17,9 @@ const Layout: FC<{
   readonly children: ReactNode;
 }> = ({ children }) => (
   <html lang="en" suppressHydrationWarning>
-    <body className="min-h-screen bg-background font-sans text-foreground">
+    <body className="bg-background text-foreground min-h-screen font-sans">
       <ThemeProvider>
-        <div className="flex min-h-screen flex-col bg-background text-foreground transition-colors">
+        <div className="bg-background text-foreground flex min-h-screen flex-col transition-colors">
           <SiteHeader />
           <div className="flex-1">{children}</div>
           <Footer />
