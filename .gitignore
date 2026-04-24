@@ -9,6 +9,9 @@
 
 # testing
 /coverage
+/.playwright-mcp/
+/playwright-mcp/
+/qa-artifacts/
 
 # next.js
 /.next/

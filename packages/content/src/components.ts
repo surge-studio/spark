@@ -24,6 +24,39 @@ export interface ComponentEntry extends ComponentContent {
 
 const componentContentBySlug: Record<RegistryComponentName, ComponentContent> =
   {
+    'pixel-loader': {
+      props: [
+        {
+          name: 'variant',
+          type: "'wave' | 'pulse' | 'wipe' | 'orbit'",
+          description:
+            'Chooses the pixel animation pattern rendered by the loader.',
+        },
+        {
+          name: 'size',
+          type: "number | 'sm' | 'md' | 'lg'",
+          description:
+            'Sets the rendered loader size. Numeric values are treated as pixels.',
+        },
+        {
+          name: 'gridSize',
+          type: 'number',
+          description:
+            'Sets the pixel grid dimensions. Values are clamped between 3 and 9.',
+        },
+        {
+          name: 'bloom',
+          type: 'boolean',
+          description: 'Adds a soft glow around each active pixel.',
+        },
+        {
+          name: 'className',
+          type: 'string',
+          description:
+            'Applies classes to the wrapper. Use text color utilities to set the pixel color.',
+        },
+      ],
+    },
     'surge-logo': {
       props: [
         {

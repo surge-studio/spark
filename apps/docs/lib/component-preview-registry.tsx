@@ -1,6 +1,7 @@
 import { componentCatalog } from '@spark/content/components';
 import type { ComponentType } from 'react';
 
+import { PixelLoaderPreview } from '@/components/previews/pixel-loader-preview';
 import { SurgeLogoPreview } from '@/components/previews/surge-logo-preview';
 
 interface ComponentPreviewRegistryEntry {
@@ -9,6 +10,9 @@ interface ComponentPreviewRegistryEntry {
 
 const componentPreviewRegistry: Record<string, ComponentPreviewRegistryEntry> =
   {
+    'pixel-loader': {
+      Preview: PixelLoaderPreview,
+    },
     'surge-logo': {
       Preview: SurgeLogoPreview,
     },

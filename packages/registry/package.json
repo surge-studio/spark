@@ -6,6 +6,7 @@
   "exports": {
     "./registry/*": "./registry/*",
     "./registry.json": "./registry.json",
+    "./pixel-loader": "./registry/default/pixel-loader/pixel-loader.tsx",
     "./surge-logo": "./registry/default/surge-logo/surge-logo.tsx"
   },
   "scripts": {

@@ -1,4 +1,6 @@
 @import 'tailwindcss' source('../');
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
 
 @source '../../../packages/registry/registry';
 @source '../../../packages/ui/src';
@@ -17,6 +19,14 @@
   --accent: 240 5% 94%;
   --accent-foreground: 240 5.9% 10%;
   --border: 240 6% 84%;
+  --primary: 240 10% 8%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 240 5% 94%;
+  --secondary-foreground: 240 5.9% 10%;
+  --destructive: 0 84% 60%;
+  --input: 240 6% 84%;
+  --ring: 240 5% 64%;
+  --radius: 0.625rem;
 }
 
 .dark {
@@ -31,6 +41,13 @@
   --accent: 240 3.7% 15.9%;
   --accent-foreground: 0 0% 98%;
   --border: 240 3.7% 15.9%;
+  --primary: 0 0% 98%;
+  --primary-foreground: 240 10% 8%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --destructive: 0 63% 31%;
+  --input: 240 3.7% 15.9%;
+  --ring: 240 5% 64.9%;
 }
 
 @theme inline {
@@ -46,10 +63,24 @@
   --color-accent: hsl(var(--accent));
   --color-accent-foreground: hsl(var(--accent-foreground));
   --color-border: hsl(var(--border));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
 }
 
 @layer base {
   body {
     @apply bg-background text-foreground;
+  }
+  * {
+    @apply border-border outline-ring/50;
   }
 }
