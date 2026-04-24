@@ -18,7 +18,7 @@ const variants: readonly PixelLoaderVariant[] = [
 ];
 
 export function PixelLoaderPreview() {
-  const [variant, setVariant] = useState<PixelLoaderVariant>('wave');
+  const [variant, setVariant] = useState<PixelLoaderVariant>('pulse');
   const [size, setSize] = useState(16);
   const [gridSize, setGridSize] = useState(6);
   const [bloom, setBloom] = useState(false);

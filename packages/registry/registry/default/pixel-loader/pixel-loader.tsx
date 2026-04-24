@@ -319,7 +319,7 @@ const renderLoader = (variant: PixelLoaderVariant, gridSize: number) => {
 };
 
 const PixelLoader: FC<PixelLoaderProps> = ({
-  variant = 'wave',
+  variant = 'pulse',
   size = 'md',
   gridSize = 6,
   bloom = false,
