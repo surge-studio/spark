@@ -2,10 +2,10 @@ import {
   componentCatalog,
   getComponentBySlug,
 } from '@spark/content/components';
-import { Snippet } from '@spark/ui/snippet';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
+import { PackageManagerCommand } from '@/components/docs/package-manager-command';
 import { getComponentPreviewBySlug } from '@/lib/component-preview-registry';
 
 interface ComponentPageProps {
@@ -25,6 +25,9 @@ export async function generateMetadata({
   }
 
   return {
+    alternates: {
+      canonical: `/components/${component.slug}`,
+    },
     title: component.title,
     description: component.description,
   };
@@ -61,7 +64,7 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
         <h2 className="text-foreground text-xl font-semibold tracking-tight">
           Installation
         </h2>
-        <Snippet cmd={component.installCommand} />
+        <PackageManagerCommand commands={component.installCommands} />
       </section>
 
       <section className="space-y-4">

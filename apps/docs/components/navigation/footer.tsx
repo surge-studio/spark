@@ -9,6 +9,7 @@ export const Footer: FC = () => (
         href="https://surge.studio"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Surge Studio"
         className="text-foreground transition hover:opacity-80"
       >
         <SurgeLogo variant="symbol" />

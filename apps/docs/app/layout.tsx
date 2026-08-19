@@ -24,7 +24,7 @@ const Layout: FC<{
       <ThemeProvider>
         <div className="bg-background text-foreground flex min-h-screen flex-col transition-colors">
           <SiteHeader />
-          <div className="flex-1">{children}</div>
+          <main className="flex-1">{children}</main>
           <Footer />
         </div>
       </ThemeProvider>

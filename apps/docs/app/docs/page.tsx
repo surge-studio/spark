@@ -2,9 +2,18 @@ import {
   componentCatalog,
   firstComponentHref,
 } from '@spark/content/components';
-import { docsOverviewContent } from '@spark/content/docs';
-import { Snippet } from '@spark/ui/snippet';
+import { docsOverviewContent, shadcnInitCommands } from '@spark/content/docs';
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
+import { PackageManagerCommand } from '@/components/docs/package-manager-command';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/docs',
+  },
+  title: 'Overview',
+};
 
 export default function DocsPage() {
   return (
@@ -28,8 +37,10 @@ export default function DocsPage() {
           {docsOverviewContent.installDescription}
         </p>
         <div className="space-y-3">
-          <Snippet cmd="pnpm dlx shadcn@latest init" />
-          <Snippet cmd={componentCatalog[0]!.installCommand} />
+          <PackageManagerCommand commands={shadcnInitCommands} />
+          <PackageManagerCommand
+            commands={componentCatalog[0]!.installCommands}
+          />
         </div>
       </section>
 

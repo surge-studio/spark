@@ -6,6 +6,10 @@ export interface ComponentProp {
   readonly type: string;
 }
 
+export type PackageManager = 'bun' | 'npm' | 'pnpm' | 'yarn';
+
+export type PackageManagerCommands = Readonly<Record<PackageManager, string>>;
+
 type RegistryItem = (typeof registryIndex.items)[number];
 type RegistryComponentName = RegistryItem['name'];
 
@@ -16,7 +20,7 @@ interface ComponentContent {
 export interface ComponentEntry extends ComponentContent {
   readonly categories: readonly string[];
   readonly description: string;
-  readonly installCommand: string;
+  readonly installCommands: PackageManagerCommands;
   readonly path: string;
   readonly slug: string;
   readonly title: string;
@@ -76,6 +80,12 @@ const componentContentBySlug: Record<RegistryComponentName, ComponentContent> =
           type: 'string',
           description: 'Applies additional classes to the rendered element.',
         },
+        {
+          name: 'title',
+          type: 'string',
+          description:
+            'Provides an accessible name when the logo is used without adjacent text.',
+        },
       ],
     },
   };
@@ -113,8 +123,18 @@ const assertComponentContentCoverage = () => {
 
 assertComponentContentCoverage();
 
-const getInstallCommand = (slug: RegistryComponentName) =>
-  `pnpm dlx shadcn@latest add ${registryIndex.homepage}/r/${slug}.json`;
+const getInstallCommands = (
+  slug: RegistryComponentName
+): PackageManagerCommands => {
+  const registryUrl = `${registryIndex.homepage}/r/${slug}.json`;
+
+  return {
+    bun: `bunx --bun shadcn@latest add ${registryUrl}`,
+    npm: `npx shadcn@latest add ${registryUrl}`,
+    pnpm: `pnpm dlx shadcn@latest add ${registryUrl}`,
+    yarn: `yarn dlx shadcn@latest add ${registryUrl}`,
+  };
+};
 
 export const componentCatalog: readonly ComponentEntry[] =
   registryIndex.items.map((item) => {
@@ -136,7 +156,7 @@ export const componentCatalog: readonly ComponentEntry[] =
     return {
       categories: item.categories ?? [],
       description: item.description,
-      installCommand: getInstallCommand(item.name),
+      installCommands: getInstallCommands(item.name),
       path: primaryFile.path,
       props: content.props,
       slug: item.name,

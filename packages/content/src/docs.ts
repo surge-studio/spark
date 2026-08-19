@@ -1,3 +1,5 @@
+import type { PackageManagerCommands } from './components';
+
 export const heroContent = {
   title:
     'Spark is a custom shadcn/ui component registry for building web apps.',
@@ -17,3 +19,10 @@ export const docsOverviewContent = {
   installTitle: 'Installation',
   title: 'Overview',
 } as const;
+
+export const shadcnInitCommands: PackageManagerCommands = {
+  bun: 'bunx --bun shadcn@latest init',
+  npm: 'npx shadcn@latest init',
+  pnpm: 'pnpm dlx shadcn@latest init',
+  yarn: 'yarn dlx shadcn@latest init',
+};

@@ -12,13 +12,14 @@
   "scripts": {
     "build": "shadcn build",
     "check": "node scripts/verify-registry.mjs",
-    "sync": "node scripts/sync-registry-public.mjs"
+    "sync": "node scripts/sync-registry-public.mjs",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@types/react": "^19.0.0",
-    "shadcn": "^3.8.5"
+    "@types/react": "^19.2.18",
+    "shadcn": "^4.18.0"
   },
   "peerDependencies": {
-    "react": "^19.0.0"
+    "react": "^19.2.8"
   }
 }

@@ -10,21 +10,31 @@
   },
   "scripts": {
     "build": "turbo run build",
+    "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test:registry && pnpm build",
+    "ci": "pnpm check && pnpm test:e2e",
     "dev": "turbo run dev --filter=@spark/docs",
     "docs:dev": "pnpm --filter @spark/docs dev",
     "format": "oxfmt",
     "format:check": "oxfmt --check",
     "lint": "oxlint --max-warnings 0",
     "lint:fix": "oxlint --fix --max-warnings 0",
-    "registry:build": "pnpm --filter @spark/registry build && pnpm --filter @spark/registry sync",
+    "registry:build": "pnpm --filter @spark/registry build && pnpm --filter @spark/registry check && pnpm --filter @spark/registry sync",
     "registry:check": "pnpm --filter @spark/registry check",
-    "start": "pnpm --filter @spark/docs start"
+    "start": "pnpm --filter @spark/docs start",
+    "test:e2e": "playwright test",
+    "test:registry": "pnpm registry:build && node --test packages/registry/scripts/*.test.mjs",
+    "typecheck": "turbo run typecheck"
   },
   "devDependencies": {
-    "oxfmt": "^0.35.0",
-    "oxlint": "^1.50.0",
-    "turbo": "^2.5.6",
-    "typescript": "^5.8.2"
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.62.1",
+    "oxfmt": "^0.63.0",
+    "oxlint": "^1.78.0",
+    "turbo": "^2.10.10",
+    "typescript": "^7.0.2"
+  },
+  "engines": {
+    "node": ">=24 <25"
   },
   "packageManager": "pnpm@10.20.0"
 }

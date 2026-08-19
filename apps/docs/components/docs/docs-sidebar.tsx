@@ -77,7 +77,7 @@ export function DocsSidebar() {
             <p className="text-muted-foreground text-xs font-semibold tracking-[0.22em] uppercase">
               Docs
             </p>
-            <nav className="space-y-1">
+            <nav className="space-y-1" aria-label="Mobile documentation">
               {docsNavigation.map((item) => (
                 <Link
                   key={item.href}
@@ -98,7 +98,10 @@ export function DocsSidebar() {
               <p className="text-muted-foreground text-xs font-semibold tracking-[0.22em] uppercase">
                 {formatCategoryLabel(category)}
               </p>
-              <nav className="space-y-1">
+              <nav
+                className="space-y-1"
+                aria-label={`Mobile ${formatCategoryLabel(category)} components`}
+              >
                 {renderComponentLinks(
                   componentCatalog.filter((component) =>
                     component.categories.includes(category)
@@ -116,7 +119,7 @@ export function DocsSidebar() {
           <p className="text-muted-foreground text-xs font-semibold tracking-[0.22em] uppercase">
             Docs
           </p>
-          <nav className="space-y-1">
+          <nav className="space-y-1" aria-label="Documentation">
             {docsNavigation.map((item) => (
               <Link
                 key={item.href}
@@ -137,7 +140,10 @@ export function DocsSidebar() {
             <p className="text-muted-foreground text-xs font-semibold tracking-[0.22em] uppercase">
               {formatCategoryLabel(category)}
             </p>
-            <nav className="space-y-1">
+            <nav
+              className="space-y-1"
+              aria-label={`${formatCategoryLabel(category)} components`}
+            >
               {renderComponentLinks(
                 componentCatalog.filter((component) =>
                   component.categories.includes(category)

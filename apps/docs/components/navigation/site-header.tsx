@@ -46,7 +46,10 @@ export function SiteHeader() {
             <SurgeLogo variant="symbol" className="w-5" />
             <span>Spark</span>
           </Link>
-          <nav className="text-muted-foreground flex items-center gap-4 text-sm">
+          <nav
+            className="text-muted-foreground flex items-center gap-4 text-sm"
+            aria-label="Primary navigation"
+          >
             {links.map((link) => (
               <Link
                 key={link.href}
@@ -83,7 +86,7 @@ export function SiteHeader() {
             <span className="sr-only">Open navigation</span>
           </summary>
           <div className="border-border bg-popover absolute top-full right-0 z-[70] mt-3 w-64 rounded-[10px] border p-1.5 shadow-lg">
-            <nav className="flex flex-col gap-1">
+            <nav className="flex flex-col gap-1" aria-label="Mobile navigation">
               {links.map((link) => (
                 <Link
                   key={link.href}

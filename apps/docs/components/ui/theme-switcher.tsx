@@ -1,6 +1,5 @@
 'use client';
 
-import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import {
   CheckIcon,
   ChevronDownIcon,
@@ -9,6 +8,7 @@ import {
   SunIcon,
 } from 'lucide-react';
 import { useTheme } from 'next-themes';
+import { DropdownMenu } from 'radix-ui';
 import { useEffect, useState } from 'react';
 
 import { cn } from '@/lib/utils';

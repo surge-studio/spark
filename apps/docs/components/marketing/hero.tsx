@@ -8,9 +8,9 @@ export const Hero: FC = () => (
     <div className="mx-auto flex w-full max-w-[1480px] justify-center">
       <div className="max-w-2xl space-y-6 text-center">
         <div className="space-y-3">
-          <h2 className="text-foreground text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
+          <h1 className="text-foreground text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
             {heroContent.title}
-          </h2>
+          </h1>
         </div>
         <div className="flex items-center justify-center gap-3">
           <Link

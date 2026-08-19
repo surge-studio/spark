@@ -24,6 +24,7 @@
 /public/docs
 /apps/docs/public/r/
 /packages/**/public/r
+/packages/registry/.consumer-fixture-*/
 
 # turbo
 .turbo

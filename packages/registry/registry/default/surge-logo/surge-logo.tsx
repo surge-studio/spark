@@ -6,10 +6,16 @@ interface SurgeLogoProps {
   readonly variant?: 'default' | 'symbol' | 'wordmark';
   readonly orientation?: 'horizontal' | 'vertical';
   readonly className?: string;
+  readonly title?: string;
 }
 
-const Wordmark: FC<Pick<SurgeLogoProps, 'className'>> = ({ className }) => (
+const Wordmark: FC<Pick<SurgeLogoProps, 'className' | 'title'>> = ({
+  className,
+  title,
+}) => (
   <svg
+    aria-hidden={title ? undefined : true}
+    role={title ? 'img' : undefined}
     className={cn('w-32', className)}
     fill="currentColor"
     version="1.1"
@@ -20,6 +26,7 @@ const Wordmark: FC<Pick<SurgeLogoProps, 'className'>> = ({ className }) => (
     x="0px"
     y="0px"
   >
+    {title ? <title>{title}</title> : undefined}
     <g id="Text">
       <g>
         <path d="M0,4.2C0,1.4,1.6,0,4.7,0s4.7,1.4,4.7,4.2v2.6H6.6V4.2C6.6,3,6,2.4,4.7,2.4l0,0C3.4,2.4,2.8,3,2.8,4.2v2C2.8,7.3,4,8.6,6.3,10c2.1,1.3,3.2,2.9,3.2,4.7v2.7c0,2.8-1.6,4.2-4.7,4.2c-3.2,0-4.7-1.4-4.7-4.2v-2.6h2.8v2.6c0,1.2,0.6,1.8,1.9,1.8s1.9-0.6,1.9-1.8v-2.5c0-1.2-1.2-2.5-3.5-3.9C1.1,9.7,0,8.1,0,6.2C0,6.2,0,4.2,0,4.2z" />
@@ -32,8 +39,13 @@ const Wordmark: FC<Pick<SurgeLogoProps, 'className'>> = ({ className }) => (
   </svg>
 );
 
-const Symbol: FC<Pick<SurgeLogoProps, 'className'>> = ({ className }) => (
+const Symbol: FC<Pick<SurgeLogoProps, 'className' | 'title'>> = ({
+  className,
+  title,
+}) => (
   <svg
+    aria-hidden={title ? undefined : true}
+    role={title ? 'img' : undefined}
     className={cn('w-8', className)}
     fill="currentColor"
     version="1.1"
@@ -44,6 +56,7 @@ const Symbol: FC<Pick<SurgeLogoProps, 'className'>> = ({ className }) => (
     x="0px"
     y="0px"
   >
+    {title ? <title>{title}</title> : undefined}
     <g>
       <g>
         <path d="M7.9,96.6c-0.3,0-0.7-0.1-0.9-0.3c-0.5-0.5-0.5-1.3,0-1.8l34.9-34.9H21.3c-0.5,0-1-0.3-1.2-0.8c-0.2-0.5-0.1-1,0.3-1.3l40.2-40.2c0.5-0.5,1.3-0.5,1.8,0s0.5,1.3,0,1.8l-37.9,38h20.5c0.5,0,1,0.3,1.2,0.8c0.2,0.5,0.1,1-0.3,1.3l-37,37C8.5,96.5,8.2,96.6,7.9,96.6z" />
@@ -56,11 +69,13 @@ const Symbol: FC<Pick<SurgeLogoProps, 'className'>> = ({ className }) => (
   </svg>
 );
 
-const FullLogo: FC<Pick<SurgeLogoProps, 'orientation' | 'className'>> = ({
-  orientation = 'horizontal',
-  className,
-}) => (
+const FullLogo: FC<
+  Pick<SurgeLogoProps, 'orientation' | 'className' | 'title'>
+> = ({ orientation = 'horizontal', className, title }) => (
   <div
+    aria-label={title}
+    aria-hidden={title ? undefined : true}
+    role={title ? 'img' : undefined}
     className={cn(
       'inline-flex items-center gap-6',
       orientation === 'vertical' && 'flex-col',
@@ -72,14 +87,21 @@ const FullLogo: FC<Pick<SurgeLogoProps, 'orientation' | 'className'>> = ({
   </div>
 );
 
-const SurgeLogo: FC<SurgeLogoProps> = ({ variant, orientation, className }) => {
+const SurgeLogo: FC<SurgeLogoProps> = ({
+  variant,
+  orientation,
+  className,
+  title,
+}) => {
   if (variant === 'symbol') {
-    return <Symbol className={className} />;
+    return <Symbol className={className} title={title} />;
   }
   if (variant === 'wordmark') {
-    return <Wordmark className={className} />;
+    return <Wordmark className={className} title={title} />;
   }
-  return <FullLogo orientation={orientation} className={className} />;
+  return (
+    <FullLogo orientation={orientation} className={className} title={title} />
+  );
 };
 
 export { SurgeLogo };

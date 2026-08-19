@@ -16,7 +16,13 @@ Then add a registry item directly from Spark:
 pnpm dlx shadcn@latest add https://spark.surge.studio/r/surge-logo.json
 ```
 
+The docs also provide equivalent commands for npm, Yarn and Bun, with one-click
+copying for every install command.
+
 ## Development
+
+Use Node.js 24 and pnpm 10.20.0. The repository pins both through `.nvmrc` and
+the `packageManager` field.
 
 Install dependencies:
 
@@ -50,12 +56,28 @@ pnpm build
 
 `pnpm build` regenerates and verifies the registry artifacts before running the Next.js production build.
 
+Run the complete static, type, registry and production-build checks:
+
+```bash
+pnpm check
+```
+
+Run the browser and accessibility smoke tests after a production build:
+
+```bash
+pnpm test:e2e
+```
+
+The browser suite uses port `4173` by default. Set `PLAYWRIGHT_PORT` to use a
+different available port.
+
 ## Registry Structure
 
 Spark serves a flat registry endpoint from the docs app at:
 
 - `/r/registry.json`
 - `/r/surge-logo.json`
+- `/r/pixel-loader.json`
 
 Registry source files live in `packages/registry/registry/**` and are transformed into public JSON payloads in `packages/registry/public/r` by `shadcn build`. The docs build then syncs those files into `apps/docs/public/r` so they are shipped as static assets at `/r/*.json`.
 

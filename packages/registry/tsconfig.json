@@ -1,4 +1,9 @@
 {
   "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "paths": {
+      "@/lib/utils": ["../../apps/docs/lib/utils.ts"]
+    }
+  },
   "include": ["registry/**/*.ts", "registry/**/*.tsx"]
 }

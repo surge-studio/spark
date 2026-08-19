@@ -90,7 +90,11 @@ export function PixelLoaderPreview() {
             Bloom
           </span>
           <div className="flex h-9 items-center">
-            <Switch checked={bloom} onCheckedChange={setBloom} />
+            <Switch
+              checked={bloom}
+              onCheckedChange={setBloom}
+              aria-label="Bloom"
+            />
           </div>
         </div>
       </div>

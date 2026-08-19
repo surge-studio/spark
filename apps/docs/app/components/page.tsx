@@ -1,5 +1,13 @@
 import { componentCatalog } from '@spark/content/components';
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/components',
+  },
+  title: 'Components',
+};
 
 export default function ComponentsIndexPage() {
   return (
